@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="NVYHomeHead" customModule="nanvyou" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HwU-vg-rQ9">
+                    <rect key="frame" x="0.0" y="200" width="320" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kii-Fj-k35">
+                            <rect key="frame" x="0.0" y="0.0" width="106.5" height="50"/>
+                            <state key="normal" title="最新"/>
+                            <connections>
+                                <action selector="mostNewAction:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="iL9-XM-Fce"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3C-r5-Bfe">
+                            <rect key="frame" x="106.5" y="0.0" width="107" height="50"/>
+                            <state key="normal" title="最热"/>
+                            <connections>
+                                <action selector="mostHitAction:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="jhW-1l-o7E"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bt1-g0-bqd">
+                            <rect key="frame" x="213.5" y="0.0" width="106.5" height="50"/>
+                            <state key="normal" title="动态"/>
+                            <connections>
+                                <action selector="dynamicAction:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="RZe-Gb-NSH"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="M3C-r5-Bfe" firstAttribute="width" secondItem="kii-Fj-k35" secondAttribute="width" id="0Qw-e4-ae8"/>
+                        <constraint firstAttribute="bottom" secondItem="kii-Fj-k35" secondAttribute="bottom" id="24e-Jy-188"/>
+                        <constraint firstAttribute="bottom" secondItem="M3C-r5-Bfe" secondAttribute="bottom" id="6WL-fD-zis"/>
+                        <constraint firstAttribute="height" constant="50" id="93b-b8-BHU"/>
+                        <constraint firstItem="kii-Fj-k35" firstAttribute="top" secondItem="HwU-vg-rQ9" secondAttribute="top" id="Che-ky-PnV"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Eay-4j-v8N"/>
+                        <constraint firstItem="Bt1-g0-bqd" firstAttribute="leading" secondItem="M3C-r5-Bfe" secondAttribute="trailing" id="Efv-kY-GOS"/>
+                        <constraint firstItem="M3C-r5-Bfe" firstAttribute="top" secondItem="HwU-vg-rQ9" secondAttribute="top" id="FXI-cD-IxA"/>
+                        <constraint firstItem="Bt1-g0-bqd" firstAttribute="width" secondItem="kii-Fj-k35" secondAttribute="width" id="RFe-wb-mNQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Bt1-g0-bqd" secondAttribute="trailing" id="ZQk-75-bUl"/>
+                        <constraint firstItem="Bt1-g0-bqd" firstAttribute="top" secondItem="HwU-vg-rQ9" secondAttribute="top" id="e2Q-2I-ldL"/>
+                        <constraint firstItem="M3C-r5-Bfe" firstAttribute="leading" secondItem="kii-Fj-k35" secondAttribute="trailing" id="i1h-HD-fYa"/>
+                        <constraint firstItem="kii-Fj-k35" firstAttribute="leading" secondItem="HwU-vg-rQ9" secondAttribute="leading" id="ifd-8R-HoZ"/>
+                        <constraint firstAttribute="bottom" secondItem="Bt1-g0-bqd" secondAttribute="bottom" id="kxK-pf-Nyl"/>
+                        <constraint firstItem="M3C-r5-Bfe" firstAttribute="leading" secondItem="kii-Fj-k35" secondAttribute="trailing" id="lpZ-KE-lgP"/>
+                        <constraint firstItem="Bt1-g0-bqd" firstAttribute="leading" secondItem="M3C-r5-Bfe" secondAttribute="trailing" id="nyG-Zr-LI7"/>
+                        <constraint firstItem="kii-Fj-k35" firstAttribute="leading" secondItem="HwU-vg-rQ9" secondAttribute="leading" id="x6H-eT-pHL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rsq-UC-QFI">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="HwU-vg-rQ9" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="Mwl-BU-yAD"/>
+                <constraint firstAttribute="trailing" secondItem="HwU-vg-rQ9" secondAttribute="trailing" id="Xue-by-ZOK"/>
+                <constraint firstAttribute="bottom" secondItem="HwU-vg-rQ9" secondAttribute="bottom" id="Zht-t3-gjm"/>
+                <constraint firstItem="Rsq-UC-QFI" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="bZA-Mq-kZe"/>
+                <constraint firstItem="HwU-vg-rQ9" firstAttribute="top" secondItem="Rsq-UC-QFI" secondAttribute="bottom" id="cIY-IL-tsM"/>
+                <constraint firstItem="Rsq-UC-QFI" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="ipj-lA-B1g"/>
+                <constraint firstAttribute="trailing" secondItem="Rsq-UC-QFI" secondAttribute="trailing" id="jCf-Az-6k0"/>
+            </constraints>
+            <connections>
+                <outlet property="cycleView" destination="Rsq-UC-QFI" id="aUX-fM-WMb"/>
+                <outlet property="mostHit" destination="M3C-r5-Bfe" id="PbV-jD-asW"/>
+                <outlet property="mostNew" destination="kii-Fj-k35" id="jXr-kE-SJs"/>
+            </connections>
+            <point key="canvasLocation" x="-47" y="-187"/>
+        </collectionReusableView>
+    </objects>
+</document>

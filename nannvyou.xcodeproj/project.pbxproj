@@ -1,0 +1,1318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16B85E6A942EEEFBA8812F8D /* Pods_nanvyou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318098B7B029BEA5304A604E /* Pods_nanvyou.framework */; };
+		310018461F264880003887A1 /* NVYMyCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310018451F264880003887A1 /* NVYMyCollectionVC.swift */; };
+		3100B6501F28ECF5002F71D6 /* NVYSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3100B64E1F28ECF5002F71D6 /* NVYSettingVC.swift */; };
+		3100B6541F28EEB8002F71D6 /* NVYSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3100B6521F28EEB8002F71D6 /* NVYSwitchCell.swift */; };
+		3100B6551F28EEB8002F71D6 /* NVYSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3100B6531F28EEB8002F71D6 /* NVYSwitchCell.xib */; };
+		3104A2D91F0A9352009A62E7 /* NVYPersonInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104A2D81F0A9352009A62E7 /* NVYPersonInfoVC.swift */; };
+		311645E41F98CF520094607B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 311645E31F98CF510094607B /* Default-568h@2x.png */; };
+		311897F61F38A61000EEA8C9 /* NVYReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311897F41F38A61000EEA8C9 /* NVYReportVC.swift */; };
+		311897F71F38A61000EEA8C9 /* NVYReportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 311897F51F38A61000EEA8C9 /* NVYReportVC.xib */; };
+		311897F91F38B1B200EEA8C9 /* NVYUserEditInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311897F81F38B1B200EEA8C9 /* NVYUserEditInfoModel.swift */; };
+		311E76411F4ACABA001AEC9B /* NVYDynamicDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E76401F4ACABA001AEC9B /* NVYDynamicDetailVC.swift */; };
+		31211D561F03ED9400323338 /* UIImage+Lwz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31211D551F03ED9400323338 /* UIImage+Lwz.swift */; };
+		31211D581F03F54D00323338 /* UIColor+Lwz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31211D571F03F54D00323338 /* UIColor+Lwz.swift */; };
+		3122C3681F753B4E0098546D /* NVYConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3122C3671F753B4E0098546D /* NVYConversationVC.swift */; };
+		312664231F4DD1550045DB0A /* NVYTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312664221F4DD1550045DB0A /* NVYTimePicker.swift */; };
+		312664251F4DD15E0045DB0A /* NVYTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 312664241F4DD15E0045DB0A /* NVYTimePicker.xib */; };
+		3126B8791EE842EA009A3484 /* NVYLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126B8771EE842EA009A3484 /* NVYLoginVC.swift */; };
+		3126B87A1EE842EA009A3484 /* NVYLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3126B8781EE842EA009A3484 /* NVYLoginVC.xib */; };
+		312A89AE1F512EA3002A5DA7 /* NVYFriendConditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312A89AD1F512EA3002A5DA7 /* NVYFriendConditionModel.swift */; };
+		312A89B01F5131B3002A5DA7 /* NVYDoubleLinePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312A89AF1F5131B3002A5DA7 /* NVYDoubleLinePicker.swift */; };
+		312A89B21F5131BC002A5DA7 /* NVYDoubleLinePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 312A89B11F5131BC002A5DA7 /* NVYDoubleLinePicker.xib */; };
+		313883AB1F0BC61200A0F765 /* NVYTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313883A91F0BC61200A0F765 /* NVYTextFieldCell.swift */; };
+		313883AC1F0BC61200A0F765 /* NVYTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 313883AA1F0BC61200A0F765 /* NVYTextFieldCell.xib */; };
+		31498DCB1F029D2900A3A8EE /* NVYLoadHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31498DCA1F029D2900A3A8EE /* NVYLoadHead.swift */; };
+		31498DCD1F029D3100A3A8EE /* NVYLoadHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31498DCC1F029D3100A3A8EE /* NVYLoadHead.xib */; };
+		314FEB341EF1872400063A20 /* NVYHTTPTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314FEB331EF1872400063A20 /* NVYHTTPTool.swift */; };
+		314FEB361EF1888F00063A20 /* NVYHTTPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314FEB351EF1888F00063A20 /* NVYHTTPConfig.swift */; };
+		315119F61F2D8A1C00C39F31 /* NVYProfileDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315119F51F2D8A1C00C39F31 /* NVYProfileDataTool.swift */; };
+		315119F81F2E1A1E00C39F31 /* NVYUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315119F71F2E1A1E00C39F31 /* NVYUserModel.swift */; };
+		315A85F31F151E2F00417E2F /* NVYUserPageInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315A85F11F151E2F00417E2F /* NVYUserPageInfoVC.swift */; };
+		3166BFA21EF40C140079E099 /* NVYSearchDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166BFA11EF40C140079E099 /* NVYSearchDataTool.swift */; };
+		3166BFA91EF415910079E099 /* NVYAddressDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166BFA81EF415910079E099 /* NVYAddressDataTool.swift */; };
+		3166BFAB1EF415AC0079E099 /* NVYProviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166BFAA1EF415AC0079E099 /* NVYProviceModel.swift */; };
+		3166BFAD1EF416C90079E099 /* NVYCityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166BFAC1EF416C90079E099 /* NVYCityModel.swift */; };
+		3166BFAF1EF417770079E099 /* NVYAreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166BFAE1EF417770079E099 /* NVYAreaModel.swift */; };
+		3166BFB11EF43F9B0079E099 /* NVYAddressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166BFB01EF43F9B0079E099 /* NVYAddressResponse.swift */; };
+		3166BFB31EF563760079E099 /* NVYAddressPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166BFB21EF563760079E099 /* NVYAddressPicker.swift */; };
+		3166BFB51EF5637E0079E099 /* NVYAddressPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3166BFB41EF5637E0079E099 /* NVYAddressPicker.xib */; };
+		3168F43F1F40338B00FA8C12 /* WRCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168F43C1F40338B00FA8C12 /* WRCycleCell.swift */; };
+		3168F4401F40338B00FA8C12 /* WRCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168F43D1F40338B00FA8C12 /* WRCycleScrollView.swift */; };
+		3168F4411F40338B00FA8C12 /* WRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168F43E1F40338B00FA8C12 /* WRProxy.swift */; };
+		317056A21F5C3504000812D8 /* NVYUserAlbumsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317056A11F5C3504000812D8 /* NVYUserAlbumsModel.swift */; };
+		317766081F59B18B0033ABA8 /* NVYMyChargeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317766071F59B18B0033ABA8 /* NVYMyChargeModel.swift */; };
+		317C9BA61EDC2869008A9A54 /* NVYHomeHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C9BA41EDC2869008A9A54 /* NVYHomeHead.swift */; };
+		317C9BA71EDC2869008A9A54 /* NVYHomeHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317C9BA51EDC2869008A9A54 /* NVYHomeHead.xib */; };
+		317C9BAA1EDC2A4D008A9A54 /* NVYVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317C9BA91EDC2A4D008A9A54 /* NVYVerticalButton.swift */; };
+		317F63891F2797DC00522124 /* NVYMyChargeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317F63881F2797DC00522124 /* NVYMyChargeVC.swift */; };
+		317F638C1F27982400522124 /* NVYMyChargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317F638A1F27982400522124 /* NVYMyChargeCell.swift */; };
+		317F638D1F27982400522124 /* NVYMyChargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317F638B1F27982400522124 /* NVYMyChargeCell.xib */; };
+		317F638F1F279B2800522124 /* NVYMyFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317F638E1F279B2800522124 /* NVYMyFriendVC.swift */; };
+		318627011ED1C26D00E5922D /* NVYHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318626FF1ED1C26D00E5922D /* NVYHomeCell.swift */; };
+		318627021ED1C26D00E5922D /* NVYHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318627001ED1C26D00E5922D /* NVYHomeCell.xib */; };
+		318627081ED1C90800E5922D /* NVYColorAndSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318627071ED1C90800E5922D /* NVYColorAndSize.swift */; };
+		31879DEB1F430FF700844B82 /* NVYUserDynamicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31879DEA1F430FF700844B82 /* NVYUserDynamicVC.swift */; };
+		31879DEE1F43103800844B82 /* NVYUserDynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31879DEC1F43103800844B82 /* NVYUserDynamicCell.swift */; };
+		31879DEF1F43103800844B82 /* NVYUserDynamicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31879DED1F43103800844B82 /* NVYUserDynamicCell.xib */; };
+		318AD9971F570C3B00662576 /* NVYChangePwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AD9951F570C3B00662576 /* NVYChangePwdVC.swift */; };
+		318AD9981F570C3B00662576 /* NVYChangePwdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318AD9961F570C3B00662576 /* NVYChangePwdVC.xib */; };
+		318BE6891F584AB500D8EE1E /* NVYVisitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BE6871F584AB500D8EE1E /* NVYVisitCell.swift */; };
+		318BE68A1F584AB500D8EE1E /* NVYVisitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318BE6881F584AB500D8EE1E /* NVYVisitCell.xib */; };
+		3194E3B01F3A067F00708D71 /* NVYUserEditConditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194E3AF1F3A067F00708D71 /* NVYUserEditConditionModel.swift */; };
+		3196A1701EF2AAE8008C90AE /* NVYSingleLinePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196A16F1EF2AAE8008C90AE /* NVYSingleLinePicker.swift */; };
+		3196A1721EF2AB02008C90AE /* NVYSingleLinePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3196A1711EF2AB02008C90AE /* NVYSingleLinePicker.xib */; };
+		3198EE5D1F4F196E00C265A0 /* NVYSysObjModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3198EE5C1F4F196E00C265A0 /* NVYSysObjModel.swift */; };
+		319B116B1EF6371B0095859F /* NVYSearchRequstModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319B116A1EF6371B0095859F /* NVYSearchRequstModel.swift */; };
+		31A07FD81EE99409008ABD9C /* NVYRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A07FD61EE99409008ABD9C /* NVYRegisterVC.swift */; };
+		31A07FD91EE99409008ABD9C /* NVYRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A07FD71EE99409008ABD9C /* NVYRegisterVC.xib */; };
+		31A4C30D1F2B944900616FC1 /* NVYUploadPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4C30B1F2B944900616FC1 /* NVYUploadPhotoVC.swift */; };
+		31A4C30E1F2B944900616FC1 /* NVYUploadPhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A4C30C1F2B944900616FC1 /* NVYUploadPhotoVC.xib */; };
+		31A745B71F17B0F3003F69DC /* NVYUserPageInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A745B51F17B0F3003F69DC /* NVYUserPageInfoCell.swift */; };
+		31A745B81F17B0F3003F69DC /* NVYUserPageInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A745B61F17B0F3003F69DC /* NVYUserPageInfoCell.xib */; };
+		31A745BA1F17B52A003F69DC /* NVYUserPageConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A745B91F17B52A003F69DC /* NVYUserPageConditionVC.swift */; };
+		31AA85F51EEAE48900069841 /* NVYUnloadHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA85F41EEAE48900069841 /* NVYUnloadHead.swift */; };
+		31AA85F71EEAE49400069841 /* NVYUnloadHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31AA85F61EEAE49400069841 /* NVYUnloadHead.xib */; };
+		31AAFB131EF80E7A00AA18B3 /* NVYSignDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AAFB121EF80E7A00AA18B3 /* NVYSignDataTool.swift */; };
+		31AAFB151EF80EAE00AA18B3 /* NVYLoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AAFB141EF80EAE00AA18B3 /* NVYLoginRequestModel.swift */; };
+		31AAFB191EF80ED900AA18B3 /* NVYRegRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AAFB181EF80ED900AA18B3 /* NVYRegRequestModel.swift */; };
+		31AAFB1D1EF80EFB00AA18B3 /* NVYForgetRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AAFB1C1EF80EFB00AA18B3 /* NVYForgetRequestModel.swift */; };
+		31ADCBCF1F337541003564D5 /* NVYHomeDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ADCBCE1F337541003564D5 /* NVYHomeDataTool.swift */; };
+		31ADCBD11F3376FD003564D5 /* NVYHomeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ADCBD01F3376FD003564D5 /* NVYHomeCellModel.swift */; };
+		31AEEB001F642A52008964B3 /* NVYMyPhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AEEAFF1F642A52008964B3 /* NVYMyPhotosVC.swift */; };
+		31AEEB021F642C22008964B3 /* NVYMyAlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AEEB011F642C22008964B3 /* NVYMyAlbumModel.swift */; };
+		31B713B71F0E85900033555C /* NVYTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B713B51F0E85900033555C /* NVYTextViewCell.swift */; };
+		31B713B81F0E85900033555C /* NVYTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B713B61F0E85900033555C /* NVYTextViewCell.xib */; };
+		31B713BB1F0E85A30033555C /* NVYSexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B713B91F0E85A30033555C /* NVYSexCell.swift */; };
+		31B713BC1F0E85A30033555C /* NVYSexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B713BA1F0E85A30033555C /* NVYSexCell.xib */; };
+		31B713BF1F0E85B60033555C /* NVYPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B713BD1F0E85B60033555C /* NVYPickerCell.swift */; };
+		31B713C01F0E85B60033555C /* NVYPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B713BE1F0E85B60033555C /* NVYPickerCell.xib */; };
+		31BB8A8B1EE5913B000B1809 /* NVYSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB8A891EE5913B000B1809 /* NVYSearchCell.swift */; };
+		31BB8A8C1EE5913B000B1809 /* NVYSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31BB8A8A1EE5913B000B1809 /* NVYSearchCell.xib */; };
+		31BCDEC61F701CCE003DA24E /* NVYNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BCDEC51F701CCE003DA24E /* NVYNavigationController.swift */; };
+		31BFEAB81F68212E00E5B722 /* NVYNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFEAB71F68212E00E5B722 /* NVYNoteModel.swift */; };
+		31BFEABA1F68218300E5B722 /* NVYFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFEAB91F68218300E5B722 /* NVYFriendModel.swift */; };
+		31BFEABD1F68271500E5B722 /* NVYFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFEABB1F68271500E5B722 /* NVYFriendCell.swift */; };
+		31BFEABE1F68271500E5B722 /* NVYFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31BFEABC1F68271500E5B722 /* NVYFriendCell.xib */; };
+		31BFEAC01F6831F800E5B722 /* NSString+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BFEABF1F6831F800E5B722 /* NSString+Date.swift */; };
+		31C55DAD1F5915C500FE25DF /* NVYVisitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C55DAC1F5915C500FE25DF /* NVYVisitModel.swift */; };
+		31CA9B2D1F72BB2A000F0891 /* NVYShowBigImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA9B2C1F72BB2A000F0891 /* NVYShowBigImageView.swift */; };
+		31CB46691F6794E8006C8ACF /* NVYMyNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CB46681F6794E8006C8ACF /* NVYMyNoteVC.swift */; };
+		31CB466C1F6795DD006C8ACF /* NVYMyNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CB466A1F6795DD006C8ACF /* NVYMyNoteCell.swift */; };
+		31CB466D1F6795DD006C8ACF /* NVYMyNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CB466B1F6795DD006C8ACF /* NVYMyNoteCell.xib */; };
+		31CD373E1EFAB7DF00CD8050 /* NVYSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD373D1EFAB7DF00CD8050 /* NVYSearchResponseModel.swift */; };
+		31D7214D1EE3B119003F7BCB /* NVYCustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D7214C1EE3B119003F7BCB /* NVYCustomSwitch.swift */; };
+		31D7214F1EE3B7C5003F7BCB /* NVYSearchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D7214E1EE3B7C5003F7BCB /* NVYSearchingView.swift */; };
+		31D721511EE3B7D2003F7BCB /* NVYSearchingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D721501EE3B7D2003F7BCB /* NVYSearchingView.xib */; };
+		31D835A91F7748C500AE03C2 /* NVYWellcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D835A81F7748C500AE03C2 /* NVYWellcomeVC.swift */; };
+		31DE5FD21F1E5D16008B8DD1 /* BetterSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE5FD11F1E5D16008B8DD1 /* BetterSegmentedControl.swift */; };
+		31DE5FD61F1E5E03008B8DD1 /* NVYVisitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE5FD51F1E5E03008B8DD1 /* NVYVisitVC.swift */; };
+		31E0AA701F35ECE80024C8A3 /* NVYUserPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E0AA6F1F35ECE80024C8A3 /* NVYUserPageModel.swift */; };
+		31E16B721F41ED5100D7CF70 /* NVYMainHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E16B711F41ED5100D7CF70 /* NVYMainHomeVC.swift */; };
+		31E16B741F41F10200D7CF70 /* NVYMainHomeHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E16B731F41F10200D7CF70 /* NVYMainHomeHead.swift */; };
+		31E16B761F41F10C00D7CF70 /* NVYMainHomeHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31E16B751F41F10C00D7CF70 /* NVYMainHomeHead.xib */; };
+		31E263D71F6EA9AB0046D67B /* NVYChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E263D61F6EA9AB0046D67B /* NVYChatListVC.swift */; };
+		31E269661F66D4560044F9D2 /* NVYAlbumDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E269651F66D4560044F9D2 /* NVYAlbumDetailModel.swift */; };
+		31E269681F66D4710044F9D2 /* NVYMyAlbumDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E269671F66D4710044F9D2 /* NVYMyAlbumDetailVC.swift */; };
+		31EB43101EEEE79F00EDB583 /* NVYFindPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EB430E1EEEE79F00EDB583 /* NVYFindPwdVC.swift */; };
+		31EB43111EEEE79F00EDB583 /* NVYFindPwdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31EB430F1EEEE79F00EDB583 /* NVYFindPwdVC.xib */; };
+		31ED80371F11C97F00456049 /* NVYPerConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ED80361F11C97F00456049 /* NVYPerConditionVC.swift */; };
+		31F2BC721F12276900DE6C63 /* NVYUserPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2BC711F12276900DE6C63 /* NVYUserPageVC.swift */; };
+		31F2BC741F12280F00DE6C63 /* NVYUserPageHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2BC731F12280F00DE6C63 /* NVYUserPageHead.swift */; };
+		31F2BC761F12281900DE6C63 /* NVYUserPageHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F2BC751F12281900DE6C63 /* NVYUserPageHead.xib */; };
+		31F447511F2A35B000110989 /* NVYPublishConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4474F1F2A35B000110989 /* NVYPublishConditionVC.swift */; };
+		31F447521F2A35B000110989 /* NVYPublishConditionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F447501F2A35B000110989 /* NVYPublishConditionVC.xib */; };
+		FE005B111EC3436900104898 /* NVYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE005B0F1EC3436900104898 /* NVYTabBarController.swift */; };
+		FE005B121EC3436900104898 /* NVYTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE005B101EC3436900104898 /* NVYTabBarController.xib */; };
+		FE005B201EC3450100104898 /* NVYHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE005B1F1EC3450100104898 /* NVYHomeVC.swift */; };
+		FE005B221EC3451400104898 /* NVYProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE005B211EC3451400104898 /* NVYProfileVC.swift */; };
+		FE005B241EC3452200104898 /* NVYSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE005B231EC3452200104898 /* NVYSearchVC.swift */; };
+		FE08763D1EB36CCE00489DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE08763C1EB36CCE00489DC3 /* AppDelegate.swift */; };
+		FE0876421EB36CCE00489DC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0876401EB36CCE00489DC3 /* Main.storyboard */; };
+		FE0876441EB36CCE00489DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE0876431EB36CCE00489DC3 /* Assets.xcassets */; };
+		FE0876471EB36CCE00489DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0876451EB36CCE00489DC3 /* LaunchScreen.storyboard */; };
+		FE43C4501F1CE219005F5E08 /* NVYUserPagePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE43C44F1F1CE219005F5E08 /* NVYUserPagePhotoVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		310018451F264880003887A1 /* NVYMyCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyCollectionVC.swift; sourceTree = "<group>"; };
+		3100B64E1F28ECF5002F71D6 /* NVYSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSettingVC.swift; sourceTree = "<group>"; };
+		3100B6521F28EEB8002F71D6 /* NVYSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSwitchCell.swift; sourceTree = "<group>"; };
+		3100B6531F28EEB8002F71D6 /* NVYSwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYSwitchCell.xib; sourceTree = "<group>"; };
+		3104A2D81F0A9352009A62E7 /* NVYPersonInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYPersonInfoVC.swift; sourceTree = "<group>"; };
+		310BB0B01F7E982C00C82987 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		311645E31F98CF510094607B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		311897F41F38A61000EEA8C9 /* NVYReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYReportVC.swift; sourceTree = "<group>"; };
+		311897F51F38A61000EEA8C9 /* NVYReportVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYReportVC.xib; sourceTree = "<group>"; };
+		311897F81F38B1B200EEA8C9 /* NVYUserEditInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserEditInfoModel.swift; sourceTree = "<group>"; };
+		311E76401F4ACABA001AEC9B /* NVYDynamicDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYDynamicDetailVC.swift; sourceTree = "<group>"; };
+		31211D551F03ED9400323338 /* UIImage+Lwz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Lwz.swift"; sourceTree = "<group>"; };
+		31211D571F03F54D00323338 /* UIColor+Lwz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Lwz.swift"; sourceTree = "<group>"; };
+		3122C3671F753B4E0098546D /* NVYConversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYConversationVC.swift; sourceTree = "<group>"; };
+		312664221F4DD1550045DB0A /* NVYTimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYTimePicker.swift; sourceTree = "<group>"; };
+		312664241F4DD15E0045DB0A /* NVYTimePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYTimePicker.xib; sourceTree = "<group>"; };
+		3126B8771EE842EA009A3484 /* NVYLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYLoginVC.swift; sourceTree = "<group>"; };
+		3126B8781EE842EA009A3484 /* NVYLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYLoginVC.xib; sourceTree = "<group>"; };
+		312A89AD1F512EA3002A5DA7 /* NVYFriendConditionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYFriendConditionModel.swift; sourceTree = "<group>"; };
+		312A89AF1F5131B3002A5DA7 /* NVYDoubleLinePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYDoubleLinePicker.swift; sourceTree = "<group>"; };
+		312A89B11F5131BC002A5DA7 /* NVYDoubleLinePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYDoubleLinePicker.xib; sourceTree = "<group>"; };
+		313883A91F0BC61200A0F765 /* NVYTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYTextFieldCell.swift; sourceTree = "<group>"; };
+		313883AA1F0BC61200A0F765 /* NVYTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYTextFieldCell.xib; sourceTree = "<group>"; };
+		31498DCA1F029D2900A3A8EE /* NVYLoadHead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYLoadHead.swift; sourceTree = "<group>"; };
+		31498DCC1F029D3100A3A8EE /* NVYLoadHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYLoadHead.xib; sourceTree = "<group>"; };
+		314FEB331EF1872400063A20 /* NVYHTTPTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYHTTPTool.swift; sourceTree = "<group>"; };
+		314FEB351EF1888F00063A20 /* NVYHTTPConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYHTTPConfig.swift; sourceTree = "<group>"; };
+		315119F51F2D8A1C00C39F31 /* NVYProfileDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYProfileDataTool.swift; sourceTree = "<group>"; };
+		315119F71F2E1A1E00C39F31 /* NVYUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserModel.swift; sourceTree = "<group>"; };
+		315A85F11F151E2F00417E2F /* NVYUserPageInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserPageInfoVC.swift; sourceTree = "<group>"; };
+		3166BFA11EF40C140079E099 /* NVYSearchDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSearchDataTool.swift; sourceTree = "<group>"; };
+		3166BFA81EF415910079E099 /* NVYAddressDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYAddressDataTool.swift; sourceTree = "<group>"; };
+		3166BFAA1EF415AC0079E099 /* NVYProviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYProviceModel.swift; sourceTree = "<group>"; };
+		3166BFAC1EF416C90079E099 /* NVYCityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYCityModel.swift; sourceTree = "<group>"; };
+		3166BFAE1EF417770079E099 /* NVYAreaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYAreaModel.swift; sourceTree = "<group>"; };
+		3166BFB01EF43F9B0079E099 /* NVYAddressResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYAddressResponse.swift; sourceTree = "<group>"; };
+		3166BFB21EF563760079E099 /* NVYAddressPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYAddressPicker.swift; sourceTree = "<group>"; };
+		3166BFB41EF5637E0079E099 /* NVYAddressPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYAddressPicker.xib; sourceTree = "<group>"; };
+		3168F43C1F40338B00FA8C12 /* WRCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleCell.swift; sourceTree = "<group>"; };
+		3168F43D1F40338B00FA8C12 /* WRCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCycleScrollView.swift; sourceTree = "<group>"; };
+		3168F43E1F40338B00FA8C12 /* WRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRProxy.swift; sourceTree = "<group>"; };
+		317056A11F5C3504000812D8 /* NVYUserAlbumsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserAlbumsModel.swift; sourceTree = "<group>"; };
+		317766071F59B18B0033ABA8 /* NVYMyChargeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyChargeModel.swift; sourceTree = "<group>"; };
+		317C9BA41EDC2869008A9A54 /* NVYHomeHead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYHomeHead.swift; sourceTree = "<group>"; };
+		317C9BA51EDC2869008A9A54 /* NVYHomeHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYHomeHead.xib; sourceTree = "<group>"; };
+		317C9BA91EDC2A4D008A9A54 /* NVYVerticalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYVerticalButton.swift; sourceTree = "<group>"; };
+		317F63881F2797DC00522124 /* NVYMyChargeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyChargeVC.swift; sourceTree = "<group>"; };
+		317F638A1F27982400522124 /* NVYMyChargeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyChargeCell.swift; sourceTree = "<group>"; };
+		317F638B1F27982400522124 /* NVYMyChargeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYMyChargeCell.xib; sourceTree = "<group>"; };
+		317F638E1F279B2800522124 /* NVYMyFriendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyFriendVC.swift; sourceTree = "<group>"; };
+		318098B7B029BEA5304A604E /* Pods_nanvyou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nanvyou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3182EE501F5EF4DA002963D3 /* nanvyou.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nanvyou.entitlements; sourceTree = "<group>"; };
+		318626FF1ED1C26D00E5922D /* NVYHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYHomeCell.swift; sourceTree = "<group>"; };
+		318627001ED1C26D00E5922D /* NVYHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYHomeCell.xib; sourceTree = "<group>"; };
+		318627071ED1C90800E5922D /* NVYColorAndSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYColorAndSize.swift; sourceTree = "<group>"; };
+		31879DEA1F430FF700844B82 /* NVYUserDynamicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserDynamicVC.swift; sourceTree = "<group>"; };
+		31879DEC1F43103800844B82 /* NVYUserDynamicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserDynamicCell.swift; sourceTree = "<group>"; };
+		31879DED1F43103800844B82 /* NVYUserDynamicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYUserDynamicCell.xib; sourceTree = "<group>"; };
+		318AD9951F570C3B00662576 /* NVYChangePwdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYChangePwdVC.swift; sourceTree = "<group>"; };
+		318AD9961F570C3B00662576 /* NVYChangePwdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYChangePwdVC.xib; sourceTree = "<group>"; };
+		318BE6871F584AB500D8EE1E /* NVYVisitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYVisitCell.swift; sourceTree = "<group>"; };
+		318BE6881F584AB500D8EE1E /* NVYVisitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYVisitCell.xib; sourceTree = "<group>"; };
+		3194E3AF1F3A067F00708D71 /* NVYUserEditConditionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserEditConditionModel.swift; sourceTree = "<group>"; };
+		3196A16F1EF2AAE8008C90AE /* NVYSingleLinePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSingleLinePicker.swift; sourceTree = "<group>"; };
+		3196A1711EF2AB02008C90AE /* NVYSingleLinePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYSingleLinePicker.xib; sourceTree = "<group>"; };
+		3198EE5C1F4F196E00C265A0 /* NVYSysObjModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSysObjModel.swift; sourceTree = "<group>"; };
+		319B116A1EF6371B0095859F /* NVYSearchRequstModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSearchRequstModel.swift; sourceTree = "<group>"; };
+		31A07FD61EE99409008ABD9C /* NVYRegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYRegisterVC.swift; sourceTree = "<group>"; };
+		31A07FD71EE99409008ABD9C /* NVYRegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYRegisterVC.xib; sourceTree = "<group>"; };
+		31A4C30B1F2B944900616FC1 /* NVYUploadPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUploadPhotoVC.swift; sourceTree = "<group>"; };
+		31A4C30C1F2B944900616FC1 /* NVYUploadPhotoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYUploadPhotoVC.xib; sourceTree = "<group>"; };
+		31A745B51F17B0F3003F69DC /* NVYUserPageInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserPageInfoCell.swift; sourceTree = "<group>"; };
+		31A745B61F17B0F3003F69DC /* NVYUserPageInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYUserPageInfoCell.xib; sourceTree = "<group>"; };
+		31A745B91F17B52A003F69DC /* NVYUserPageConditionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserPageConditionVC.swift; sourceTree = "<group>"; };
+		31AA85F41EEAE48900069841 /* NVYUnloadHead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUnloadHead.swift; sourceTree = "<group>"; };
+		31AA85F61EEAE49400069841 /* NVYUnloadHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYUnloadHead.xib; sourceTree = "<group>"; };
+		31AAFB121EF80E7A00AA18B3 /* NVYSignDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSignDataTool.swift; sourceTree = "<group>"; };
+		31AAFB141EF80EAE00AA18B3 /* NVYLoginRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYLoginRequestModel.swift; sourceTree = "<group>"; };
+		31AAFB181EF80ED900AA18B3 /* NVYRegRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYRegRequestModel.swift; sourceTree = "<group>"; };
+		31AAFB1C1EF80EFB00AA18B3 /* NVYForgetRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYForgetRequestModel.swift; sourceTree = "<group>"; };
+		31ADCBCE1F337541003564D5 /* NVYHomeDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYHomeDataTool.swift; sourceTree = "<group>"; };
+		31ADCBD01F3376FD003564D5 /* NVYHomeCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYHomeCellModel.swift; sourceTree = "<group>"; };
+		31AEEAFF1F642A52008964B3 /* NVYMyPhotosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyPhotosVC.swift; sourceTree = "<group>"; };
+		31AEEB011F642C22008964B3 /* NVYMyAlbumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyAlbumModel.swift; sourceTree = "<group>"; };
+		31B713B51F0E85900033555C /* NVYTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYTextViewCell.swift; sourceTree = "<group>"; };
+		31B713B61F0E85900033555C /* NVYTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYTextViewCell.xib; sourceTree = "<group>"; };
+		31B713B91F0E85A30033555C /* NVYSexCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSexCell.swift; sourceTree = "<group>"; };
+		31B713BA1F0E85A30033555C /* NVYSexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYSexCell.xib; sourceTree = "<group>"; };
+		31B713BD1F0E85B60033555C /* NVYPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYPickerCell.swift; sourceTree = "<group>"; };
+		31B713BE1F0E85B60033555C /* NVYPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYPickerCell.xib; sourceTree = "<group>"; };
+		31BB8A891EE5913B000B1809 /* NVYSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSearchCell.swift; sourceTree = "<group>"; };
+		31BB8A8A1EE5913B000B1809 /* NVYSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYSearchCell.xib; sourceTree = "<group>"; };
+		31BCDEC51F701CCE003DA24E /* NVYNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYNavigationController.swift; sourceTree = "<group>"; };
+		31BFEAB71F68212E00E5B722 /* NVYNoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYNoteModel.swift; sourceTree = "<group>"; };
+		31BFEAB91F68218300E5B722 /* NVYFriendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYFriendModel.swift; sourceTree = "<group>"; };
+		31BFEABB1F68271500E5B722 /* NVYFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYFriendCell.swift; sourceTree = "<group>"; };
+		31BFEABC1F68271500E5B722 /* NVYFriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYFriendCell.xib; sourceTree = "<group>"; };
+		31BFEABF1F6831F800E5B722 /* NSString+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Date.swift"; sourceTree = "<group>"; };
+		31C55DAC1F5915C500FE25DF /* NVYVisitModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYVisitModel.swift; sourceTree = "<group>"; };
+		31CA9B2C1F72BB2A000F0891 /* NVYShowBigImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYShowBigImageView.swift; sourceTree = "<group>"; };
+		31CB46681F6794E8006C8ACF /* NVYMyNoteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyNoteVC.swift; sourceTree = "<group>"; };
+		31CB466A1F6795DD006C8ACF /* NVYMyNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyNoteCell.swift; sourceTree = "<group>"; };
+		31CB466B1F6795DD006C8ACF /* NVYMyNoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYMyNoteCell.xib; sourceTree = "<group>"; };
+		31CD373D1EFAB7DF00CD8050 /* NVYSearchResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSearchResponseModel.swift; sourceTree = "<group>"; };
+		31D7214C1EE3B119003F7BCB /* NVYCustomSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYCustomSwitch.swift; sourceTree = "<group>"; };
+		31D7214E1EE3B7C5003F7BCB /* NVYSearchingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSearchingView.swift; sourceTree = "<group>"; };
+		31D721501EE3B7D2003F7BCB /* NVYSearchingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYSearchingView.xib; sourceTree = "<group>"; };
+		31D835A81F7748C500AE03C2 /* NVYWellcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYWellcomeVC.swift; sourceTree = "<group>"; };
+		31DE5FD11F1E5D16008B8DD1 /* BetterSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterSegmentedControl.swift; sourceTree = "<group>"; };
+		31DE5FD51F1E5E03008B8DD1 /* NVYVisitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYVisitVC.swift; sourceTree = "<group>"; };
+		31E0AA6F1F35ECE80024C8A3 /* NVYUserPageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserPageModel.swift; sourceTree = "<group>"; };
+		31E16B711F41ED5100D7CF70 /* NVYMainHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMainHomeVC.swift; sourceTree = "<group>"; };
+		31E16B731F41F10200D7CF70 /* NVYMainHomeHead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMainHomeHead.swift; sourceTree = "<group>"; };
+		31E16B751F41F10C00D7CF70 /* NVYMainHomeHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYMainHomeHead.xib; sourceTree = "<group>"; };
+		31E263D61F6EA9AB0046D67B /* NVYChatListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYChatListVC.swift; sourceTree = "<group>"; };
+		31E269651F66D4560044F9D2 /* NVYAlbumDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYAlbumDetailModel.swift; sourceTree = "<group>"; };
+		31E269671F66D4710044F9D2 /* NVYMyAlbumDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyAlbumDetailVC.swift; sourceTree = "<group>"; };
+		31EB430E1EEEE79F00EDB583 /* NVYFindPwdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYFindPwdVC.swift; sourceTree = "<group>"; };
+		31EB430F1EEEE79F00EDB583 /* NVYFindPwdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYFindPwdVC.xib; sourceTree = "<group>"; };
+		31ED80361F11C97F00456049 /* NVYPerConditionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYPerConditionVC.swift; sourceTree = "<group>"; };
+		31F2BC711F12276900DE6C63 /* NVYUserPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserPageVC.swift; sourceTree = "<group>"; };
+		31F2BC731F12280F00DE6C63 /* NVYUserPageHead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserPageHead.swift; sourceTree = "<group>"; };
+		31F2BC751F12281900DE6C63 /* NVYUserPageHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYUserPageHead.xib; sourceTree = "<group>"; };
+		31F4474F1F2A35B000110989 /* NVYPublishConditionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYPublishConditionVC.swift; sourceTree = "<group>"; };
+		31F447501F2A35B000110989 /* NVYPublishConditionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYPublishConditionVC.xib; sourceTree = "<group>"; };
+		73B1BF3F680BE32B481912EB /* Pods-nanvyou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanvyou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou.debug.xcconfig"; sourceTree = "<group>"; };
+		A9626F0E81CFC7150B1A0A8F /* Pods-nanvyou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanvyou.release.xcconfig"; path = "Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou.release.xcconfig"; sourceTree = "<group>"; };
+		FE005B0F1EC3436900104898 /* NVYTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYTabBarController.swift; sourceTree = "<group>"; };
+		FE005B101EC3436900104898 /* NVYTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYTabBarController.xib; sourceTree = "<group>"; };
+		FE005B1F1EC3450100104898 /* NVYHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYHomeVC.swift; sourceTree = "<group>"; };
+		FE005B211EC3451400104898 /* NVYProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYProfileVC.swift; sourceTree = "<group>"; };
+		FE005B231EC3452200104898 /* NVYSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSearchVC.swift; sourceTree = "<group>"; };
+		FE0876391EB36CCE00489DC3 /* nanvyou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanvyou.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE08763C1EB36CCE00489DC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE0876411EB36CCE00489DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE0876431EB36CCE00489DC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE0876461EB36CCE00489DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE0876481EB36CCE00489DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE43C44F1F1CE219005F5E08 /* NVYUserPagePhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserPagePhotoVC.swift; sourceTree = "<group>"; };
+		FECFFB3F1F30086F002429A3 /* nanvyou-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nanvyou-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		310BB0AD1F7E982C00C82987 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0876361EB36CCE00489DC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16B85E6A942EEEFBA8812F8D /* Pods_nanvyou.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31211D541F03EC8900323338 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				31211D551F03ED9400323338 /* UIImage+Lwz.swift */,
+				31211D571F03F54D00323338 /* UIColor+Lwz.swift */,
+				31BFEABF1F6831F800E5B722 /* NSString+Date.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		3126B8721EE842B1009A3484 /* SignModule */ = {
+			isa = PBXGroup;
+			children = (
+				3126B8731EE842B1009A3484 /* Controller */,
+				3126B8741EE842B1009A3484 /* Model */,
+				3126B8751EE842B1009A3484 /* Tool */,
+				3126B8761EE842B1009A3484 /* View */,
+			);
+			path = SignModule;
+			sourceTree = "<group>";
+		};
+		3126B8731EE842B1009A3484 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3126B8771EE842EA009A3484 /* NVYLoginVC.swift */,
+				3126B8781EE842EA009A3484 /* NVYLoginVC.xib */,
+				31A07FD61EE99409008ABD9C /* NVYRegisterVC.swift */,
+				31A07FD71EE99409008ABD9C /* NVYRegisterVC.xib */,
+				31EB430E1EEEE79F00EDB583 /* NVYFindPwdVC.swift */,
+				31EB430F1EEEE79F00EDB583 /* NVYFindPwdVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3126B8741EE842B1009A3484 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31AAFB141EF80EAE00AA18B3 /* NVYLoginRequestModel.swift */,
+				31AAFB181EF80ED900AA18B3 /* NVYRegRequestModel.swift */,
+				31AAFB1C1EF80EFB00AA18B3 /* NVYForgetRequestModel.swift */,
+				315119F71F2E1A1E00C39F31 /* NVYUserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3126B8751EE842B1009A3484 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				31AAFB121EF80E7A00AA18B3 /* NVYSignDataTool.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		3126B8761EE842B1009A3484 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		314FEB321EF186EA00063A20 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				314FEB331EF1872400063A20 /* NVYHTTPTool.swift */,
+				314FEB351EF1888F00063A20 /* NVYHTTPConfig.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		315119F41F2D89FA00C39F31 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				315119F51F2D8A1C00C39F31 /* NVYProfileDataTool.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		3162AA851F755A9A009684D9 /* Wellcome */ = {
+			isa = PBXGroup;
+			children = (
+				31D835A81F7748C500AE03C2 /* NVYWellcomeVC.swift */,
+			);
+			path = Wellcome;
+			sourceTree = "<group>";
+		};
+		3166BFA01EF40BEE0079E099 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				3166BFA11EF40C140079E099 /* NVYSearchDataTool.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		3166BFA31EF415510079E099 /* AddressPicker */ = {
+			isa = PBXGroup;
+			children = (
+				3166BFA61EF415510079E099 /* View */,
+				3166BFA41EF415510079E099 /* Model */,
+				3166BFA71EF4156F0079E099 /* Tool */,
+			);
+			path = AddressPicker;
+			sourceTree = "<group>";
+		};
+		3166BFA41EF415510079E099 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3166BFAA1EF415AC0079E099 /* NVYProviceModel.swift */,
+				3166BFAC1EF416C90079E099 /* NVYCityModel.swift */,
+				3166BFAE1EF417770079E099 /* NVYAreaModel.swift */,
+				3166BFB01EF43F9B0079E099 /* NVYAddressResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3166BFA61EF415510079E099 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3166BFB21EF563760079E099 /* NVYAddressPicker.swift */,
+				3166BFB41EF5637E0079E099 /* NVYAddressPicker.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3166BFA71EF4156F0079E099 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				3166BFA81EF415910079E099 /* NVYAddressDataTool.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		3168F43B1F40338B00FA8C12 /* WRCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				3168F43C1F40338B00FA8C12 /* WRCycleCell.swift */,
+				3168F43D1F40338B00FA8C12 /* WRCycleScrollView.swift */,
+				3168F43E1F40338B00FA8C12 /* WRProxy.swift */,
+			);
+			path = WRCycleScrollView;
+			sourceTree = "<group>";
+		};
+		317C9BA81EDC2A1D008A9A54 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				3166BFA31EF415510079E099 /* AddressPicker */,
+				317C9BA91EDC2A4D008A9A54 /* NVYVerticalButton.swift */,
+				312664221F4DD1550045DB0A /* NVYTimePicker.swift */,
+				312664241F4DD15E0045DB0A /* NVYTimePicker.xib */,
+				312A89AF1F5131B3002A5DA7 /* NVYDoubleLinePicker.swift */,
+				312A89B11F5131BC002A5DA7 /* NVYDoubleLinePicker.xib */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		318627031ED1C76700E5922D /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				3168F43B1F40338B00FA8C12 /* WRCycleScrollView */,
+				31DE5FD11F1E5D16008B8DD1 /* BetterSegmentedControl.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		318627041ED1C76700E5922D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				318627071ED1C90800E5922D /* NVYColorAndSize.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		31ADCBCD1F337541003564D5 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				31ADCBCE1F337541003564D5 /* NVYHomeDataTool.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		3B13697EB97D1DCC14067FEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				318098B7B029BEA5304A604E /* Pods_nanvyou.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D9DCA0712E0AEE2B9C1CEDA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73B1BF3F680BE32B481912EB /* Pods-nanvyou.debug.xcconfig */,
+				A9626F0E81CFC7150B1A0A8F /* Pods-nanvyou.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE005B0C1EC342B600104898 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				31BCDEC51F701CCE003DA24E /* NVYNavigationController.swift */,
+				FE005B0F1EC3436900104898 /* NVYTabBarController.swift */,
+				FE005B101EC3436900104898 /* NVYTabBarController.xib */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		FE005B131EC344D000104898 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FE005B141EC344D000104898 /* Controller */,
+				FE005B151EC344D000104898 /* Model */,
+				FE005B161EC344D000104898 /* View */,
+				31ADCBCD1F337541003564D5 /* Tool */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FE005B141EC344D000104898 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE005B1F1EC3450100104898 /* NVYHomeVC.swift */,
+				31F2BC711F12276900DE6C63 /* NVYUserPageVC.swift */,
+				315A85F11F151E2F00417E2F /* NVYUserPageInfoVC.swift */,
+				31A745B91F17B52A003F69DC /* NVYUserPageConditionVC.swift */,
+				FE43C44F1F1CE219005F5E08 /* NVYUserPagePhotoVC.swift */,
+				311897F41F38A61000EEA8C9 /* NVYReportVC.swift */,
+				311897F51F38A61000EEA8C9 /* NVYReportVC.xib */,
+				31E16B711F41ED5100D7CF70 /* NVYMainHomeVC.swift */,
+				31879DEA1F430FF700844B82 /* NVYUserDynamicVC.swift */,
+				311E76401F4ACABA001AEC9B /* NVYDynamicDetailVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE005B151EC344D000104898 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31ADCBD01F3376FD003564D5 /* NVYHomeCellModel.swift */,
+				31E0AA6F1F35ECE80024C8A3 /* NVYUserPageModel.swift */,
+				312A89AD1F512EA3002A5DA7 /* NVYFriendConditionModel.swift */,
+				317056A11F5C3504000812D8 /* NVYUserAlbumsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE005B161EC344D000104898 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				318626FF1ED1C26D00E5922D /* NVYHomeCell.swift */,
+				318627001ED1C26D00E5922D /* NVYHomeCell.xib */,
+				317C9BA41EDC2869008A9A54 /* NVYHomeHead.swift */,
+				317C9BA51EDC2869008A9A54 /* NVYHomeHead.xib */,
+				31F2BC731F12280F00DE6C63 /* NVYUserPageHead.swift */,
+				31F2BC751F12281900DE6C63 /* NVYUserPageHead.xib */,
+				31A745B51F17B0F3003F69DC /* NVYUserPageInfoCell.swift */,
+				31A745B61F17B0F3003F69DC /* NVYUserPageInfoCell.xib */,
+				31E16B731F41F10200D7CF70 /* NVYMainHomeHead.swift */,
+				31E16B751F41F10C00D7CF70 /* NVYMainHomeHead.xib */,
+				31879DEC1F43103800844B82 /* NVYUserDynamicCell.swift */,
+				31879DED1F43103800844B82 /* NVYUserDynamicCell.xib */,
+				31CA9B2C1F72BB2A000F0891 /* NVYShowBigImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE005B171EC344D000104898 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FE005B181EC344D000104898 /* Controller */,
+				FE005B191EC344D000104898 /* Model */,
+				FE005B1A1EC344D000104898 /* View */,
+				315119F41F2D89FA00C39F31 /* Tool */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FE005B181EC344D000104898 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE005B211EC3451400104898 /* NVYProfileVC.swift */,
+				3104A2D81F0A9352009A62E7 /* NVYPersonInfoVC.swift */,
+				31ED80361F11C97F00456049 /* NVYPerConditionVC.swift */,
+				31DE5FD51F1E5E03008B8DD1 /* NVYVisitVC.swift */,
+				310018451F264880003887A1 /* NVYMyCollectionVC.swift */,
+				317F63881F2797DC00522124 /* NVYMyChargeVC.swift */,
+				317F638E1F279B2800522124 /* NVYMyFriendVC.swift */,
+				3100B64E1F28ECF5002F71D6 /* NVYSettingVC.swift */,
+				31F4474F1F2A35B000110989 /* NVYPublishConditionVC.swift */,
+				31F447501F2A35B000110989 /* NVYPublishConditionVC.xib */,
+				31A4C30B1F2B944900616FC1 /* NVYUploadPhotoVC.swift */,
+				31A4C30C1F2B944900616FC1 /* NVYUploadPhotoVC.xib */,
+				318AD9951F570C3B00662576 /* NVYChangePwdVC.swift */,
+				318AD9961F570C3B00662576 /* NVYChangePwdVC.xib */,
+				31AEEAFF1F642A52008964B3 /* NVYMyPhotosVC.swift */,
+				31E269671F66D4710044F9D2 /* NVYMyAlbumDetailVC.swift */,
+				31CB46681F6794E8006C8ACF /* NVYMyNoteVC.swift */,
+				31E263D61F6EA9AB0046D67B /* NVYChatListVC.swift */,
+				3122C3671F753B4E0098546D /* NVYConversationVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE005B191EC344D000104898 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31C55DAC1F5915C500FE25DF /* NVYVisitModel.swift */,
+				311897F81F38B1B200EEA8C9 /* NVYUserEditInfoModel.swift */,
+				3194E3AF1F3A067F00708D71 /* NVYUserEditConditionModel.swift */,
+				3198EE5C1F4F196E00C265A0 /* NVYSysObjModel.swift */,
+				317766071F59B18B0033ABA8 /* NVYMyChargeModel.swift */,
+				31AEEB011F642C22008964B3 /* NVYMyAlbumModel.swift */,
+				31E269651F66D4560044F9D2 /* NVYAlbumDetailModel.swift */,
+				31BFEAB71F68212E00E5B722 /* NVYNoteModel.swift */,
+				31BFEAB91F68218300E5B722 /* NVYFriendModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE005B1A1EC344D000104898 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				31AA85F41EEAE48900069841 /* NVYUnloadHead.swift */,
+				31AA85F61EEAE49400069841 /* NVYUnloadHead.xib */,
+				31498DCA1F029D2900A3A8EE /* NVYLoadHead.swift */,
+				31498DCC1F029D3100A3A8EE /* NVYLoadHead.xib */,
+				313883A91F0BC61200A0F765 /* NVYTextFieldCell.swift */,
+				313883AA1F0BC61200A0F765 /* NVYTextFieldCell.xib */,
+				31B713B51F0E85900033555C /* NVYTextViewCell.swift */,
+				31B713B61F0E85900033555C /* NVYTextViewCell.xib */,
+				31B713B91F0E85A30033555C /* NVYSexCell.swift */,
+				31B713BA1F0E85A30033555C /* NVYSexCell.xib */,
+				31B713BD1F0E85B60033555C /* NVYPickerCell.swift */,
+				31B713BE1F0E85B60033555C /* NVYPickerCell.xib */,
+				317F638A1F27982400522124 /* NVYMyChargeCell.swift */,
+				317F638B1F27982400522124 /* NVYMyChargeCell.xib */,
+				3100B6521F28EEB8002F71D6 /* NVYSwitchCell.swift */,
+				3100B6531F28EEB8002F71D6 /* NVYSwitchCell.xib */,
+				318BE6871F584AB500D8EE1E /* NVYVisitCell.swift */,
+				318BE6881F584AB500D8EE1E /* NVYVisitCell.xib */,
+				31CB466A1F6795DD006C8ACF /* NVYMyNoteCell.swift */,
+				31CB466B1F6795DD006C8ACF /* NVYMyNoteCell.xib */,
+				31BFEABB1F68271500E5B722 /* NVYFriendCell.swift */,
+				31BFEABC1F68271500E5B722 /* NVYFriendCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE005B1B1EC344D000104898 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FE005B1C1EC344D000104898 /* Controller */,
+				FE005B1D1EC344D000104898 /* Model */,
+				FE005B1E1EC344D000104898 /* View */,
+				3166BFA01EF40BEE0079E099 /* Tool */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FE005B1C1EC344D000104898 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE005B231EC3452200104898 /* NVYSearchVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE005B1D1EC344D000104898 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				319B116A1EF6371B0095859F /* NVYSearchRequstModel.swift */,
+				31CD373D1EFAB7DF00CD8050 /* NVYSearchResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE005B1E1EC344D000104898 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				31D7214C1EE3B119003F7BCB /* NVYCustomSwitch.swift */,
+				31D7214E1EE3B7C5003F7BCB /* NVYSearchingView.swift */,
+				31D721501EE3B7D2003F7BCB /* NVYSearchingView.xib */,
+				31BB8A891EE5913B000B1809 /* NVYSearchCell.swift */,
+				31BB8A8A1EE5913B000B1809 /* NVYSearchCell.xib */,
+				3196A16F1EF2AAE8008C90AE /* NVYSingleLinePicker.swift */,
+				3196A1711EF2AB02008C90AE /* NVYSingleLinePicker.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE0876301EB36CCE00489DC3 = {
+			isa = PBXGroup;
+			children = (
+				311645E31F98CF510094607B /* Default-568h@2x.png */,
+				FE08763B1EB36CCE00489DC3 /* nanvyou */,
+				FE08763A1EB36CCE00489DC3 /* Products */,
+				6D9DCA0712E0AEE2B9C1CEDA /* Pods */,
+				3B13697EB97D1DCC14067FEA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FE08763A1EB36CCE00489DC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE0876391EB36CCE00489DC3 /* nanvyou.app */,
+				310BB0B01F7E982C00C82987 /* test.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE08763B1EB36CCE00489DC3 /* nanvyou */ = {
+			isa = PBXGroup;
+			children = (
+				3182EE501F5EF4DA002963D3 /* nanvyou.entitlements */,
+				FE005B1B1EC344D000104898 /* Search */,
+				FE005B131EC344D000104898 /* Home */,
+				FE005B171EC344D000104898 /* Profile */,
+				314FEB321EF186EA00063A20 /* Network */,
+				317C9BA81EDC2A1D008A9A54 /* CustomViews */,
+				FE005B0C1EC342B600104898 /* TabBarController */,
+				318627031ED1C76700E5922D /* Lib */,
+				318627041ED1C76700E5922D /* Tools */,
+				31211D541F03EC8900323338 /* Category */,
+				3126B8721EE842B1009A3484 /* SignModule */,
+				3162AA851F755A9A009684D9 /* Wellcome */,
+				FE08763C1EB36CCE00489DC3 /* AppDelegate.swift */,
+				FE0876401EB36CCE00489DC3 /* Main.storyboard */,
+				FE0876431EB36CCE00489DC3 /* Assets.xcassets */,
+				FE0876451EB36CCE00489DC3 /* LaunchScreen.storyboard */,
+				FE0876481EB36CCE00489DC3 /* Info.plist */,
+				FECFFB3F1F30086F002429A3 /* nanvyou-Bridging-Header.h */,
+			);
+			path = nanvyou;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		310BB0AF1F7E982C00C82987 /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 310BB0C51F7E982C00C82987 /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				310BB0AC1F7E982C00C82987 /* Sources */,
+				310BB0AD1F7E982C00C82987 /* Frameworks */,
+				310BB0AE1F7E982C00C82987 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test;
+			productName = test;
+			productReference = 310BB0B01F7E982C00C82987 /* test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE0876381EB36CCE00489DC3 /* nanvyou */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE08764B1EB36CCE00489DC3 /* Build configuration list for PBXNativeTarget "nanvyou" */;
+			buildPhases = (
+				71980A0C5EDFA35D33FEA37E /* [CP] Check Pods Manifest.lock */,
+				FE0876351EB36CCE00489DC3 /* Sources */,
+				FE0876361EB36CCE00489DC3 /* Frameworks */,
+				FE0876371EB36CCE00489DC3 /* Resources */,
+				EC19ADC6F2FD88F2F081FD9C /* [CP] Embed Pods Frameworks */,
+				CAEF020F8BE461EA44C849D6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nanvyou;
+			productName = nanvyou;
+			productReference = FE0876391EB36CCE00489DC3 /* nanvyou.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE0876311EB36CCE00489DC3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NVY;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "MacMin-DLC0001";
+				TargetAttributes = {
+					310BB0AF1F7E982C00C82987 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Manual;
+					};
+					FE0876381EB36CCE00489DC3 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 56VNERY6UJ;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = FE0876341EB36CCE00489DC3 /* Build configuration list for PBXProject "nanvyou" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+				"zh-Hant",
+			);
+			mainGroup = FE0876301EB36CCE00489DC3;
+			productRefGroup = FE08763A1EB36CCE00489DC3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE0876381EB36CCE00489DC3 /* nanvyou */,
+				310BB0AF1F7E982C00C82987 /* test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		310BB0AE1F7E982C00C82987 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				311645E41F98CF520094607B /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0876371EB36CCE00489DC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0876471EB36CCE00489DC3 /* LaunchScreen.storyboard in Resources */,
+				31D721511EE3B7D2003F7BCB /* NVYSearchingView.xib in Resources */,
+				3166BFB51EF5637E0079E099 /* NVYAddressPicker.xib in Resources */,
+				31A745B81F17B0F3003F69DC /* NVYUserPageInfoCell.xib in Resources */,
+				312A89B21F5131BC002A5DA7 /* NVYDoubleLinePicker.xib in Resources */,
+				3196A1721EF2AB02008C90AE /* NVYSingleLinePicker.xib in Resources */,
+				FE005B121EC3436900104898 /* NVYTabBarController.xib in Resources */,
+				312664251F4DD15E0045DB0A /* NVYTimePicker.xib in Resources */,
+				31A07FD91EE99409008ABD9C /* NVYRegisterVC.xib in Resources */,
+				31A4C30E1F2B944900616FC1 /* NVYUploadPhotoVC.xib in Resources */,
+				31B713BC1F0E85A30033555C /* NVYSexCell.xib in Resources */,
+				318AD9981F570C3B00662576 /* NVYChangePwdVC.xib in Resources */,
+				FE0876441EB36CCE00489DC3 /* Assets.xcassets in Resources */,
+				318BE68A1F584AB500D8EE1E /* NVYVisitCell.xib in Resources */,
+				31B713C01F0E85B60033555C /* NVYPickerCell.xib in Resources */,
+				317C9BA71EDC2869008A9A54 /* NVYHomeHead.xib in Resources */,
+				317F638D1F27982400522124 /* NVYMyChargeCell.xib in Resources */,
+				3126B87A1EE842EA009A3484 /* NVYLoginVC.xib in Resources */,
+				31EB43111EEEE79F00EDB583 /* NVYFindPwdVC.xib in Resources */,
+				31AA85F71EEAE49400069841 /* NVYUnloadHead.xib in Resources */,
+				31879DEF1F43103800844B82 /* NVYUserDynamicCell.xib in Resources */,
+				31CB466D1F6795DD006C8ACF /* NVYMyNoteCell.xib in Resources */,
+				313883AC1F0BC61200A0F765 /* NVYTextFieldCell.xib in Resources */,
+				31B713B81F0E85900033555C /* NVYTextViewCell.xib in Resources */,
+				31F2BC761F12281900DE6C63 /* NVYUserPageHead.xib in Resources */,
+				3100B6551F28EEB8002F71D6 /* NVYSwitchCell.xib in Resources */,
+				31BB8A8C1EE5913B000B1809 /* NVYSearchCell.xib in Resources */,
+				FE0876421EB36CCE00489DC3 /* Main.storyboard in Resources */,
+				318627021ED1C26D00E5922D /* NVYHomeCell.xib in Resources */,
+				31E16B761F41F10C00D7CF70 /* NVYMainHomeHead.xib in Resources */,
+				31F447521F2A35B000110989 /* NVYPublishConditionVC.xib in Resources */,
+				311897F71F38A61000EEA8C9 /* NVYReportVC.xib in Resources */,
+				31498DCD1F029D3100A3A8EE /* NVYLoadHead.xib in Resources */,
+				31BFEABE1F68271500E5B722 /* NVYFriendCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71980A0C5EDFA35D33FEA37E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nanvyou-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAEF020F8BE461EA44C849D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou-resources.sh",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC19ADC6F2FD88F2F081FD9C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper+Realm/ObjectMapper_Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper_Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		310BB0AC1F7E982C00C82987 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0876351EB36CCE00489DC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31BFEAC01F6831F800E5B722 /* NSString+Date.swift in Sources */,
+				31AA85F51EEAE48900069841 /* NVYUnloadHead.swift in Sources */,
+				31E263D71F6EA9AB0046D67B /* NVYChatListVC.swift in Sources */,
+				3122C3681F753B4E0098546D /* NVYConversationVC.swift in Sources */,
+				314FEB361EF1888F00063A20 /* NVYHTTPConfig.swift in Sources */,
+				31AAFB131EF80E7A00AA18B3 /* NVYSignDataTool.swift in Sources */,
+				31ED80371F11C97F00456049 /* NVYPerConditionVC.swift in Sources */,
+				31E0AA701F35ECE80024C8A3 /* NVYUserPageModel.swift in Sources */,
+				31D835A91F7748C500AE03C2 /* NVYWellcomeVC.swift in Sources */,
+				31A745BA1F17B52A003F69DC /* NVYUserPageConditionVC.swift in Sources */,
+				318AD9971F570C3B00662576 /* NVYChangePwdVC.swift in Sources */,
+				3100B6501F28ECF5002F71D6 /* NVYSettingVC.swift in Sources */,
+				317F638F1F279B2800522124 /* NVYMyFriendVC.swift in Sources */,
+				317F63891F2797DC00522124 /* NVYMyChargeVC.swift in Sources */,
+				3168F43F1F40338B00FA8C12 /* WRCycleCell.swift in Sources */,
+				31BFEAB81F68212E00E5B722 /* NVYNoteModel.swift in Sources */,
+				31DE5FD61F1E5E03008B8DD1 /* NVYVisitVC.swift in Sources */,
+				31E269681F66D4710044F9D2 /* NVYMyAlbumDetailVC.swift in Sources */,
+				3194E3B01F3A067F00708D71 /* NVYUserEditConditionModel.swift in Sources */,
+				31C55DAD1F5915C500FE25DF /* NVYVisitModel.swift in Sources */,
+				3166BFB31EF563760079E099 /* NVYAddressPicker.swift in Sources */,
+				31A07FD81EE99409008ABD9C /* NVYRegisterVC.swift in Sources */,
+				3100B6541F28EEB8002F71D6 /* NVYSwitchCell.swift in Sources */,
+				318627011ED1C26D00E5922D /* NVYHomeCell.swift in Sources */,
+				31AEEB001F642A52008964B3 /* NVYMyPhotosVC.swift in Sources */,
+				312A89AE1F512EA3002A5DA7 /* NVYFriendConditionModel.swift in Sources */,
+				31D7214D1EE3B119003F7BCB /* NVYCustomSwitch.swift in Sources */,
+				3166BFB11EF43F9B0079E099 /* NVYAddressResponse.swift in Sources */,
+				31DE5FD21F1E5D16008B8DD1 /* BetterSegmentedControl.swift in Sources */,
+				312A89B01F5131B3002A5DA7 /* NVYDoubleLinePicker.swift in Sources */,
+				312664231F4DD1550045DB0A /* NVYTimePicker.swift in Sources */,
+				318627081ED1C90800E5922D /* NVYColorAndSize.swift in Sources */,
+				FE005B201EC3450100104898 /* NVYHomeVC.swift in Sources */,
+				311E76411F4ACABA001AEC9B /* NVYDynamicDetailVC.swift in Sources */,
+				31CD373E1EFAB7DF00CD8050 /* NVYSearchResponseModel.swift in Sources */,
+				311897F91F38B1B200EEA8C9 /* NVYUserEditInfoModel.swift in Sources */,
+				31AAFB1D1EF80EFB00AA18B3 /* NVYForgetRequestModel.swift in Sources */,
+				317766081F59B18B0033ABA8 /* NVYMyChargeModel.swift in Sources */,
+				3166BFAD1EF416C90079E099 /* NVYCityModel.swift in Sources */,
+				31AAFB191EF80ED900AA18B3 /* NVYRegRequestModel.swift in Sources */,
+				31ADCBD11F3376FD003564D5 /* NVYHomeCellModel.swift in Sources */,
+				313883AB1F0BC61200A0F765 /* NVYTextFieldCell.swift in Sources */,
+				31CB46691F6794E8006C8ACF /* NVYMyNoteVC.swift in Sources */,
+				FE43C4501F1CE219005F5E08 /* NVYUserPagePhotoVC.swift in Sources */,
+				319B116B1EF6371B0095859F /* NVYSearchRequstModel.swift in Sources */,
+				31A745B71F17B0F3003F69DC /* NVYUserPageInfoCell.swift in Sources */,
+				31F447511F2A35B000110989 /* NVYPublishConditionVC.swift in Sources */,
+				31D7214F1EE3B7C5003F7BCB /* NVYSearchingView.swift in Sources */,
+				31BB8A8B1EE5913B000B1809 /* NVYSearchCell.swift in Sources */,
+				FE08763D1EB36CCE00489DC3 /* AppDelegate.swift in Sources */,
+				3166BFAB1EF415AC0079E099 /* NVYProviceModel.swift in Sources */,
+				FE005B111EC3436900104898 /* NVYTabBarController.swift in Sources */,
+				31ADCBCF1F337541003564D5 /* NVYHomeDataTool.swift in Sources */,
+				31EB43101EEEE79F00EDB583 /* NVYFindPwdVC.swift in Sources */,
+				FE005B241EC3452200104898 /* NVYSearchVC.swift in Sources */,
+				3166BFA21EF40C140079E099 /* NVYSearchDataTool.swift in Sources */,
+				3196A1701EF2AAE8008C90AE /* NVYSingleLinePicker.swift in Sources */,
+				31F2BC721F12276900DE6C63 /* NVYUserPageVC.swift in Sources */,
+				31CA9B2D1F72BB2A000F0891 /* NVYShowBigImageView.swift in Sources */,
+				31B713BF1F0E85B60033555C /* NVYPickerCell.swift in Sources */,
+				31BCDEC61F701CCE003DA24E /* NVYNavigationController.swift in Sources */,
+				315119F81F2E1A1E00C39F31 /* NVYUserModel.swift in Sources */,
+				31CB466C1F6795DD006C8ACF /* NVYMyNoteCell.swift in Sources */,
+				31A4C30D1F2B944900616FC1 /* NVYUploadPhotoVC.swift in Sources */,
+				3198EE5D1F4F196E00C265A0 /* NVYSysObjModel.swift in Sources */,
+				31B713BB1F0E85A30033555C /* NVYSexCell.swift in Sources */,
+				318BE6891F584AB500D8EE1E /* NVYVisitCell.swift in Sources */,
+				310018461F264880003887A1 /* NVYMyCollectionVC.swift in Sources */,
+				31BFEABD1F68271500E5B722 /* NVYFriendCell.swift in Sources */,
+				3126B8791EE842EA009A3484 /* NVYLoginVC.swift in Sources */,
+				3104A2D91F0A9352009A62E7 /* NVYPersonInfoVC.swift in Sources */,
+				317C9BAA1EDC2A4D008A9A54 /* NVYVerticalButton.swift in Sources */,
+				31E269661F66D4560044F9D2 /* NVYAlbumDetailModel.swift in Sources */,
+				31879DEE1F43103800844B82 /* NVYUserDynamicCell.swift in Sources */,
+				317C9BA61EDC2869008A9A54 /* NVYHomeHead.swift in Sources */,
+				31BFEABA1F68218300E5B722 /* NVYFriendModel.swift in Sources */,
+				315119F61F2D8A1C00C39F31 /* NVYProfileDataTool.swift in Sources */,
+				317056A21F5C3504000812D8 /* NVYUserAlbumsModel.swift in Sources */,
+				31879DEB1F430FF700844B82 /* NVYUserDynamicVC.swift in Sources */,
+				3166BFAF1EF417770079E099 /* NVYAreaModel.swift in Sources */,
+				3168F4411F40338B00FA8C12 /* WRProxy.swift in Sources */,
+				FE005B221EC3451400104898 /* NVYProfileVC.swift in Sources */,
+				31B713B71F0E85900033555C /* NVYTextViewCell.swift in Sources */,
+				31E16B721F41ED5100D7CF70 /* NVYMainHomeVC.swift in Sources */,
+				315A85F31F151E2F00417E2F /* NVYUserPageInfoVC.swift in Sources */,
+				31498DCB1F029D2900A3A8EE /* NVYLoadHead.swift in Sources */,
+				31AAFB151EF80EAE00AA18B3 /* NVYLoginRequestModel.swift in Sources */,
+				3168F4401F40338B00FA8C12 /* WRCycleScrollView.swift in Sources */,
+				31211D561F03ED9400323338 /* UIImage+Lwz.swift in Sources */,
+				314FEB341EF1872400063A20 /* NVYHTTPTool.swift in Sources */,
+				31211D581F03F54D00323338 /* UIColor+Lwz.swift in Sources */,
+				317F638C1F27982400522124 /* NVYMyChargeCell.swift in Sources */,
+				31AEEB021F642C22008964B3 /* NVYMyAlbumModel.swift in Sources */,
+				31F2BC741F12280F00DE6C63 /* NVYUserPageHead.swift in Sources */,
+				31E16B741F41F10200D7CF70 /* NVYMainHomeHead.swift in Sources */,
+				311897F61F38A61000EEA8C9 /* NVYReportVC.swift in Sources */,
+				3166BFA91EF415910079E099 /* NVYAddressDataTool.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FE0876401EB36CCE00489DC3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE0876411EB36CCE00489DC3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE0876451EB36CCE00489DC3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE0876461EB36CCE00489DC3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		310BB0C31F7E982C00C82987 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/nanvyou/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlc.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		310BB0C41F7E982C00C82987 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/nanvyou/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlc.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FE0876491EB36CCE00489DC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE08764A1EB36CCE00489DC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE08764C1EB36CCE00489DC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73B1BF3F680BE32B481912EB /* Pods-nanvyou.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = nanvyou/nanvyou.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 56VNERY6UJ;
+				INFOPLIST_FILE = nanvyou/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.nannvyou.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d896141f-1334-4367-939c-bf643f18c643";
+				PROVISIONING_PROFILE_SPECIFIER = nannvDev;
+				SWIFT_OBJC_BRIDGING_HEADER = "nanvyou/nanvyou-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FE08764D1EB36CCE00489DC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9626F0E81CFC7150B1A0A8F /* Pods-nanvyou.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = nanvyou/nanvyou.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 56VNERY6UJ;
+				INFOPLIST_FILE = nanvyou/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.nannvyou.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0e8bcb5e-85f8-4768-9371-7a5450214ea3";
+				PROVISIONING_PROFILE_SPECIFIER = nannvDistr;
+				SWIFT_OBJC_BRIDGING_HEADER = "nanvyou/nanvyou-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		310BB0C51F7E982C00C82987 /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				310BB0C31F7E982C00C82987 /* Debug */,
+				310BB0C41F7E982C00C82987 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE0876341EB36CCE00489DC3 /* Build configuration list for PBXProject "nanvyou" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0876491EB36CCE00489DC3 /* Debug */,
+				FE08764A1EB36CCE00489DC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE08764B1EB36CCE00489DC3 /* Build configuration list for PBXNativeTarget "nanvyou" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE08764C1EB36CCE00489DC3 /* Debug */,
+				FE08764D1EB36CCE00489DC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE0876311EB36CCE00489DC3 /* Project object */;
+}
