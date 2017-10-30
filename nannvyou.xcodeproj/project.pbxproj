@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16B85E6A942EEEFBA8812F8D /* Pods_nanvyou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318098B7B029BEA5304A604E /* Pods_nanvyou.framework */; };
+		16B85E6A942EEEFBA8812F8D /* Pods_nannvyou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318098B7B029BEA5304A604E /* Pods_nannvyou.framework */; };
 		310018461F264880003887A1 /* NVYMyCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310018451F264880003887A1 /* NVYMyCollectionVC.swift */; };
 		3100B6501F28ECF5002F71D6 /* NVYSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3100B64E1F28ECF5002F71D6 /* NVYSettingVC.swift */; };
 		3100B6541F28EEB8002F71D6 /* NVYSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3100B6521F28EEB8002F71D6 /* NVYSwitchCell.swift */; };
@@ -193,8 +193,8 @@
 		317F638A1F27982400522124 /* NVYMyChargeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyChargeCell.swift; sourceTree = "<group>"; };
 		317F638B1F27982400522124 /* NVYMyChargeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYMyChargeCell.xib; sourceTree = "<group>"; };
 		317F638E1F279B2800522124 /* NVYMyFriendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYMyFriendVC.swift; sourceTree = "<group>"; };
-		318098B7B029BEA5304A604E /* Pods_nanvyou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nanvyou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3182EE501F5EF4DA002963D3 /* nanvyou.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nanvyou.entitlements; sourceTree = "<group>"; };
+		318098B7B029BEA5304A604E /* Pods_nannvyou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nannvyou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3182EE501F5EF4DA002963D3 /* nannvyou.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nannvyou.entitlements; sourceTree = "<group>"; };
 		318626FF1ED1C26D00E5922D /* NVYHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYHomeCell.swift; sourceTree = "<group>"; };
 		318627001ED1C26D00E5922D /* NVYHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYHomeCell.xib; sourceTree = "<group>"; };
 		318627071ED1C90800E5922D /* NVYColorAndSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYColorAndSize.swift; sourceTree = "<group>"; };
@@ -268,21 +268,21 @@
 		31F2BC751F12281900DE6C63 /* NVYUserPageHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYUserPageHead.xib; sourceTree = "<group>"; };
 		31F4474F1F2A35B000110989 /* NVYPublishConditionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYPublishConditionVC.swift; sourceTree = "<group>"; };
 		31F447501F2A35B000110989 /* NVYPublishConditionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYPublishConditionVC.xib; sourceTree = "<group>"; };
-		73B1BF3F680BE32B481912EB /* Pods-nanvyou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanvyou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou.debug.xcconfig"; sourceTree = "<group>"; };
-		A9626F0E81CFC7150B1A0A8F /* Pods-nanvyou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanvyou.release.xcconfig"; path = "Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou.release.xcconfig"; sourceTree = "<group>"; };
+		73B1BF3F680BE32B481912EB /* Pods-nannvyou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nannvyou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou.debug.xcconfig"; sourceTree = "<group>"; };
+		A9626F0E81CFC7150B1A0A8F /* Pods-nannvyou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nannvyou.release.xcconfig"; path = "Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou.release.xcconfig"; sourceTree = "<group>"; };
 		FE005B0F1EC3436900104898 /* NVYTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYTabBarController.swift; sourceTree = "<group>"; };
 		FE005B101EC3436900104898 /* NVYTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYTabBarController.xib; sourceTree = "<group>"; };
 		FE005B1F1EC3450100104898 /* NVYHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYHomeVC.swift; sourceTree = "<group>"; };
 		FE005B211EC3451400104898 /* NVYProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYProfileVC.swift; sourceTree = "<group>"; };
 		FE005B231EC3452200104898 /* NVYSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYSearchVC.swift; sourceTree = "<group>"; };
-		FE0876391EB36CCE00489DC3 /* nanvyou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanvyou.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0876391EB36CCE00489DC3 /* nannvyou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nannvyou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE08763C1EB36CCE00489DC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE0876411EB36CCE00489DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE0876431EB36CCE00489DC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE0876461EB36CCE00489DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE0876481EB36CCE00489DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE43C44F1F1CE219005F5E08 /* NVYUserPagePhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYUserPagePhotoVC.swift; sourceTree = "<group>"; };
-		FECFFB3F1F30086F002429A3 /* nanvyou-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nanvyou-Bridging-Header.h"; sourceTree = "<group>"; };
+		FECFFB3F1F30086F002429A3 /* nannvyou-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nannvyou-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,7 +297,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16B85E6A942EEEFBA8812F8D /* Pods_nanvyou.framework in Frameworks */,
+				16B85E6A942EEEFBA8812F8D /* Pods_nannvyou.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +486,7 @@
 		3B13697EB97D1DCC14067FEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				318098B7B029BEA5304A604E /* Pods_nanvyou.framework */,
+				318098B7B029BEA5304A604E /* Pods_nannvyou.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -494,8 +494,8 @@
 		6D9DCA0712E0AEE2B9C1CEDA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				73B1BF3F680BE32B481912EB /* Pods-nanvyou.debug.xcconfig */,
-				A9626F0E81CFC7150B1A0A8F /* Pods-nanvyou.release.xcconfig */,
+				73B1BF3F680BE32B481912EB /* Pods-nannvyou.debug.xcconfig */,
+				A9626F0E81CFC7150B1A0A8F /* Pods-nannvyou.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -697,7 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				311645E31F98CF510094607B /* Default-568h@2x.png */,
-				FE08763B1EB36CCE00489DC3 /* nanvyou */,
+				FE08763B1EB36CCE00489DC3 /* nannvyou */,
 				FE08763A1EB36CCE00489DC3 /* Products */,
 				6D9DCA0712E0AEE2B9C1CEDA /* Pods */,
 				3B13697EB97D1DCC14067FEA /* Frameworks */,
@@ -707,16 +707,16 @@
 		FE08763A1EB36CCE00489DC3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FE0876391EB36CCE00489DC3 /* nanvyou.app */,
+				FE0876391EB36CCE00489DC3 /* nannvyou.app */,
 				310BB0B01F7E982C00C82987 /* test.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FE08763B1EB36CCE00489DC3 /* nanvyou */ = {
+		FE08763B1EB36CCE00489DC3 /* nannvyou */ = {
 			isa = PBXGroup;
 			children = (
-				3182EE501F5EF4DA002963D3 /* nanvyou.entitlements */,
+				3182EE501F5EF4DA002963D3 /* nannvyou.entitlements */,
 				FE005B1B1EC344D000104898 /* Search */,
 				FE005B131EC344D000104898 /* Home */,
 				FE005B171EC344D000104898 /* Profile */,
@@ -733,9 +733,9 @@
 				FE0876431EB36CCE00489DC3 /* Assets.xcassets */,
 				FE0876451EB36CCE00489DC3 /* LaunchScreen.storyboard */,
 				FE0876481EB36CCE00489DC3 /* Info.plist */,
-				FECFFB3F1F30086F002429A3 /* nanvyou-Bridging-Header.h */,
+				FECFFB3F1F30086F002429A3 /* nannvyou-Bridging-Header.h */,
 			);
-			path = nanvyou;
+			path = nannvyou;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -758,9 +758,9 @@
 			productReference = 310BB0B01F7E982C00C82987 /* test.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FE0876381EB36CCE00489DC3 /* nanvyou */ = {
+		FE0876381EB36CCE00489DC3 /* nannvyou */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FE08764B1EB36CCE00489DC3 /* Build configuration list for PBXNativeTarget "nanvyou" */;
+			buildConfigurationList = FE08764B1EB36CCE00489DC3 /* Build configuration list for PBXNativeTarget "nannvyou" */;
 			buildPhases = (
 				71980A0C5EDFA35D33FEA37E /* [CP] Check Pods Manifest.lock */,
 				FE0876351EB36CCE00489DC3 /* Sources */,
@@ -773,9 +773,9 @@
 			);
 			dependencies = (
 			);
-			name = nanvyou;
-			productName = nanvyou;
-			productReference = FE0876391EB36CCE00489DC3 /* nanvyou.app */;
+			name = nannvyou;
+			productName = nannvyou;
+			productReference = FE0876391EB36CCE00489DC3 /* nannvyou.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -806,7 +806,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FE0876341EB36CCE00489DC3 /* Build configuration list for PBXProject "nanvyou" */;
+			buildConfigurationList = FE0876341EB36CCE00489DC3 /* Build configuration list for PBXProject "nannvyou" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -821,7 +821,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FE0876381EB36CCE00489DC3 /* nanvyou */,
+				FE0876381EB36CCE00489DC3 /* nannvyou */,
 				310BB0AF1F7E982C00C82987 /* test */,
 			);
 		};
@@ -891,7 +891,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-nanvyou-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-nannvyou-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -904,7 +904,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou-resources.sh",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
@@ -917,7 +917,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC19ADC6F2FD88F2F081FD9C /* [CP] Embed Pods Frameworks */ = {
@@ -926,7 +926,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -949,7 +949,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nanvyou/Pods-nanvyou-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1104,7 +1104,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "$(SRCROOT)/nanvyou/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/nannvyou/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dlc.test;
@@ -1130,7 +1130,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "$(SRCROOT)/nanvyou/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/nannvyou/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dlc.test;
@@ -1237,22 +1237,22 @@
 		};
 		FE08764C1EB36CCE00489DC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73B1BF3F680BE32B481912EB /* Pods-nanvyou.debug.xcconfig */;
+			baseConfigurationReference = 73B1BF3F680BE32B481912EB /* Pods-nannvyou.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = nanvyou/nanvyou.entitlements;
+				CODE_SIGN_ENTITLEMENTS = nannvyou/nannvyou.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 56VNERY6UJ;
-				INFOPLIST_FILE = nanvyou/Info.plist;
+				INFOPLIST_FILE = nannvyou/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.nannvyou.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d896141f-1334-4367-939c-bf643f18c643";
 				PROVISIONING_PROFILE_SPECIFIER = nannvDev;
-				SWIFT_OBJC_BRIDGING_HEADER = "nanvyou/nanvyou-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "nannvyou/nannvyou-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1261,22 +1261,22 @@
 		};
 		FE08764D1EB36CCE00489DC3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9626F0E81CFC7150B1A0A8F /* Pods-nanvyou.release.xcconfig */;
+			baseConfigurationReference = A9626F0E81CFC7150B1A0A8F /* Pods-nannvyou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = nanvyou/nanvyou.entitlements;
+				CODE_SIGN_ENTITLEMENTS = nannvyou/nannvyou.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 56VNERY6UJ;
-				INFOPLIST_FILE = nanvyou/Info.plist;
+				INFOPLIST_FILE = nannvyou/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.nannvyou.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0e8bcb5e-85f8-4768-9371-7a5450214ea3";
 				PROVISIONING_PROFILE_SPECIFIER = nannvDistr;
-				SWIFT_OBJC_BRIDGING_HEADER = "nanvyou/nanvyou-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "nannvyou/nannvyou-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1294,7 +1294,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FE0876341EB36CCE00489DC3 /* Build configuration list for PBXProject "nanvyou" */ = {
+		FE0876341EB36CCE00489DC3 /* Build configuration list for PBXProject "nannvyou" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FE0876491EB36CCE00489DC3 /* Debug */,
@@ -1303,7 +1303,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FE08764B1EB36CCE00489DC3 /* Build configuration list for PBXNativeTarget "nanvyou" */ = {
+		FE08764B1EB36CCE00489DC3 /* Build configuration list for PBXNativeTarget "nannvyou" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FE08764C1EB36CCE00489DC3 /* Debug */,

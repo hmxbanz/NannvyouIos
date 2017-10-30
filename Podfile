@@ -1,6 +1,6 @@
 platform :ios, '9.0'
 
-target 'nanvyou' do
+target 'nannvyou' do
 
 pod 'RongCloudIM/IMLib', '~> 2.8.3'
 pod 'RongCloudIM/IMKit', '~> 2.8.3'
