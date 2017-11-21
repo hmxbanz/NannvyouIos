@@ -29,8 +29,12 @@ class NVYMyNoteCell: UITableViewCell {
         
         userIcon.layer.cornerRadius = 30.0
         userIcon.layer.masksToBounds = true
-        
+        let normalImg = UIImage.nvy_getImageWithColor(color: UIColor.wz_colorWithHexString(hex: "FF87D6"));
+        let unableImg = UIImage.nvy_getImageWithColor(color: UIColor.wz_colorWithHexString(hex: "B8B8B8"));
+        agreeBtn.setBackgroundImage(normalImg, for: .normal);
+        agreeBtn.setBackgroundImage(unableImg, for: .disabled);
         agreeBtn.layer.cornerRadius = 5.0
+        agreeBtn.clipsToBounds = true;
     }
     
     @IBAction func agreeAction(_ sender: UIButton) {

@@ -12,7 +12,7 @@
 
 import UIKit
 
-class NVYTabBarController: UITabBarController {
+class NVYTabBarController: UITabBarController ,UITabBarControllerDelegate{
 
     var screenWidth: CGFloat?
     var screenHeight: CGFloat?
@@ -35,6 +35,7 @@ class NVYTabBarController: UITabBarController {
         
         self.view.backgroundColor = UIColor.white
         
+        self.delegate = self;
         initControllers()
     }
     
@@ -82,6 +83,26 @@ class NVYTabBarController: UITabBarController {
         }
         
         viewControllers = viewCtlArr as? [UIViewController]
+    }
+    
+    //    MARK:UITabBarControllerDelegate
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        let index = self.viewControllers?.index(of: viewController);
+        if index == 2 {
+            let logined = NVYUserModel.isLogined();
+            if !logined {
+                let loginVC = NVYLoginVC();
+                loginVC.presentMode = true;
+                let loginNav = NVYNavigationController.init(rootViewController: loginVC);
+                let curVC:NVYNavigationController? = self.selectedViewController as? NVYNavigationController;
+                curVC?.present(loginNav, animated: true, completion: nil);
+                loginVC.loginSuccess = { () -> Void in
+                    curVC?.dismiss(animated: true, completion: nil);
+                }
+            }
+            return logined;
+        }
+        return true;
     }
     
     override func didReceiveMemoryWarning() {

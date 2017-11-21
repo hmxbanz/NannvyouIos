@@ -37,8 +37,14 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         view.addSubview(initInfoTable())
         
-        userInfoModel = NVYUserEditInfoModel()
-        userInfoModel?.Sex = 1
+        userInfoModel = NVYUserModel.getUserModel().transformModel();//NVYUserEditInfoModel()
+//        userInfoModel?.Sex = 1;
+        
+//        NVYProfileDataTool.getUserInfo(completion: { (result) in
+//            if result {
+//
+//            }
+//        })
     }
     
     func backAction() {

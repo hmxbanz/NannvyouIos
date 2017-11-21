@@ -9,7 +9,7 @@
 import UIKit
 import PKHUD
 
-class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, RCIMReceiveMessageDelegate {
     
     var screenWidth: CGFloat?
     var screenHeight: CGFloat?
@@ -55,7 +55,7 @@ class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func initTableHead() {
         
-        if NVYUserModel.getUserModel().RongCloudToken != nil {
+        if NVYUserModel.isLogined() {
             signedHead()
         } else {
             unSignHead()
@@ -66,7 +66,7 @@ class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     func signedHead() {
         
 //        let heightRate = CGFloat(220.0/667.0)
-        let headHeight = 200.0//heightRate * screenHeight!
+        let headHeight = 220.0//heightRate * screenHeight!
         
         let loadHead = Bundle.main.loadNibNamed("NVYLoadHead", owner: nil, options: nil)?.first as! NVYLoadHead
         
@@ -99,11 +99,14 @@ class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             let vc = NVYChatListVC()
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        RCIM.shared().receiveMessageDelegate = self;
         
         loadHead.headFriendAction = { () -> Void in
             let vc = NVYMyFriendVC()
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        updateUnreadInfo();
+        updateSystemMsgUnreadInfo();
         
         loadHead.headActivityAction = { () -> Void in
             let vc = NVYPublishConditionVC()
@@ -231,6 +234,33 @@ class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         super.didReceiveMemoryWarning()
 
     }
+    
+    //MARK:融云相关方法
+    //更新消息标记
+    private func updateUnreadInfo(){
+        let unreadCount = NVYProfileDataTool.unreadMsgTotalCount();
+        selfLoadHead?.chatBtn.showBadgeLabel = (unreadCount > 0);
+        selfLoadHead?.chatBtn.badgeNum = unreadCount;
+    }
+    
+    //更新好友按钮标记
+    private func updateSystemMsgUnreadInfo () {
+        let systemCount = NVYProfileDataTool.unreadSystemMsgCount();
+        selfLoadHead?.friendBtn.badgeSize = 10;
+        selfLoadHead?.friendBtn.badgeNum = 0; //系统未读信息不需显示数量。只显示红点即可
+        selfLoadHead?.friendBtn.showBadgeLabel = (systemCount > 0);
+        NVYProfileDataTool.getUnreadMsgCountFromServer(type: 2) { (count) in
+            print("获取到服务器系统未读信息数:\(count)");
+        }
+    }
+    
+    //收到消息代理
+    func onRCIMReceive(_ message: RCMessage!, left: Int32) {
+        updateUnreadInfo();
+        if message.conversationType == .ConversationType_SYSTEM {
+            updateSystemMsgUnreadInfo();
+        }
+    }
 }
 
 extension NVYProfileVC {
@@ -245,25 +275,28 @@ extension NVYProfileVC {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return 20.0
-        }
-        return 0.0
+        return 10.0;
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section != 1 {
-            return 10.0
-        }
-        return 0.0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth!, height: 10.0))
-        view.backgroundColor = UIColor.groupTableViewBackground
+        view.backgroundColor = UIColor.clear;//UIColor.wz_colorWithHexString(hex: "EFEFF4"); //UIColor.groupTableViewBackground
         return view
     }
+    
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        if section != 1 {
+//            return 10.0
+//        }
+//        return 0.0
+//    }
+//
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//
+//        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth!, height: 10.0))
+//        view.backgroundColor = UIColor.wz_colorWithHexString(hex: "EFEFF4"); //UIColor.groupTableViewBackground
+//        return view
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -332,7 +365,6 @@ extension NVYProfileVC {
                 
             }
         }
-        
-        
     }
 }
+

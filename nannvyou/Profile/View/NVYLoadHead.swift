@@ -82,7 +82,7 @@ class NVYLoadHead: UIView {
             
         })
         
-        statusLabel.text = "审核状态：\(NVYUserModel.getUserModel().CheckName!)    类型：\(NVYUserModel.getUserModel().RoleName!)"
+        statusLabel.text = "审核状态：\(NVYUserModel.getUserModel().CheckName ?? "待审核")    类型：\(NVYUserModel.getUserModel().RoleName ?? "")"
     }
     
     @IBAction func settingAction(_ sender: UIButton) {

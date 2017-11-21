@@ -33,6 +33,9 @@ class NVYLoginVC: UIViewController {
     
     let tfHeight = 40.0
     
+    var presentMode = false;
+    
+    
     var loginSuccess: LoginBlock?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +60,31 @@ class NVYLoginVC: UIViewController {
         
         initBtn()
         
+        configNavBackButtonIfNeed();
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+        
+    }
+    
+    func configNavBackButtonIfNeed() {
+        if presentMode {
+            let backIcon = UIImage.init(named: "icon_arrow_left");
+            let customView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 44, height: 44));
+            let actionBtn = UIButton.init(type: UIButtonType.custom);
+            actionBtn.frame = CGRect.init(x: 0, y: 0, width: 25, height: 25);
+            actionBtn.setImage(backIcon, for: UIControlState.normal);
+            actionBtn.addTarget(self, action: #selector(backNavigationButtonPressed(btn:)), for: .touchUpInside);
+            actionBtn.center = CGPoint.init(x: 11, y: 22);
+            customView.addSubview(actionBtn);
+            let backItem = UIBarButtonItem.init(customView: customView);//UIBarButtonItem.init(image: backIcon, style: UIBarButtonItemStyle.plain, target: self, action: #selector(backNavigationButtonPressed(btn:)));
+            self.navigationItem.leftBarButtonItem = backItem;
+        }
+    }
+    
+    func backNavigationButtonPressed(btn:UIButton){
+        self.navigationController?.dismiss(animated: true, completion: nil);
     }
     
     func initTF() {

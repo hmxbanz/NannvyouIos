@@ -130,6 +130,7 @@
 		31F2BC761F12281900DE6C63 /* NVYUserPageHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F2BC751F12281900DE6C63 /* NVYUserPageHead.xib */; };
 		31F447511F2A35B000110989 /* NVYPublishConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4474F1F2A35B000110989 /* NVYPublishConditionVC.swift */; };
 		31F447521F2A35B000110989 /* NVYPublishConditionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F447501F2A35B000110989 /* NVYPublishConditionVC.xib */; };
+		530A564E1FB010B400D4BD78 /* Date+NVY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530A564D1FB010B400D4BD78 /* Date+NVY.swift */; };
 		FE005B111EC3436900104898 /* NVYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE005B0F1EC3436900104898 /* NVYTabBarController.swift */; };
 		FE005B121EC3436900104898 /* NVYTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE005B101EC3436900104898 /* NVYTabBarController.xib */; };
 		FE005B201EC3450100104898 /* NVYHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE005B1F1EC3450100104898 /* NVYHomeVC.swift */; };
@@ -268,6 +269,7 @@
 		31F2BC751F12281900DE6C63 /* NVYUserPageHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYUserPageHead.xib; sourceTree = "<group>"; };
 		31F4474F1F2A35B000110989 /* NVYPublishConditionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYPublishConditionVC.swift; sourceTree = "<group>"; };
 		31F447501F2A35B000110989 /* NVYPublishConditionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYPublishConditionVC.xib; sourceTree = "<group>"; };
+		530A564D1FB010B400D4BD78 /* Date+NVY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+NVY.swift"; sourceTree = "<group>"; };
 		73B1BF3F680BE32B481912EB /* Pods-nannvyou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nannvyou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou.debug.xcconfig"; sourceTree = "<group>"; };
 		A9626F0E81CFC7150B1A0A8F /* Pods-nannvyou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nannvyou.release.xcconfig"; path = "Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou.release.xcconfig"; sourceTree = "<group>"; };
 		FE005B0F1EC3436900104898 /* NVYTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYTabBarController.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				31211D551F03ED9400323338 /* UIImage+Lwz.swift */,
 				31211D571F03F54D00323338 /* UIColor+Lwz.swift */,
 				31BFEABF1F6831F800E5B722 /* NSString+Date.swift */,
+				530A564D1FB010B400D4BD78 /* Date+NVY.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -320,7 +323,6 @@
 				3126B8731EE842B1009A3484 /* Controller */,
 				3126B8741EE842B1009A3484 /* Model */,
 				3126B8751EE842B1009A3484 /* Tool */,
-				3126B8761EE842B1009A3484 /* View */,
 			);
 			path = SignModule;
 			sourceTree = "<group>";
@@ -355,13 +357,6 @@
 				31AAFB121EF80E7A00AA18B3 /* NVYSignDataTool.swift */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		3126B8761EE842B1009A3484 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		314FEB321EF186EA00063A20 /* Network */ = {
@@ -995,6 +990,7 @@
 				31D7214D1EE3B119003F7BCB /* NVYCustomSwitch.swift in Sources */,
 				3166BFB11EF43F9B0079E099 /* NVYAddressResponse.swift in Sources */,
 				31DE5FD21F1E5D16008B8DD1 /* BetterSegmentedControl.swift in Sources */,
+				530A564E1FB010B400D4BD78 /* Date+NVY.swift in Sources */,
 				312A89B01F5131B3002A5DA7 /* NVYDoubleLinePicker.swift in Sources */,
 				312664231F4DD1550045DB0A /* NVYTimePicker.swift in Sources */,
 				318627081ED1C90800E5922D /* NVYColorAndSize.swift in Sources */,

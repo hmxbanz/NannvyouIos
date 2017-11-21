@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NVYUserPageHead" customModule="nanvyou" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NVYUserPageHead" customModule="nannvyou" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -261,7 +261,7 @@
                 <outlet property="userInfoBtn" destination="9KR-wR-JkY" id="ypA-da-v1W"/>
                 <outlet property="userPhotoBtn" destination="sRr-ZM-cg9" id="1Y9-Pg-F1N"/>
             </connections>
-            <point key="canvasLocation" x="1" y="-56"/>
+            <point key="canvasLocation" x="-117" y="-53"/>
         </view>
     </objects>
     <resources>

@@ -44,4 +44,14 @@ extension String {
         return dateStr
     }
     
+    //将C#格式的日期字符串转成iOS日期
+    func nvy_dateFromCsDate() -> Date {
+        let csDate = self;
+        let startIndex = csDate.index((csDate.index(of: "("))!, offsetBy: 1);
+        let endIndex = csDate.index(of: ")");
+        let intervalString = csDate.substring(with: startIndex ..< endIndex);
+        let interval = (intervalString as NSString).doubleValue / 1000; //C#的时间戳是毫秒级的
+        let result = Date.init(timeIntervalSince1970: interval);
+        return result;
+    }
 }

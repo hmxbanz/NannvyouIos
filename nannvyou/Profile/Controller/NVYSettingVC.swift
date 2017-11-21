@@ -60,7 +60,9 @@ class NVYSettingVC: UITableViewController {
                 
                 RCIM().disconnect(false)
                 
-                self.navigationController?.popViewController(animated: true)
+                self.tabBarController?.selectedIndex = 1;
+                self.tabBarController?.tabBar.isHidden = false;
+                self.navigationController?.popViewController(animated: false)
             }
         }
         

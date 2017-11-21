@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NVYLoginVC" customModule="nanvyou" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NVYLoginVC" customModule="nannvyou" customModuleProvider="target">
             <connections>
                 <outlet property="forgetBtn" destination="L5n-XT-NzL" id="qsF-ga-914"/>
                 <outlet property="loginBtn" destination="3ZI-Ii-ap5" id="Tjg-XI-Q45"/>
@@ -27,14 +28,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="417-rq-Tiz">
-                    <rect key="frame" x="87.5" y="84" width="200" height="1"/>
+                    <rect key="frame" x="87.5" y="20" width="200" height="1"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="vSk-Hi-EXI"/>
                         <constraint firstAttribute="width" constant="200" id="wgL-b8-hJZ"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNk-p7-4h1">
-                    <rect key="frame" x="20" y="105" width="335" height="80"/>
+                    <rect key="frame" x="20" y="41" width="335" height="80"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kt1-71-Nxm">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
@@ -81,7 +82,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZI-Ii-ap5">
-                    <rect key="frame" x="20" y="215" width="335" height="40"/>
+                    <rect key="frame" x="20" y="151" width="335" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="YRJ-rp-dJV"/>
@@ -94,7 +95,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5n-XT-NzL">
-                    <rect key="frame" x="285" y="265" width="70" height="30"/>
+                    <rect key="frame" x="285" y="201" width="70" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="5w1-xm-wsI"/>
                         <constraint firstAttribute="width" constant="70" id="p6V-u6-xst"/>
@@ -129,7 +130,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mE-Lg-aCn" customClass="NVYVerticalButton" customModule="nanvyou" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mE-Lg-aCn" customClass="NVYVerticalButton" customModule="nannvyou" customModuleProvider="target">
                             <rect key="frame" x="60.5" y="63.5" width="94" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="37z-uT-aCp"/>
@@ -141,7 +142,7 @@
                                 <action selector="registerAction:" destination="-1" eventType="touchUpInside" id="kMV-Ph-wEv"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Im0-8R-sCZ" customClass="NVYVerticalButton" customModule="nanvyou" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Im0-8R-sCZ" customClass="NVYVerticalButton" customModule="nannvyou" customModuleProvider="target">
                             <rect key="frame" x="166.5" y="63.5" width="122" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="rtY-kv-CkT"/>
@@ -172,7 +173,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="417-rq-Tiz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="02H-sH-Brh"/>
+                <constraint firstItem="417-rq-Tiz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="02H-sH-Brh"/>
                 <constraint firstItem="417-rq-Tiz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3zX-wN-apH"/>
                 <constraint firstAttribute="trailing" secondItem="O4G-15-KgR" secondAttribute="trailing" constant="20" id="4te-cX-3WH"/>
                 <constraint firstAttribute="bottom" secondItem="O4G-15-KgR" secondAttribute="bottom" constant="30" id="JJv-oi-i1E"/>

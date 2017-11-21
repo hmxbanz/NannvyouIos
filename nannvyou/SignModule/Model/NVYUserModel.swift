@@ -13,7 +13,7 @@ class NVYUserModel: NSObject, Mappable {
 
     var Age: Int = 0
     
-    var Area: String?
+    var Area: Int?
     
     var AreaName: String?
     
@@ -69,7 +69,7 @@ class NVYUserModel: NSObject, Mappable {
     
     var ModifyDate: String?
     
-    var Nation: String?
+    var Nation: Int?
     
     var NationName: String?
     
@@ -108,25 +108,25 @@ class NVYUserModel: NSObject, Mappable {
     
     var RealName: String?
     
-    var RoleID: String?
+    var RoleID: Int?
     
     var RoleName: String?
     
     var RongCloudToken: String?
     
-    var Salary: String?
+    var Salary: Int?
     
     var SalaryName: String?
     
-    var Score: String?
+    var Score: Int?
     
     var SelfDescribe: String?
     
-    var Sex: String?
+    var Sex: Int?
     
     var SexName: String?
     
-    var Status: String?
+    var Status: Int?
     
     var StatusName: String?
     
@@ -229,6 +229,34 @@ class NVYUserModel: NSObject, Mappable {
         VisitedCount <- map["VisitedCount"]
     }
     
+    func transformModel() -> NVYUserEditInfoModel {
+        let model = NVYUserEditInfoModel ();
+        model.NickName = self.NickName;
+        model.RealName = self.RealName;
+        model.QQ = self.QQ;
+        model.Email = self.Email;
+        model.SelfDescribe = self.SelfDescribe;
+        model.Sex = self.Sex ?? 1;//Int(self.Sex ?? "1")!;
+        if (self.Birthday?.contains("Date"))! {
+            //解析服务器返回的日期格式 /Date(280771200000)/
+            let date = self.Birthday?.nvy_dateFromCsDate();
+            let dateString = date?.nvy_DateStringOfChina();
+            model.Birthday = dateString;
+        }
+        model.BodyHeight = String(self.BodyHeight);
+        model.BodyWeight = String(self.BodyWeight);
+        model.Occupation = self.Occupation;
+        model.Area = self.AreaName;
+        model.NativeArea = self.NativeArea;
+        model.MaritalStatus = self.MaritalStatus;
+        model.Education = self.Education;
+        model.Salary = self.SalaryName;
+        model.House = self.House;
+        model.Car = self.Car;
+        model.Nation = self.NationName;
+        return model;
+    }
+    
     static func saveUserModel(_ model: NVYUserModel) -> Bool {
         
         var home = NSHomeDirectory() as String
@@ -248,6 +276,10 @@ class NVYUserModel: NSObject, Mappable {
             return Mapper<NVYUserModel>().map(JSONObject: data)!
         }
         return NVYUserModel()
+    }
+    
+    static func isLogined() -> Bool {
+        return NVYUserModel.getUserModel().RongCloudToken != nil;
     }
     
     static func removeUserModel() {

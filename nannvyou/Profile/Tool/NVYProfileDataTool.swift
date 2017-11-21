@@ -307,6 +307,25 @@ class NVYProfileDataTool: NSObject {
         }
     }
     
+    //MARK:未读消息数
+    static func unreadMsgTotalCount () -> Int {
+        return Int(RCIMClient.shared().getTotalUnreadCount());
+    }
+    
+    static func unreadSystemMsgCount() -> Int {
+        return Int(RCIMClient.shared().getUnreadCount([RCConversationType.ConversationType_SYSTEM.rawValue]));
+    }
+    
+    //获取服务器未读消息数(参数type = 2(系统消息))
+    static func getUnreadMsgCountFromServer (type: Int, completion: @escaping (_ result: Int) -> Void) {
+        NVYHTTPTool.postMethod(url: "\(kBaseURL)/User/GetUserMessagesCount", params: ["type": type]) { (DataResponse) in
+            print("服务器未读信息数 = \(DataResponse)");
+            let respDict = DataResponse.result.value as? NSDictionary;
+            let count = respDict?.object(forKey: "MessagesCount") as? Int;
+            completion(count!);
+        }
+    }
+    
     //消息列表
     static func fetchMyNote(page: Int, completion: @escaping (_ result: Array<Any>) -> Void) {
         
@@ -404,7 +423,7 @@ class NVYProfileDataTool: NSObject {
     //获取消息列表
     static func getUserNotes(page: Int, completion: @escaping (_ result: Array<NVYNoteModel>) -> Void) {
         
-        NVYHTTPTool.postMethod(url: "\(kBaseURL)/User/GetUserMessages", params: ["pageIndex" : page, "pageSize" : 20]) { (DataResponse) in
+        NVYHTTPTool.postMethod(url: "\(kBaseURL)/User/GetUserMessages", params: ["pageIndex" : page, "pageSize" : 20, "type" : 2]) { (DataResponse) in
             
             print("获取用户消息列表 = \(DataResponse)")
             

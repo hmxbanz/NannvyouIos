@@ -122,9 +122,14 @@ class NVYMyNoteVC: UITableViewController {
             
             cell?.timeLabel.text = "\(model.CreateDate?.lwz_changeTime() ?? "")"
             
-            if model.noteType == 3 {
-                cell?.agreeBtn.isHidden = true
+            if (model.noteType == 3 || model.noteType == 2) {
+                let title = (model.noteType == 2) ? "已发送" : "已同意";
+                cell?.agreeBtn.isEnabled = false;
+                cell?.agreeBtn.setTitle(title, for: .normal);
+//                cell?.agreeBtn.isHidden = true
             } else {
+                cell?.agreeBtn.isEnabled = true;
+                cell?.agreeBtn.setTitle("同意", for: .normal);
                 cell?.agreeBlock = { (path) in //同意添加好友
                     
                     let model = self.listArr![path.row]

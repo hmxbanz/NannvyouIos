@@ -16,7 +16,7 @@ class NVYChatListVC: RCConversationListViewController {
         navigationItem.title = "聊天列表"
 
         //设置需要显示哪些类型的会话
-        self.setDisplayConversationTypes([1, 3])
+        self.setDisplayConversationTypes([1, 3, 6])
 //        [self setDisplayConversationTypes:@[@(ConversationType_PRIVATE),
 //            @(ConversationType_DISCUSSION),
 //            @(ConversationType_CHATROOM),
@@ -24,7 +24,7 @@ class NVYChatListVC: RCConversationListViewController {
 //            @(ConversationType_APPSERVICE),
 //            @(ConversationType_SYSTEM)]];
         //设置需要将哪些类型的会话在会话列表中聚合显示
-        self.setCollectionConversationType(["ConversationType_DISCUSSION", "ConversationType_GROUP"])
+        self.setCollectionConversationType(["ConversationType_DISCUSSION", "ConversationType_GROUP", "ConversationType_SYSTEM"])
 
     }
 
