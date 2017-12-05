@@ -24,7 +24,7 @@ class NVYTextFieldCell: UITableViewCell, UITextFieldDelegate {
         super.awakeFromNib()
         
         textField.delegate = self
-
+        textField.returnKeyType = .done;
     }
     
     //MARK: - UITextFieldDelegate
@@ -36,6 +36,11 @@ class NVYTextFieldCell: UITableViewCell, UITextFieldDelegate {
 //        }
         
         return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        return false;
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {

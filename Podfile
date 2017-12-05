@@ -2,8 +2,8 @@ platform :ios, '9.0'
 
 target 'nannvyou' do
 
-pod 'RongCloudIM/IMLib', '~> 2.8.3'
-pod 'RongCloudIM/IMKit', '~> 2.8.3'
+pod 'RongCloudIM/IMLib', '~> 2.8.23'
+pod 'RongCloudIM/IMKit', '~> 2.8.23'
 pod 'Alamofire', '~> 4.4.0'
 pod 'RealmSwift', '~> 2.8.0'
 pod "ObjectMapper+Realm"

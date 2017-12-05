@@ -29,7 +29,7 @@ class NVYUserModel: NSObject, Mappable {
     
     var CellPhone: String?
     
-    var Check: String?
+    var Check: Int?
     
     var CheckName: String?
     
@@ -245,7 +245,7 @@ class NVYUserModel: NSObject, Mappable {
         }
         model.BodyHeight = String(self.BodyHeight);
         model.BodyWeight = String(self.BodyWeight);
-        model.Occupation = self.Occupation;
+        model.Occupation = "\(self.IndustryName ?? "无") \(self.OccupationName ?? "无")";
         model.Area = self.AreaName;
         model.NativeArea = self.NativeArea;
         model.MaritalStatus = self.MaritalStatus;
@@ -255,6 +255,57 @@ class NVYUserModel: NSObject, Mappable {
         model.Car = self.Car;
         model.Nation = self.NationName;
         return model;
+    }
+    
+    func birthdayDisplayString() -> String? {
+        if (self.Birthday?.contains("Date"))! {
+            //解析服务器返回的日期格式 /Date(280771200000)/
+            let date = self.Birthday?.nvy_dateFromCsDate();
+            let dateString = date?.nvy_DateStringOfChina();
+            return dateString;
+        }
+        return self.Birthday;
+    }
+    
+    func occupationDisplayString() -> String? {
+        if self.IndustryName == nil && self.OccupationName == nil {
+            return nil;
+        }
+        let result = "\(self.IndustryName ?? "无") \(self.OccupationName ?? "无")";
+        return result;
+    }
+    
+    func isUserChecked() -> Bool {
+        let check = self.Check ?? 0;
+        return (check == 52);
+    }
+    
+    static func autoLoginIfNeed(){
+        if NVYUserModel.isLogined() {
+            if let info = UserDefaults.standard.value(forKey: "NVYLoginUserInfo") {
+                let userInfo = info as! Dictionary<String, String?>;
+                let loginModel = NVYLoginRequestModel()
+                loginModel.userName = userInfo["NVYUserName"]!;
+                loginModel.password = userInfo["NVYUserPwd"]!;
+                NVYSignDataTool.userLogin(loginModel: loginModel) { (Bool) in
+                    
+                }
+            }
+            
+//            let userInfo =  as! Dictionary<String, String?>?;
+        }
+    }
+    
+    static func saveLoginUser(userName: String?, password: String?) -> Void {
+        let userInfo = ["NVYUserName": userName,
+                        "NVYUserPwd": password];
+        UserDefaults.standard.setValue(userInfo, forKey: "NVYLoginUserInfo");
+        UserDefaults.standard.synchronize();
+    }
+    
+    static func removeLoginUser(){
+        UserDefaults.standard.removeObject(forKey: "NVYLoginUserInfo");
+        UserDefaults.standard.synchronize();
     }
     
     static func saveUserModel(_ model: NVYUserModel) -> Bool {

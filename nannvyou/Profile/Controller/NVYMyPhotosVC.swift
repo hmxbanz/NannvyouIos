@@ -48,6 +48,7 @@ class NVYMyPhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     
     func setNavRightBtn() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "上传", style: .plain, target: self, action: #selector(rightBtnAction))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white;
     }
     
     func rightBtnAction() {
@@ -82,7 +83,7 @@ class NVYMyPhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLay
                 
             })
             
-            cell?.userNameLabe.text = "\(model.PhotoInfo ?? "")"
+            cell?.userNameLabe.text = "\(model.AlbumName ?? "")"
             
         } 
         
@@ -123,8 +124,9 @@ class NVYMyPhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLay
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = UICollectionViewScrollDirection.vertical;
-        
+        let model = albums![indexPath.row];
         let vc = NVYMyAlbumDetailVC(collectionViewLayout: layout)
+        vc.albumModel = model;
         vc.albumType = indexPath.row + 1
         navigationController?.pushViewController(vc, animated: true)
     }

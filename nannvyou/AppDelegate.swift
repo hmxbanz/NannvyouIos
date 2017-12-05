@@ -51,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate, RC
                 print("融云登录失败")
             })
         }
+        NVYUserModel.autoLoginIfNeed();
         
         return true
     }

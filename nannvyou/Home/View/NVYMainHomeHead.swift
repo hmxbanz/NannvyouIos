@@ -27,6 +27,8 @@ class NVYMainHomeHead: UIView {
     
     @IBOutlet weak var dynamic: UIButton!
     
+    let cycleScrollView = WRCycleScrollView.init(frame: CGRect.zero);
+    
     var homeNewAction: MainHomeNewBlock?
     var homeHotAction: MainHomeHotBlock?
     var homeRandonAction: MainHomeRandonBlock?
@@ -76,6 +78,35 @@ class NVYMainHomeHead: UIView {
         let dynamicImg = UIImage.wz_changeImageTintColor(tintColor: UIColor.wz_colorWithHexString(hex: "#ff7da8"), image: #imageLiteral(resourceName: "nav_share"))
         dynamic.setImage(dynamicImg, for: .normal)
         
+        cycleScrollView.descLabelFont = UIFont.boldSystemFont(ofSize: 15)
+        cycleScrollView.descLabelHeight = 50
+        cycleScrollView.pageControlAliment = .CenterBottom
+        cycleScrollView.imgsType = .SERVER;
+        cycleView.addSubview(cycleScrollView);
+        
+        let localImages = ["http://oss.nannvyou.cn/Images/AD/banner1.jpg",
+                           "http://oss.nannvyou.cn/Images/AD/banner2.jpg",
+                           "http://oss.nannvyou.cn/Images/AD/banner3.jpg"]
+        cycleScrollView.serverImgArray = localImages;
+        NVYHomeDataTool.getADLists { (List) in
+            var serverList: [String]? = [];
+            if let tmpList = List{
+                for info in tmpList {
+                    var value = info["RemoteADPhoto"] as? String;
+                    if value == nil {
+                        value = "\(kBaseURL)\(info["ADPhoto"] ?? "")";
+                    }
+                    serverList?.append(value ?? "");
+                }
+            }
+            self.refreshADImage(imgList: serverList);
+        };
+    }
+    
+    func refreshADImage(imgList: [String]?) -> Void {
+        if (imgList != nil && imgList!.count > 0) {
+            cycleScrollView.serverImgArray = imgList;
+        }
     }
     
     override func layoutSubviews() {
@@ -87,14 +118,6 @@ class NVYMainHomeHead: UIView {
         //放错图片，导致调试了一个晚上，效果都不好。
         //但是移位64的问题就是真的存在的。
         let frame = CGRect(x: 0, y: 0, width: screenWidth!, height: cycleView.bounds.height)
-        let localImages = ["http://oss.nannvyou.cn/Images/AD/banner1.jpg",
-                           "http://oss.nannvyou.cn/Images/AD/banner2.jpg",
-                           "http://oss.nannvyou.cn/Images/AD/banner3.jpg"]
-        let cycleScrollView = WRCycleScrollView(frame:frame, type:.SERVER, imgs:localImages, descs:nil)
-//        cycleScrollView.delegate = self
-        cycleScrollView.descLabelFont = UIFont.boldSystemFont(ofSize: 15)
-        cycleScrollView.descLabelHeight = 50
-        cycleScrollView.pageControlAliment = .CenterBottom
-        cycleView.addSubview(cycleScrollView)
+        cycleScrollView.frame = frame;
     }
 }

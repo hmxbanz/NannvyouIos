@@ -59,7 +59,7 @@ class NVYSettingVC: UITableViewController {
                 }, seq: user.UserInfoID)
                 
                 RCIM().disconnect(false)
-                
+                NVYUserModel.removeLoginUser();
                 self.tabBarController?.selectedIndex = 1;
                 self.tabBarController?.tabBar.isHidden = false;
                 self.navigationController?.popViewController(animated: false)

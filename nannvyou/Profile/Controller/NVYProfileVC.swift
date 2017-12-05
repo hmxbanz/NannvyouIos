@@ -50,7 +50,18 @@ class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 
         profileTable = initProfileTable()
         view.addSubview(profileTable!)
+        if NVYUserModel.isLogined() {
+            loadUserInfo();
+        }
         
+    }
+    
+    func loadUserInfo() -> Void {
+        NVYProfileDataTool.getUserInfo(completion: { (result) in
+            if result {
+                print("获取用户资料成功");
+            }
+        })
     }
     
     func initTableHead() {
@@ -133,7 +144,8 @@ class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         navigationController?.pushViewController(loginVC, animated: true)
         
         loginVC.loginSuccess = { () -> Void in
-            self.signedHead()
+            self.signedHead();
+            self.loadUserInfo();
         }
     }
     
@@ -235,7 +247,7 @@ class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 
     }
     
-    //MARK:融云相关方法
+    //MARK:RCIMReceiveMessageDelegate 融云相关方法
     //更新消息标记
     private func updateUnreadInfo(){
         let unreadCount = NVYProfileDataTool.unreadMsgTotalCount();

@@ -112,6 +112,20 @@ class NVYHomeDataTool: NSObject {
         }
     }
     
+    static func getADLists(completion: @escaping (_ lists: [NSDictionary]?) -> Void){
+        NVYHTTPTool.postMethod(url: "\(kBaseURL)/Home/GetADs", params: nil) { (DataResponse) in
+            let responseDict = DataResponse.result.value as! NSDictionary;
+            let state = responseDict["state"] as? Int
+            if state == 1 {
+                let list = responseDict.object(forKey: "ADs") as? [NSDictionary];
+                print(list ?? "没有广告图");
+                completion(list);
+            }else{
+                print("获取广告图失败");
+            }
+        };
+    }
+    
     //取用户相册
     static func getUserPhoto(userID: Int, completion: @escaping (_ models: Array<Any>) -> Void)
     {

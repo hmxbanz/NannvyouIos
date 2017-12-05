@@ -18,6 +18,8 @@ class NVYMyAlbumDetailVC: UICollectionViewController, UICollectionViewDelegateFl
     
     var albumType: Int = 0
     
+    var albumModel: NVYMyAlbumModel?;
+    
     var dataArr: Array<NVYAlbumDetailModel>?
     
     override func viewDidLoad() {
@@ -29,12 +31,13 @@ class NVYMyAlbumDetailVC: UICollectionViewController, UICollectionViewDelegateFl
         
         dataArr = Array()
         
-        navigationItem.title = "专辑图片"
+        navigationItem.title = albumModel?.AlbumName ?? "";//"专辑图片"
 
         self.collectionView!.register(UINib.init(nibName: "NVYHomeCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView?.backgroundColor = UIColor.groupTableViewBackground
         
-        NVYProfileDataTool.getUserPhotos(albumID: albumType) { (Photos) in
+        let albumID = self.albumModel?.AlbumID ?? 0;//albumType
+        NVYProfileDataTool.getUserPhotos(albumID: albumID) { (Photos) in
             self.dataArr = Photos
             self.collectionView?.reloadData()
         }

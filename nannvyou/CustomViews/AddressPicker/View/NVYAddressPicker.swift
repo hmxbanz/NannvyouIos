@@ -10,6 +10,7 @@ import UIKit
 
 typealias AddressSurePickBlock = (_ address: String, _ ID: Int) -> Void
 typealias AddressPickScrollBlock = (_ component: Int, _ row: Int) -> Void
+typealias AddressPickerBlock = (_ provice: NVYProviceModel?, _ city: NVYCityModel?, _ area: NVYAreaModel?) -> Void;
 
 class NVYAddressPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -28,6 +29,7 @@ class NVYAddressPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     var areaArr: [NVYAreaModel]?
 
     var surePick: AddressSurePickBlock?
+    var confrimBlock: AddressPickerBlock?;
     
     var pickComponent = 0
     
@@ -85,28 +87,27 @@ class NVYAddressPicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBAction func sureAction(_ sender: UIButton) {
         removeFromSuperview()
-
+        
+        var name = ""
+        var ID = 0
+        
+        let province = provinceArr?[pickerView.selectedRow(inComponent: 0)]
+        let city = cityArr?[pickerView.selectedRow(inComponent: 1)]
+        var area: NVYAreaModel?;
+        if pickComponent > 2 {
+            area = areaArr?[pickerView.selectedRow(inComponent: 2)]
+            name = "\((province?.ProvinceName)!) \((city?.CityName)!) \((area?.AreaName)!)"
+            ID = (area?.Id)!
+        } else {
+            name = "\((province?.ProvinceName)!) \((city?.CityName)!)"
+            ID = (city?.Id)!
+        }
+        
         if (surePick != nil) {
-            
-            var name = ""
-            var ID = 0
-            if pickComponent > 2 {
-                
-                let province = provinceArr?[pickerView.selectedRow(inComponent: 0)]
-                let city = cityArr?[pickerView.selectedRow(inComponent: 1)]
-                let area = areaArr?[pickerView.selectedRow(inComponent: 2)]
-                
-                name = "\((province?.ProvinceName)!) \((city?.CityName)!) \((area?.AreaName)!)"
-                ID = (area?.Id)!
-    
-            } else {
-                let province = provinceArr?[pickerView.selectedRow(inComponent: 0)]
-                let city = cityArr?[pickerView.selectedRow(inComponent: 1)]
-                
-                name = "\((province?.ProvinceName)!) \((city?.CityName)!)"
-                ID = (city?.Id)!
-            }
             surePick!(name, ID)
+        }
+        if confrimBlock != nil {
+            confrimBlock!(province, city, area);
         }
     }
 

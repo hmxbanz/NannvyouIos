@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias SexButtonBlock = (_ tag: Int) -> Void
+typealias SexButtonBlock = (_ tag: Int) -> Bool
 
 class NVYSexCell: UITableViewCell {
 
@@ -24,6 +24,8 @@ class NVYSexCell: UITableViewCell {
     
     var sexBlock: SexButtonBlock?
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -37,13 +39,14 @@ class NVYSexCell: UITableViewCell {
         if currentBtn == sender {
             return
         } else {
-            currentBtn.isSelected = false
-            currentBtn = sender
-            currentBtn.isSelected = true
-        }
-        
-        if sexBlock != nil {
-            sexBlock!(sender.tag)
+            if sexBlock != nil {
+                let canChange = sexBlock!(sender.tag);
+                if canChange {
+                    currentBtn.isSelected = false
+                    currentBtn = sender
+                    currentBtn.isSelected = true
+                }
+            }
         }
     }
     
@@ -52,13 +55,14 @@ class NVYSexCell: UITableViewCell {
         if currentBtn == sender {
             return
         } else {
-            currentBtn.isSelected = false
-            currentBtn = sender
-            currentBtn.isSelected = true
-        }
-        
-        if sexBlock != nil {
-            sexBlock!(sender.tag)
+            if sexBlock != nil {
+               let canChange = sexBlock!(sender.tag);
+                if canChange {
+                    currentBtn.isSelected = false
+                    currentBtn = sender
+                    currentBtn.isSelected = true
+                }
+            }
         }
     }
     

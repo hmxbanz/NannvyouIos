@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 import Alamofire
 
-class NVYMainHomeVC: UIViewController {
+class NVYMainHomeVC: UIViewController, RCIMReceiveMessageDelegate{
     
     var screenWidth: CGFloat?
     var screenHeight: CGFloat?
@@ -21,14 +21,18 @@ class NVYMainHomeVC: UIViewController {
     
     var userInfoModel: NVYUserPageModel?
     
+    var badgeLabel: UILabel?;
+    let itemView =  UIView.init(frame: CGRect.init(x: 0, y: 0, width: 40, height: 40));
+    
     private var scrollContainer: UIScrollView?
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        tabBarController?.tabBar.isHidden = false
-        
+        tabBarController?.tabBar.isHidden = false;
+        RCIM.shared().receiveMessageDelegate = self;
+        updateUnreadInfo();
     }
     
     override func viewDidLoad() {
@@ -45,6 +49,26 @@ class NVYMainHomeVC: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "男女友", style: .plain, target: nil, action: nil)
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         
+        let itemView = self.itemView;
+        let itemImgView = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 25, height: 25));
+        itemImgView.center = CGPoint.init(x: itemView.frame.midX, y: itemView.frame.midY);
+        itemImgView.image = UIImage.wz_changeImageTintColor(tintColor: .white, image: #imageLiteral(resourceName: "icon_msg"));
+        itemView.addSubview(itemImgView);
+        let badgeLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 15, height: 15));
+        badgeLabel.textColor = UIColor.white;
+        badgeLabel.font = UIFont.systemFont(ofSize: 13);
+        badgeLabel.textAlignment = .center;
+        badgeLabel.backgroundColor = .red;
+        badgeLabel.layer.cornerRadius = badgeLabel.frame.height / 2.0;
+        badgeLabel.layer.masksToBounds = true;
+        itemView.addSubview(badgeLabel);
+        self.badgeLabel = badgeLabel;
+        self.updateBadgeWith(num: 9);
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(messageAction));
+        itemView.addGestureRecognizer(tapGesture);
+        
+        let rightItem = UIBarButtonItem.init(customView: itemView);
+        navigationItem.rightBarButtonItem = rightItem;
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icon_msg"), style: .plain, target: self, action: #selector(messageAction))
 //        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
         
@@ -78,8 +102,35 @@ class NVYMainHomeVC: UIViewController {
         self.scrollContainer!.addSubview(vc.view)
     }
     
+    func updateBadgeWith(num: NSInteger) -> Void {
+        let numString = NSString.init(format: "%i", num);
+        let font: UIFont = UIFont.systemFont(ofSize: 13);
+        let attributes = [NSFontAttributeName:font];
+        let option = NSStringDrawingOptions.usesLineFragmentOrigin
+        var stringWidth = numString.boundingRect(with: CGSize.init(width: 100.0, height: 15.0), options: option, attributes: attributes, context: nil).width + 6;
+        stringWidth = (stringWidth < 15) ? 15 : stringWidth;
+        self.badgeLabel?.frame = CGRect.init(x: self.itemView.frame.maxX - stringWidth / 2.0, y: 0, width: stringWidth, height: 15);
+        self.badgeLabel?.text = numString as String;
+    }
+    
     func messageAction() {
-        
+        let vc = NVYChatListVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    //MARK:RCIMReceiveMessageDelegate 融云相关方法
+    //更新消息标记
+    private func updateUnreadInfo(){
+        let unreadCount = NVYProfileDataTool.unreadMsgTotalCount();
+        badgeLabel?.isHidden = (unreadCount <= 0);
+        updateBadgeWith(num: unreadCount);
+    }
+    
+    //收到消息代理
+    func onRCIMReceive(_ message: RCMessage!, left: Int32) {
+        DispatchQueue.main.async { // Correct
+            self.updateUnreadInfo();
+        }
     }
     
     func initScrollView() -> UIScrollView {

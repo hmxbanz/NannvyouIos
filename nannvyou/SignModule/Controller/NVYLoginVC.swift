@@ -130,6 +130,7 @@ class NVYLoginVC: UIViewController {
                 if (self.loginSuccess != nil) {
                     self.loginSuccess!()
                 }
+                NVYUserModel.saveLoginUser(userName: loginModel.userName, password: loginModel.password);
                 self.navigationController?.popViewController(animated: true)
             }
         }

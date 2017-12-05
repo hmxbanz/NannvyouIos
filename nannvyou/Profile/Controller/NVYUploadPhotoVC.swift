@@ -31,6 +31,8 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
     
     @IBOutlet weak var imgLabel: UILabel!
     
+    //图片简介
+    @IBOutlet weak var imageBriefLabel: UILabel!
     //相册类型
     var albumType: Int = 0
     
@@ -52,14 +54,14 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
     }
     
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
-        
-        if sender.selectedSegmentIndex == 1 {
+        let index = sender.selectedSegmentIndex;
+        imageBriefLabel.isHidden = (index != 0);
+        seleImgLabel.isHidden = (index != 1);
+        if index == 1 {
             selectContainer.isHidden = false
-            seleImgLabel.isHidden = false
             albumType = 2
         } else {
             selectContainer.isHidden = true
-            seleImgLabel.isHidden = true
             albumType = 1
         }
     }
@@ -102,6 +104,7 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
     
     func takePhoto(type: Int) {
         let imagePicker = UIImagePickerController()
+        imagePicker.navigationBar.tintColor = UIColor.white;
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         

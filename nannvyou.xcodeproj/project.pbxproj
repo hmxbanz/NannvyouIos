@@ -131,6 +131,8 @@
 		31F447511F2A35B000110989 /* NVYPublishConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4474F1F2A35B000110989 /* NVYPublishConditionVC.swift */; };
 		31F447521F2A35B000110989 /* NVYPublishConditionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F447501F2A35B000110989 /* NVYPublishConditionVC.xib */; };
 		530A564E1FB010B400D4BD78 /* Date+NVY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530A564D1FB010B400D4BD78 /* Date+NVY.swift */; };
+		53A0C8541FD4F55700073987 /* NVYJobPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A0C8531FD4F55700073987 /* NVYJobPicker.swift */; };
+		53A0C8561FD4F56900073987 /* NVYJobPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53A0C8551FD4F56900073987 /* NVYJobPicker.xib */; };
 		FE005B111EC3436900104898 /* NVYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE005B0F1EC3436900104898 /* NVYTabBarController.swift */; };
 		FE005B121EC3436900104898 /* NVYTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE005B101EC3436900104898 /* NVYTabBarController.xib */; };
 		FE005B201EC3450100104898 /* NVYHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE005B1F1EC3450100104898 /* NVYHomeVC.swift */; };
@@ -270,6 +272,8 @@
 		31F4474F1F2A35B000110989 /* NVYPublishConditionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYPublishConditionVC.swift; sourceTree = "<group>"; };
 		31F447501F2A35B000110989 /* NVYPublishConditionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYPublishConditionVC.xib; sourceTree = "<group>"; };
 		530A564D1FB010B400D4BD78 /* Date+NVY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+NVY.swift"; sourceTree = "<group>"; };
+		53A0C8531FD4F55700073987 /* NVYJobPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVYJobPicker.swift; sourceTree = "<group>"; };
+		53A0C8551FD4F56900073987 /* NVYJobPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NVYJobPicker.xib; sourceTree = "<group>"; };
 		73B1BF3F680BE32B481912EB /* Pods-nannvyou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nannvyou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou.debug.xcconfig"; sourceTree = "<group>"; };
 		A9626F0E81CFC7150B1A0A8F /* Pods-nannvyou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nannvyou.release.xcconfig"; path = "Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou.release.xcconfig"; sourceTree = "<group>"; };
 		FE005B0F1EC3436900104898 /* NVYTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYTabBarController.swift; sourceTree = "<group>"; };
@@ -642,6 +646,8 @@
 				31CB466B1F6795DD006C8ACF /* NVYMyNoteCell.xib */,
 				31BFEABB1F68271500E5B722 /* NVYFriendCell.swift */,
 				31BFEABC1F68271500E5B722 /* NVYFriendCell.xib */,
+				53A0C8531FD4F55700073987 /* NVYJobPicker.swift */,
+				53A0C8551FD4F56900073987 /* NVYJobPicker.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -846,6 +852,7 @@
 				31A07FD91EE99409008ABD9C /* NVYRegisterVC.xib in Resources */,
 				31A4C30E1F2B944900616FC1 /* NVYUploadPhotoVC.xib in Resources */,
 				31B713BC1F0E85A30033555C /* NVYSexCell.xib in Resources */,
+				53A0C8561FD4F56900073987 /* NVYJobPicker.xib in Resources */,
 				318AD9981F570C3B00662576 /* NVYChangePwdVC.xib in Resources */,
 				FE0876441EB36CCE00489DC3 /* Assets.xcassets in Resources */,
 				318BE68A1F584AB500D8EE1E /* NVYVisitCell.xib in Resources */,
@@ -1050,6 +1057,7 @@
 				31498DCB1F029D2900A3A8EE /* NVYLoadHead.swift in Sources */,
 				31AAFB151EF80EAE00AA18B3 /* NVYLoginRequestModel.swift in Sources */,
 				3168F4401F40338B00FA8C12 /* WRCycleScrollView.swift in Sources */,
+				53A0C8541FD4F55700073987 /* NVYJobPicker.swift in Sources */,
 				31211D561F03ED9400323338 /* UIImage+Lwz.swift in Sources */,
 				314FEB341EF1872400063A20 /* NVYHTTPTool.swift in Sources */,
 				31211D581F03F54D00323338 /* UIColor+Lwz.swift in Sources */,
@@ -1246,7 +1254,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.nannvyou.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d896141f-1334-4367-939c-bf643f18c643";
+				PROVISIONING_PROFILE = "b5e0bdeb-eae8-4ca4-8688-5bcd295bccda";
 				PROVISIONING_PROFILE_SPECIFIER = nannvDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "nannvyou/nannvyou-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

@@ -35,12 +35,14 @@ class NVYMyCollectionVC: UITableViewController {
         header = ESRefreshHeaderAnimator.init(frame: CGRect.zero)
         footer = ESRefreshFooterAnimator.init(frame: CGRect.zero)
         
-        self.tableView?.es_addPullToRefresh(animator: header) { [unowned self] in
+        self.tableView.es.addPullToRefresh {
+            [unowned self] in
             self.refresh()
         }
         
-        self.tableView?.es_addInfiniteScrolling(animator: footer) { [unowned self] in
-            self.loadMore()
+        self.tableView.es.addInfiniteScrolling {
+            [unowned self] in
+            self.loadMore();
         }
     }
     
@@ -55,9 +57,8 @@ class NVYMyCollectionVC: UITableViewController {
             }
             
             /// Stop refresh when your job finished, it will reset refresh footer if completion is true
-            self.tableView.es_stopPullToRefresh(ignoreDate: true)
             /// Set ignore footer or not
-            self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
+            self.tableView.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false);
         }
     }
     
@@ -76,7 +77,7 @@ class NVYMyCollectionVC: UITableViewController {
             }
             
             /// 如果你的加载更多事件成功，调用es_stopLoadingMore()重置footer状态
-            self.tableView.es_stopLoadingMore()
+            self.tableView.es.stopLoadingMore()
             
         }
     }

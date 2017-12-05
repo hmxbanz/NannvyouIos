@@ -196,6 +196,19 @@ class NVYUserPageHead: UIView {
         }
     }
     
+    func selectPageAt(index: Int) -> Void {
+        let buttons = [userInfoBtn, userConditionBtn, userActivityBtn, userPhotoBtn];
+        if index < buttons.count {
+            let button = buttons[index];
+            if currentBtn != button {
+                currentBtn = button;
+                UIView.animate(withDuration: 0.28, animations: {
+                    self.line.frame = CGRect.init(x: (button?.frame.minX)!, y: (button?.frame.maxY)! - 1, width: (button?.frame.width)!, height: 1);
+                });
+            }
+        }
+    }
+    
     @IBAction func userActivityBtnAction(_ sender: UIButton) {
         
         if currentBtn != sender {

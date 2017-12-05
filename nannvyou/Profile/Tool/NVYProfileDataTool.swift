@@ -66,6 +66,9 @@ class NVYProfileDataTool: NSObject {
                 user.IconSmall = userModel.IconSmall
                 _ = NVYUserModel.saveUserModel(user)
                 
+                let conditionModel = Mapper<NVYFriendConditionModel>().map(JSONObject: userPageModel.FriendCondition) ?? NVYFriendConditionModel();
+                _ = NVYFriendConditionModel.saveConditionModel(conditionModel);
+                
                 completion(true)
                 HUD.hide(animated: true)
             } else {
@@ -322,7 +325,7 @@ class NVYProfileDataTool: NSObject {
             print("服务器未读信息数 = \(DataResponse)");
             let respDict = DataResponse.result.value as? NSDictionary;
             let count = respDict?.object(forKey: "MessagesCount") as? Int;
-            completion(count!);
+            completion(count ?? 0);
         }
     }
     

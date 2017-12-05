@@ -34,7 +34,7 @@ class NVYChatListVC: RCConversationListViewController {
         chatVC.conversationType = model.conversationType
         chatVC.targetId = model.targetId
         chatVC.title = model.conversationTitle
-        navigationController?.pushViewController(chatVC, animated: true)
+        self.navigationController?.pushViewController(chatVC, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

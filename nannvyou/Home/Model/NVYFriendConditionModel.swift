@@ -11,18 +11,17 @@ import ObjectMapper
 
 class NVYFriendConditionModel: NSObject, Mappable {
 
-    var AgeRange: String?
     var AgeMax: Int = 0
     var AgeMin: Int = 0
-    var Area: String?
+    var Area: String?;
     var AreaName: String?
     var Birthday: String?
     
-    var BodyHeight: String?
+//    var BodyHeight: String?
     var BodyHeightMax: Int = 0
     var BodyHeightMin: Int = 0
     
-    var BodyWeight: String?
+//    var BodyWeight: String?
     var BodyWeightMax: Int = 0
     var BodyWeightMin: Int = 0
     var Car: String?
@@ -115,7 +114,7 @@ class NVYFriendConditionModel: NSObject, Mappable {
     
     func mapping(map: Map) {
         
-        AgeRange  <- map["AgeRange"]
+//        AgeRange  <- map["AgeRange"]
         AgeMax    <- map["AgeMax"]
         AgeMin    <- map["AgeMin"]
         Area     <- map["Area"]
@@ -123,11 +122,11 @@ class NVYFriendConditionModel: NSObject, Mappable {
         
         Birthday <- map["Birthday"]
         
-        BodyHeight <- map["BodyHeight"]
+//        BodyHeight <- map["BodyHeight"]
         BodyHeightMax <- map["BodyHeightMax"]
         BodyHeightMin <- map["BodyHeightMin"]
         
-        BodyWeight <- map["BodyWeight"]
+//        BodyWeight <- map["BodyWeight"]
         BodyWeightMax <- map["BodyWeightMax"]
         BodyWeightMin <- map["BodyWeightMin"]
         Car <- map["Car"]
@@ -191,6 +190,100 @@ class NVYFriendConditionModel: NSObject, Mappable {
         VisitedCount <- map["VisitedCount"]
         MyConditionId <- map["MyConditionId"]
         Remark <- map["Remark"]
+    }
+    
+    //MARK: 地址信息
+    
+    func addressString() -> String? {
+        let result = (ProvinceName ?? "无") + "-"  + (CityName ?? "无") + "-" + (AreaName ?? "无");
+        return result;
+    }
+    
+    func areaNameString(province: NVYProviceModel?, city: NVYCityModel?, area: NVYAreaModel?) -> String? {
+        var result = "\((province?.ProvinceName)!) \((city?.CityName)!)";
+        if area != nil{
+            result = "\(result) \((area?.AreaName)!)";
+        }
+        return result;
+    }
+    
+    func updateAddresInfo(province: NVYProviceModel?, city: NVYCityModel?, area: NVYAreaModel?) -> Void {
+        self.Province = province?.ProvinceCode;
+        self.ProvinceName = province?.ProvinceName;
+        self.City = String(city?.Id ?? 0);
+        self.CityName = city?.CityName;
+        self.Area = String(area?.Id ?? 0);
+        self.AreaName = area?.AreaName;
+    }
+    
+    func nativeAddressString() -> String? {
+        let result = (NativeProvinceName ?? "无") + "-"  + (NativeCityName ?? "无") + "-" + (NativeAreaName ?? "无");
+        return result;
+    }
+    
+    func updateNativeAddressInfo(province: NVYProviceModel?, city: NVYCityModel?, area: NVYAreaModel?) -> Void {
+        self.NativeProvince = province?.ProvinceCode;
+        self.NativeProvinceName = province?.ProvinceName;
+        self.NativeCity = String(city?.Id ?? 0);
+        self.NativeCityName = city?.CityName;
+        self.NativeArea = String(area?.Id ?? 0);
+        self.NativeAreaName = area?.AreaName;
+    }
+    
+    //MARK: 年龄范围
+    func ageRangeString() -> String {
+        let result = "\(AgeMin)-\(AgeMax)岁";
+        return result;
+    }
+    
+    func updateAgeRange(minValue: Int, maxValue: Int) -> Void {
+        AgeMin = minValue;
+        AgeMax = maxValue;
+    }
+    
+    //MARK: 身高范围
+    func bodyHeightRangeString() -> String {
+        let result = "\(BodyHeightMin)-\(BodyHeightMax)CM";
+        return result;
+    }
+    
+    func updateBodyHeightRange(minValue: Int, maxValue: Int) -> Void {
+        BodyHeightMin = minValue;
+        BodyHeightMax = maxValue;
+    }
+    
+    //MARK: 体重范围
+    func bodyWeightRangeString() -> String {
+        let result = "\(BodyWeightMin)-\(BodyWeightMax)KG";
+        return result;
+    }
+    
+    func updateBodyWeightRange(minValue: Int, maxValue: Int) -> Void {
+        BodyWeightMin = minValue;
+        BodyWeightMax = maxValue;
+    }
+    
+    //MARK: 模型存储
+    
+    static func saveConditionModel(_ model: NVYFriendConditionModel) -> Bool {
+        
+        var home = NSHomeDirectory() as String
+        home = home.appending("/Documents/userCondition.data")
+        let data = model.toJSON()
+        return NSKeyedArchiver.archiveRootObject(data, toFile: home)
+    }
+    
+    static func getUserConditionModel() -> NVYFriendConditionModel {
+        
+        var home = NSHomeDirectory() as String
+        home = home.appending("/Documents/userCondition.data")
+        
+        let data = NSKeyedUnarchiver.unarchiveObject(withFile: home) as? NSDictionary
+        
+        if data != nil {
+            return Mapper<NVYFriendConditionModel>().map(JSONObject: data)!
+        }
+        return NVYFriendConditionModel()
     }
     
 }

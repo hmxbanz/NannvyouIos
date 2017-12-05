@@ -17,6 +17,7 @@ class NVYVerticalButton: UIButton {
         didSet
         {
             self.badgeNumLabel?.text = (badgeNum <= 0) ? "" : "\(badgeNum)";
+            self.layoutIfNeeded();
         }
     }
     
@@ -83,7 +84,6 @@ class NVYVerticalButton: UIButton {
         let width = self.badgeStringWidth();
         let labelRect = CGRect.init(x: imgRect.maxX, y: imgRect.minY, width: width, height: _badgeSize);
         self.badgeNumLabel?.frame = labelRect;
-        self.badgeNumLabel?.layer.cornerRadius = _badgeSize / 2.0;
     }
     
     

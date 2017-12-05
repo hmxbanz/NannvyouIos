@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 import Alamofire
 
-class NVYUserPageVC: UIViewController {
+class NVYUserPageVC: UIViewController, UIScrollViewDelegate{
 
     var screenWidth: CGFloat?
     var screenHeight: CGFloat?
@@ -22,6 +22,8 @@ class NVYUserPageVC: UIViewController {
     var userInfoModel: NVYUserPageModel?
     
     private var scrollContainer: UIScrollView?
+    
+    private var userHeader: NVYUserPageHead?;
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,6 +110,7 @@ class NVYUserPageVC: UIViewController {
             scrollContainer?.showsHorizontalScrollIndicator = false
             scrollContainer?.bounces = false
             scrollContainer?.isPagingEnabled = true
+            scrollContainer?.delegate = self;
             scrollContainer?.contentSize = CGSize(width: 4.0 * screenWidth!, height: screenHeight! - 280)
         }
         return scrollContainer!
@@ -118,6 +121,7 @@ class NVYUserPageVC: UIViewController {
         let userHead = Bundle.main.loadNibNamed("NVYUserPageHead", owner: nil, options: nil)?.first as? NVYUserPageHead
         userHead?.frame = CGRect(x: 0, y: 0, width: screenWidth!, height: 280)
         view.addSubview(userHead!)
+        self.userHeader = userHead;
         
         var userInfo = NVYUserModel()
         userInfo = Mapper<NVYUserModel>().map(JSONObject: userInfoModel?.UserInfo)!
@@ -221,6 +225,20 @@ class NVYUserPageVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    //MARK:UIScrollViewDelegate
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        print("End Draging");
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("End decelerating");
+        if scrollView == self.scrollContainer {
+            let offset = scrollView.contentOffset;
+            let index = Int.init(offset.x / self.screenWidth!);
+            self.userHeader?.selectPageAt(index: index);
+        }
     }
     
 }

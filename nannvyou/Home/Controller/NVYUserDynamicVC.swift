@@ -34,11 +34,11 @@ class NVYUserDynamicVC: UITableViewController {
         header = ESRefreshHeaderAnimator.init(frame: CGRect.zero)
         footer = ESRefreshFooterAnimator.init(frame: CGRect.zero)
         
-        self.tableView?.es_addPullToRefresh(animator: header) { [unowned self] in
+        self.tableView?.es.addPullToRefresh(animator: header) { [unowned self] in
             self.refresh()
         }
         
-        self.tableView?.es_addInfiniteScrolling(animator: footer) { [unowned self] in
+        self.tableView?.es.addInfiniteScrolling(animator: footer) { [unowned self] in
             self.loadMore()
         }
     }
@@ -55,9 +55,9 @@ class NVYUserDynamicVC: UITableViewController {
                 }
                 
                 /// Stop refresh when your job finished, it will reset refresh footer if completion is true
-                self.tableView.es_stopPullToRefresh(ignoreDate: true)
+                self.tableView.es.stopPullToRefresh(ignoreDate: true)
                 /// Set ignore footer or not
-                self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
+                self.tableView.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
             })
         } else {
             NVYHomeDataTool.getHomeDynamicData(pageIndex: self.currentPage) { (dataArray) in
@@ -69,9 +69,9 @@ class NVYUserDynamicVC: UITableViewController {
                 }
                 
                 /// Stop refresh when your job finished, it will reset refresh footer if completion is true
-                self.tableView.es_stopPullToRefresh(ignoreDate: true)
+                self.tableView.es.stopPullToRefresh(ignoreDate: true)
                 /// Set ignore footer or not
-                self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
+                self.tableView.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
             }
         }
     }
@@ -93,7 +93,7 @@ class NVYUserDynamicVC: UITableViewController {
                 }
                 
                 /// 如果你的加载更多事件成功，调用es_stopLoadingMore()重置footer状态
-                self.tableView.es_stopLoadingMore()
+                self.tableView.es.stopLoadingMore()
             })
         } else {
             NVYHomeDataTool.getHomeDynamicData(pageIndex: self.currentPage) { (dataArray) in
@@ -109,7 +109,7 @@ class NVYUserDynamicVC: UITableViewController {
                 }
                 
                 /// 如果你的加载更多事件成功，调用es_stopLoadingMore()重置footer状态
-                self.tableView.es_stopLoadingMore()
+                self.tableView.es.stopLoadingMore()
             }
         }
     }
@@ -141,7 +141,7 @@ class NVYUserDynamicVC: UITableViewController {
         if ((self.dataArr?.count)! > 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NVYUserDynamicCell", for: indexPath) as! NVYUserDynamicCell
             
-            cell.model = self.dataArr?[indexPath.row] as? NVYHomeCellModel
+            cell.model = self.dataArr?[indexPath.row]
 
             return cell
         } else {
@@ -157,7 +157,7 @@ class NVYUserDynamicVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let detailVC = NVYDynamicDetailVC()
-        detailVC.detailModel = self.dataArr?[indexPath.row] as? NVYHomeCellModel
+        detailVC.detailModel = self.dataArr?[indexPath.row]
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 

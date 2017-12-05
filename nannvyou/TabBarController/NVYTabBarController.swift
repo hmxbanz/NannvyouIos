@@ -26,6 +26,14 @@ class NVYTabBarController: UITabBarController ,UITabBarControllerDelegate{
     var imgSelArr = [#imageLiteral(resourceName: "tab_search_hover"), #imageLiteral(resourceName: "tab_logo_hover"), #imageLiteral(resourceName: "tab_me_hover")]
     let titles = ["搜索", " ", "我的"]
     
+    var homeBtn: UIButton = UIButton.init(type: .custom);
+    
+    override var selectedIndex: Int{
+        didSet{
+            homeBtn.isSelected = (selectedIndex == 1);
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +45,19 @@ class NVYTabBarController: UITabBarController ,UITabBarControllerDelegate{
         
         self.delegate = self;
         initControllers()
+        
+        homeBtn.setBackgroundImage(#imageLiteral(resourceName: "tab_logo"), for: .normal);
+        homeBtn.setBackgroundImage(#imageLiteral(resourceName: "tab_logo_hover"), for: .selected);
+        let screenSize = UIScreen.main.bounds.size;
+        homeBtn.bounds = CGRect.init(x: 0, y: 0, width: 90, height: 44);
+        homeBtn.center = CGPoint.init(x: screenSize.width / 2.0, y: 49 / 2.0);
+        homeBtn.addTarget(self, action: #selector(homeButtonPressed), for: UIControlEvents.touchUpInside);
+        self.tabBar.addSubview(homeBtn);
+    }
+    
+    func homeButtonPressed() -> Void {
+        self.selectedIndex = 1;
+        homeBtn.isSelected = true;
     }
     
     func initControllers() -> Void
@@ -61,10 +82,9 @@ class NVYTabBarController: UITabBarController ,UITabBarControllerDelegate{
             var selImg: UIImage = imgSelArr[index]
             selImg = selImg.withRenderingMode(.alwaysOriginal)
             
-            
-            vc.tabBarItem.image = norImg
-            vc.tabBarItem.selectedImage = selImg
             if index != 1 {
+                vc.tabBarItem.image = norImg
+                vc.tabBarItem.selectedImage = selImg
                 vc.tabBarItem.title = titles[index]
             }
             
@@ -103,6 +123,11 @@ class NVYTabBarController: UITabBarController ,UITabBarControllerDelegate{
             return logined;
         }
         return true;
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let isHOme = viewController.isKind(of: NVYHomeVC.classForCoder());
+        homeBtn.isSelected = isHOme;
     }
     
     override func didReceiveMemoryWarning() {

@@ -27,6 +27,10 @@ class NVYTextViewCell: UITableViewCell, UITextViewDelegate {
         textView.delegate = self
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        delegate?.textViewCellBeginEdit(cell: self);
+    }
+    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
 //        if delegate != nil {
@@ -55,6 +59,7 @@ class NVYTextViewCell: UITableViewCell, UITextViewDelegate {
 
 protocol NVYTextViewCellDelegate: NSObjectProtocol {
     
-    func finishTVEdit(cell: NVYTextViewCell, text: String)
+    func finishTVEdit(cell: NVYTextViewCell, text: String);
     
+    func textViewCellBeginEdit(cell: NVYTextViewCell);
 }

@@ -165,11 +165,13 @@ class NVYSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             searchView?.searchBlock = { () -> Void in
                 
                 if self.searchRequest?.ageRange == nil {
-                    HUD.flash(.labeledError(title: "请选择年龄", subtitle: ""), delay: 1.5)
-                    return
+                    self.searchRequest?.ageRange = "18-50";
+//                    HUD.flash(.labeledError(title: "请选择年龄", subtitle: ""), delay: 1.5)
+//                    return
                 } else if self.searchRequest?.area == nil {
-                    HUD.flash(.labeledError(title: "请选择城市", subtitle: ""), delay: 1.5)
-                    return
+                    self.searchRequest?.area = "";
+//                    HUD.flash(.labeledError(title: "请选择城市", subtitle: ""), delay: 1.5)
+//                    return
                 }
                 
                 self.selectButton?.isUserInteractionEnabled = true
@@ -184,16 +186,14 @@ class NVYSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 NVYSearchDataTool.searchAction(page: self.currentPage, searchModel: self.searchRequest!, completion: { (dataArray) in
                                         
                     if dataArray.count > 0 {
-                        self.searchDataArr = dataArray
-                        
-                        self.searchTable?.reloadData()
+                        self.searchDataArr = dataArray;
+                        self.searchTable?.reloadData();
+                        self.searchTable?.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true);
                     } else {
                         HUD.flash(.labeledError(title: "暂无数据", subtitle: ""), delay: 1.5)
-                        
                         self.searchDataArr = Array()
                         self.searchTable?.reloadData()
                     }
-                    
                 })
                 
                 
@@ -204,11 +204,11 @@ class NVYSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 footer = ESRefreshFooterAnimator.init(frame: CGRect.zero)
                 
                 
-                self.searchTable?.es_addPullToRefresh(animator: header) { [unowned self] in
+                self.searchTable?.es.addPullToRefresh(animator: header) { [unowned self] in
                     self.refresh()
                 }
                 
-                self.searchTable?.es_addInfiniteScrolling(animator: footer) { [unowned self] in
+                self.searchTable?.es.addInfiniteScrolling(animator: footer) { [unowned self] in
                     self.loadMore()
                 }
                 //        searchTable?.refreshIdentifier = String.init(describing: type)
@@ -233,9 +233,9 @@ class NVYSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             }
             
             /// Stop refresh when your job finished, it will reset refresh footer if completion is true
-            self.searchTable?.es_stopPullToRefresh(ignoreDate: true)
+            self.searchTable?.es.stopPullToRefresh(ignoreDate: true)
             /// Set ignore footer or not
-            self.searchTable?.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
+            self.searchTable?.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         })
     }
 
@@ -254,7 +254,7 @@ class NVYSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             }
             
             /// 如果你的加载更多事件成功，调用es_stopLoadingMore()重置footer状态
-            self.searchTable?.es_stopLoadingMore()
+            self.searchTable?.es.stopLoadingMore()
             /// 通过es_noticeNoMoreData()设置footer暂无数据状态
 //            self.searchTable?.es_noticeNoMoreData()
             
