@@ -258,7 +258,8 @@ class NVYUserModel: NSObject, Mappable {
     }
     
     func birthdayDisplayString() -> String? {
-        if (self.Birthday?.contains("Date"))! {
+        let isCShort = (self.Birthday?.contains("Date"));
+        if isCShort == true {
             //解析服务器返回的日期格式 /Date(280771200000)/
             let date = self.Birthday?.nvy_dateFromCsDate();
             let dateString = date?.nvy_DateStringOfChina();

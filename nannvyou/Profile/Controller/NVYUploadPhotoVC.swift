@@ -9,7 +9,7 @@
 import UIKit
 import PKHUD
 
-class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     var screenWidth: CGFloat?
     var screenHeight: CGFloat?
@@ -35,6 +35,8 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
     @IBOutlet weak var imageBriefLabel: UILabel!
     //相册类型
     var albumType: Int = 0
+    var img2Upload: UIImage?;
+    var albumName: String?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +53,7 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
         
         selectContainer.isHidden = true
         seleImgLabel.isHidden = true
+        introTF.delegate = self;
     }
     
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
@@ -67,7 +70,7 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
     }
     
     @IBAction func selectBtnAction(_ sender: UIButton) {
-        
+        view.endEditing(true);
         let picker = Bundle.main.loadNibNamed("NVYSingleLinePicker", owner: nil, options: nil)?.first as? NVYSingleLinePicker
         picker?.frame = CGRect(x: 0, y: 0, width: self.screenWidth!, height: self.screenHeight! - 49.0)
         self.view.addSubview(picker!)
@@ -77,14 +80,13 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
         picker?.pickerArr(array: titles)
         
         picker?.surePick = { (_ row: NSInteger) -> Void in
-            
             self.imgLabel.text = titles[row] as? String
-            
+            self.albumName = titles[row] as? String;
         }
     }
     
     @IBAction func imgButtonAction(_ sender: UIButton) {
-        
+        view.endEditing(true);
         let actionsheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
         actionsheet.addAction(UIAlertAction(title: "拍照", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
             
@@ -140,7 +142,7 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
             
             
             let image = info[UIImagePickerControllerEditedImage] as! UIImage
-           
+            self.img2Upload = image;
             imgButton.setImage(image, for: .normal)
             
             picker.dismiss(animated: true, completion: nil)
@@ -154,12 +156,20 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
     }
     
     @IBAction func uploadBtnAction(_ sender: UIButton) {
-        
+        view.endEditing(true);
+        if albumType == 2 && albumName == nil {
+            HUD.flash(.labeledError(title: "请选择图片类型", subtitle: ""), delay: 1.0);
+            return;
+        }
+        if self.img2Upload == nil {
+            HUD.flash(.labeledError(title: "请选择要上传的图片", subtitle: ""), delay: 1.0);
+            return;
+        }
         if albumType == 1 {
-            if introTF.text == "" {
-                HUD.flash(.labeledError(title: "请输入简介", subtitle: ""), delay: 1.0)
-                return
-            }
+//            if introTF.text == "" {
+//                HUD.flash(.labeledError(title: "请输入简介", subtitle: ""), delay: 1.0)
+//                return
+//            }
         } else {
             introTF.text = ""
         }
@@ -179,6 +189,12 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
         super.didReceiveMemoryWarning()
 
         
+    }
+    
+    //MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        return false;
     }
 
 }

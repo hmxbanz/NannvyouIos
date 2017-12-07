@@ -94,6 +94,7 @@ class NVYSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         if searchRequest == nil {
             searchRequest = NVYSearchRequstModel()
+            searchRequest?.sex = 1;
         }
         return searchRequest!
     }
@@ -163,12 +164,13 @@ class NVYSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             }
             
             searchView?.searchBlock = { () -> Void in
-                
+                self.currentPage = 1;
                 if self.searchRequest?.ageRange == nil {
                     self.searchRequest?.ageRange = "18-50";
 //                    HUD.flash(.labeledError(title: "请选择年龄", subtitle: ""), delay: 1.5)
 //                    return
-                } else if self.searchRequest?.area == nil {
+                }
+                if self.searchRequest?.area == nil {
                     self.searchRequest?.area = "";
 //                    HUD.flash(.labeledError(title: "请选择城市", subtitle: ""), delay: 1.5)
 //                    return
@@ -190,7 +192,7 @@ class NVYSearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                         self.searchTable?.reloadData();
                         self.searchTable?.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true);
                     } else {
-                        HUD.flash(.labeledError(title: "暂无数据", subtitle: ""), delay: 1.5)
+//                        HUD.flash(.labeledError(title: "暂无数据", subtitle: ""), delay: 1.5)
                         self.searchDataArr = Array()
                         self.searchTable?.reloadData()
                     }
@@ -299,7 +301,7 @@ extension NVYSearchVC {
         
         let model = self.searchDataArr![indexPath.row]
         
-        let imgStr = "\(kBaseURL)\(model.IconSmall!)"
+        let imgStr = "\(kBaseURL)\(model.IconSmall ?? "")"
         let imgURL = NSURL(string: imgStr)
         let imgResource = ImageResource(downloadURL: imgURL! as URL, cacheKey: imgStr)
         cell.userIcon?.kf.setImage(with: imgResource, placeholder: Image(named: "icon_head"), options: nil, progressBlock: nil, completionHandler: { (Image, NSError, CacheType, URL) in

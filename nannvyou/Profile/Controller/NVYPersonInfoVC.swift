@@ -155,7 +155,7 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             let img = UIImage.wz_changeImageTintColor(tintColor: UIColor.wz_colorWithHexString(hex: "#ff7da8"), image: cellImages[indexPath.row])
             cell?.iconView?.image = img
             cell?.titleLabel?.text = cellTitles[indexPath.row]
-            
+            cell?.refreshSex(sex: self.userModel.Sex ?? -1);
             cell?.sexBlock = { (_ tag: Int) -> Bool in
                 if self.userModel.isUserChecked() {
                     self .showEditErrorWith(msg: "性别已审核，不可修改");
@@ -275,7 +275,7 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             timePicker.sureBlock = { (_ date: Date) -> Void in
                 //时间转化
                 let dateFormat = DateFormatter()
-                dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                dateFormat.dateFormat = "yyyy-MM-dd"
                 let dateStr = dateFormat.string(from: date);
                 NVYProfileDataTool.uploadSingleUserInfo(info: dateStr, apiName: "Birthday", completion: { (Bool) in
                     if Bool {

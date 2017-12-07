@@ -14,8 +14,8 @@ class NVYSearchRequstModel: Mappable {
     //各个实例变量
     var pageIndex: Int = 0
     var pageSize: Int = 0
-    var sex: Int = 1 // 1-男，2-女
-    var marry: Int = 0
+    var sex: Int = 1 // 1-男，0-女
+    var marry: Int = 0 // 0 - 未婚，1-离异
     var ageRange: String?
     var area: String?
     

@@ -29,9 +29,24 @@ class NVYSexCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        maleBtn.isSelected = true
-        currentBtn = maleBtn
+//        maleBtn.isSelected = true
+//        currentBtn = maleBtn
         
+    }
+    
+    //-1：未选择  0-女，1-男
+    func refreshSex(sex:Int) -> Void {
+        let female = (sex == 0);
+        let male = (sex == 1);
+        maleBtn.isSelected = male;
+        femaleBtn.isSelected = female;
+        if female {
+            currentBtn = femaleBtn;
+        }else if (male){
+            currentBtn = maleBtn;
+        }else{
+            currentBtn = nil;
+        }
     }
 
     @IBAction func maleBtnAction(_ sender: UIButton) {
