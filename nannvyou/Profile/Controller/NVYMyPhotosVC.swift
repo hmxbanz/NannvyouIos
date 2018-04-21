@@ -11,6 +11,7 @@ import Kingfisher
 
 private let reuseIdentifier = "Cell"
 
+/// 我的相册
 class NVYMyPhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
 

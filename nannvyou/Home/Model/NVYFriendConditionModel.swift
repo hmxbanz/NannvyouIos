@@ -195,7 +195,10 @@ class NVYFriendConditionModel: NSObject, Mappable {
     //MARK: 地址信息
     
     func addressString() -> String? {
-        let result = (ProvinceName ?? "无") + "-"  + (CityName ?? "无") + "-" + (AreaName ?? "无");
+        let province = ProvinceName ?? "无";
+        let city = CityName ?? "无";
+        let area = AreaName ?? "无";
+        let result = "\(province)-\(city)-\(area)";//(province) + "-"  + (city) + "-" + (area);
         return result;
     }
     
@@ -217,7 +220,10 @@ class NVYFriendConditionModel: NSObject, Mappable {
     }
     
     func nativeAddressString() -> String? {
-        let result = (NativeProvinceName ?? "无") + "-"  + (NativeCityName ?? "无") + "-" + (NativeAreaName ?? "无");
+        let province = NativeProvinceName ?? "无";
+        let city = NativeCityName ?? "无";
+        let area = NativeAreaName ?? "无";
+        let result = "\(province)-\(city)-\(area)";
         return result;
     }
     

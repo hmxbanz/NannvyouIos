@@ -105,7 +105,17 @@ class NVYMyAlbumDetailVC: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let previewVC = NVYPhotoPreviewVC();
+        var pathList: Array<String>? = Array.init();
+        for model in self.dataArr! {
+            var path = model.PhotoBig ?? (model.PhotoSmall ?? "");
+            path = "\(kBaseURL)\(path)";
+            pathList?.append(path);
+        }
+        previewVC.title = self.navigationItem.title;
+        previewVC.pathList = pathList;
+        previewVC.index = indexPath.item;
+        navigationController?.pushViewController(previewVC, animated: true);
     }
 
 }

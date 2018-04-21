@@ -11,6 +11,7 @@ pod 'PKHUD', '~> 4.2.3'
 pod 'Kingfisher', '~> 3.10.1'  
 pod "ESPullToRefresh"
 pod 'JPush', '~> 3.0.6'
+pod 'SnapKit', '~> 3.2.0'
 
 use_frameworks!
 

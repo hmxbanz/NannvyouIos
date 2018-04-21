@@ -1,12 +1,12 @@
 PODS:
   - Alamofire (4.4.0)
   - ESPullToRefresh (2.7)
-  - JCore (1.1.6)
-  - JPush (3.0.7):
-    - JCore (~> 1.1.6)
+  - JCore (1.1.9)
+  - JPush (3.0.9):
+    - JCore (~> 1.1.7)
   - Kingfisher (3.10.4)
   - ObjectMapper (3.1.0)
-  - ObjectMapper+Realm (0.5):
+  - "ObjectMapper+Realm (0.5)":
     - ObjectMapper
     - RealmSwift
   - PKHUD (4.2.3)
@@ -15,34 +15,52 @@ PODS:
   - Realm/Headers (2.8.3)
   - RealmSwift (2.8.3):
     - Realm (= 2.8.3)
-  - RongCloudIM/IMKit (2.8.23):
+  - RongCloudIM/IMKit (2.8.30):
     - RongCloudIM/IMLib
-  - RongCloudIM/IMLib (2.8.23)
+  - RongCloudIM/IMLib (2.8.30)
+  - SnapKit (3.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4.0)
   - ESPullToRefresh
   - JPush (~> 3.0.6)
   - Kingfisher (~> 3.10.1)
-  - ObjectMapper+Realm
+  - "ObjectMapper+Realm"
   - PKHUD (~> 4.2.3)
   - RealmSwift (~> 2.8.0)
   - RongCloudIM/IMKit (~> 2.8.23)
   - RongCloudIM/IMLib (~> 2.8.23)
+  - SnapKit (~> 3.2.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - ESPullToRefresh
+    - JCore
+    - JPush
+    - Kingfisher
+    - ObjectMapper
+    - "ObjectMapper+Realm"
+    - PKHUD
+    - Realm
+    - RealmSwift
+    - RongCloudIM
+    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
-  JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
-  JPush: 111b79b8a0169ab8fd4c486dac3ed166ed69293e
+  JCore: 27598485098d0db99d2812cba048003457d08cfb
+  JPush: 003d9eaef8ba2df76de32573d0c8aa62b92b3c82
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
-  ObjectMapper+Realm: 3188789fb77c189c7a83cb625333a607eb61a08f
+  "ObjectMapper+Realm": 3188789fb77c189c7a83cb625333a607eb61a08f
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
-  RongCloudIM: 0bdb03fd133dcdc03a12e505c23a838270dbeaee
+  RongCloudIM: ccf8cde8c7938f8a3ae464533413defed7b926bd
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 309bcab24ff8074ddf8fe569781c27083d1155cd
+PODFILE CHECKSUM: 7d19e0eb062093f0942632aa774dab26acb66aaa
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0

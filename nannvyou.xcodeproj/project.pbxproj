@@ -133,6 +133,10 @@
 		530A564E1FB010B400D4BD78 /* Date+NVY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530A564D1FB010B400D4BD78 /* Date+NVY.swift */; };
 		53A0C8541FD4F55700073987 /* NVYJobPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A0C8531FD4F55700073987 /* NVYJobPicker.swift */; };
 		53A0C8561FD4F56900073987 /* NVYJobPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53A0C8551FD4F56900073987 /* NVYJobPicker.xib */; };
+		53BE64AA20899AA500E57BB4 /* NVYPhotoPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE64A920899AA500E57BB4 /* NVYPhotoPreviewVC.swift */; };
+		53BE64AC2089B6C500E57BB4 /* NVYConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE64AB2089B6C500E57BB4 /* NVYConst.swift */; };
+		53BE64AF2089B9EF00E57BB4 /* NVYPhotoPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE64AE2089B9EF00E57BB4 /* NVYPhotoPreviewCell.swift */; };
+		53BE64B12089BA1F00E57BB4 /* NVYPhotoPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53BE64B02089BA1F00E57BB4 /* NVYPhotoPreviewCell.xib */; };
 		FE005B111EC3436900104898 /* NVYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE005B0F1EC3436900104898 /* NVYTabBarController.swift */; };
 		FE005B121EC3436900104898 /* NVYTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE005B101EC3436900104898 /* NVYTabBarController.xib */; };
 		FE005B201EC3450100104898 /* NVYHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE005B1F1EC3450100104898 /* NVYHomeVC.swift */; };
@@ -274,6 +278,10 @@
 		530A564D1FB010B400D4BD78 /* Date+NVY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+NVY.swift"; sourceTree = "<group>"; };
 		53A0C8531FD4F55700073987 /* NVYJobPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVYJobPicker.swift; sourceTree = "<group>"; };
 		53A0C8551FD4F56900073987 /* NVYJobPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NVYJobPicker.xib; sourceTree = "<group>"; };
+		53BE64A920899AA500E57BB4 /* NVYPhotoPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVYPhotoPreviewVC.swift; sourceTree = "<group>"; };
+		53BE64AB2089B6C500E57BB4 /* NVYConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVYConst.swift; sourceTree = "<group>"; };
+		53BE64AE2089B9EF00E57BB4 /* NVYPhotoPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVYPhotoPreviewCell.swift; sourceTree = "<group>"; };
+		53BE64B02089BA1F00E57BB4 /* NVYPhotoPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NVYPhotoPreviewCell.xib; sourceTree = "<group>"; };
 		73B1BF3F680BE32B481912EB /* Pods-nannvyou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nannvyou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou.debug.xcconfig"; sourceTree = "<group>"; };
 		A9626F0E81CFC7150B1A0A8F /* Pods-nannvyou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nannvyou.release.xcconfig"; path = "Pods/Target Support Files/Pods-nannvyou/Pods-nannvyou.release.xcconfig"; sourceTree = "<group>"; };
 		FE005B0F1EC3436900104898 /* NVYTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYTabBarController.swift; sourceTree = "<group>"; };
@@ -490,6 +498,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		53BE64AD2089B9DE00E57BB4 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				53BE64AE2089B9EF00E57BB4 /* NVYPhotoPreviewCell.swift */,
+				53BE64B02089BA1F00E57BB4 /* NVYPhotoPreviewCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
 		6D9DCA0712E0AEE2B9C1CEDA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -598,6 +615,7 @@
 				318AD9961F570C3B00662576 /* NVYChangePwdVC.xib */,
 				31AEEAFF1F642A52008964B3 /* NVYMyPhotosVC.swift */,
 				31E269671F66D4710044F9D2 /* NVYMyAlbumDetailVC.swift */,
+				53BE64A920899AA500E57BB4 /* NVYPhotoPreviewVC.swift */,
 				31CB46681F6794E8006C8ACF /* NVYMyNoteVC.swift */,
 				31E263D61F6EA9AB0046D67B /* NVYChatListVC.swift */,
 				3122C3671F753B4E0098546D /* NVYConversationVC.swift */,
@@ -624,6 +642,7 @@
 		FE005B1A1EC344D000104898 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				53BE64AD2089B9DE00E57BB4 /* TableCell */,
 				31AA85F41EEAE48900069841 /* NVYUnloadHead.swift */,
 				31AA85F61EEAE49400069841 /* NVYUnloadHead.xib */,
 				31498DCA1F029D2900A3A8EE /* NVYLoadHead.swift */,
@@ -730,6 +749,7 @@
 				3126B8721EE842B1009A3484 /* SignModule */,
 				3162AA851F755A9A009684D9 /* Wellcome */,
 				FE08763C1EB36CCE00489DC3 /* AppDelegate.swift */,
+				53BE64AB2089B6C500E57BB4 /* NVYConst.swift */,
 				FE0876401EB36CCE00489DC3 /* Main.storyboard */,
 				FE0876431EB36CCE00489DC3 /* Assets.xcassets */,
 				FE0876451EB36CCE00489DC3 /* LaunchScreen.storyboard */,
@@ -842,6 +862,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE0876471EB36CCE00489DC3 /* LaunchScreen.storyboard in Resources */,
+				53BE64B12089BA1F00E57BB4 /* NVYPhotoPreviewCell.xib in Resources */,
 				31D721511EE3B7D2003F7BCB /* NVYSearchingView.xib in Resources */,
 				3166BFB51EF5637E0079E099 /* NVYAddressPicker.xib in Resources */,
 				31A745B81F17B0F3003F69DC /* NVYUserPageInfoCell.xib in Resources */,
@@ -915,7 +936,11 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -937,6 +962,7 @@
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -948,6 +974,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1027,6 +1054,7 @@
 				3166BFA21EF40C140079E099 /* NVYSearchDataTool.swift in Sources */,
 				3196A1701EF2AAE8008C90AE /* NVYSingleLinePicker.swift in Sources */,
 				31F2BC721F12276900DE6C63 /* NVYUserPageVC.swift in Sources */,
+				53BE64AF2089B9EF00E57BB4 /* NVYPhotoPreviewCell.swift in Sources */,
 				31CA9B2D1F72BB2A000F0891 /* NVYShowBigImageView.swift in Sources */,
 				31B713BF1F0E85B60033555C /* NVYPickerCell.swift in Sources */,
 				31BCDEC61F701CCE003DA24E /* NVYNavigationController.swift in Sources */,
@@ -1040,12 +1068,14 @@
 				31BFEABD1F68271500E5B722 /* NVYFriendCell.swift in Sources */,
 				3126B8791EE842EA009A3484 /* NVYLoginVC.swift in Sources */,
 				3104A2D91F0A9352009A62E7 /* NVYPersonInfoVC.swift in Sources */,
+				53BE64AA20899AA500E57BB4 /* NVYPhotoPreviewVC.swift in Sources */,
 				317C9BAA1EDC2A4D008A9A54 /* NVYVerticalButton.swift in Sources */,
 				31E269661F66D4560044F9D2 /* NVYAlbumDetailModel.swift in Sources */,
 				31879DEE1F43103800844B82 /* NVYUserDynamicCell.swift in Sources */,
 				317C9BA61EDC2869008A9A54 /* NVYHomeHead.swift in Sources */,
 				31BFEABA1F68218300E5B722 /* NVYFriendModel.swift in Sources */,
 				315119F61F2D8A1C00C39F31 /* NVYProfileDataTool.swift in Sources */,
+				53BE64AC2089B6C500E57BB4 /* NVYConst.swift in Sources */,
 				317056A21F5C3504000812D8 /* NVYUserAlbumsModel.swift in Sources */,
 				31879DEB1F430FF700844B82 /* NVYUserDynamicVC.swift in Sources */,
 				3166BFAF1EF417770079E099 /* NVYAreaModel.swift in Sources */,
@@ -1249,6 +1279,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 56VNERY6UJ;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = nannvyou/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1273,6 +1304,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 56VNERY6UJ;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = nannvyou/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
