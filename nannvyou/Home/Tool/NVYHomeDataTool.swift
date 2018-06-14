@@ -239,7 +239,8 @@ class NVYHomeDataTool: NSObject {
                 completion(true)
             } else {
                 completion(false)
-                HUD.flash(.label("不是好友不能聊天"), delay: 1.0)
+                let msg = responseDict["msg"] as! String;
+                HUD.flash(.label(msg), delay: 1.0)
             }
         }
     }

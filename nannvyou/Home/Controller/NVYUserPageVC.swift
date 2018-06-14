@@ -116,12 +116,30 @@ class NVYUserPageVC: UIViewController, UIScrollViewDelegate{
         return scrollContainer!
     }
     
+    func showUserAvatarPage() -> Void {
+        let previewVC = NVYPhotoPreviewVC();
+        var pathList: Array<String>? = Array.init();
+        var userInfo = NVYUserModel()
+        userInfo = Mapper<NVYUserModel>().map(JSONObject: userInfoModel?.UserInfo)!
+        var path = userInfo.IconBig ?? (userInfo.IconSmall ?? "");
+        path = "\(kBaseURL)\(path)";
+        pathList?.append(path);
+        previewVC.title = self.navigationItem.title;
+        previewVC.pathList = pathList;
+        previewVC.index = 0;
+        navigationController?.pushViewController(previewVC, animated: true);
+    }
+    
     func initHead()  {
         
         let userHead = Bundle.main.loadNibNamed("NVYUserPageHead", owner: nil, options: nil)?.first as? NVYUserPageHead
         userHead?.frame = CGRect(x: 0, y: 0, width: screenWidth!, height: 280)
         view.addSubview(userHead!)
         self.userHeader = userHead;
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(showUserAvatarPage));
+        userHead?.userIcon.isUserInteractionEnabled = true;
+        userHead?.userIcon.addGestureRecognizer(tap);
         
         var userInfo = NVYUserModel()
         userInfo = Mapper<NVYUserModel>().map(JSONObject: userInfoModel?.UserInfo)!

@@ -25,6 +25,7 @@ typealias UserPagePhotoBlock    = () -> Void
 class NVYUserPageHead: UIView {
 
     @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var cBackTopY: NSLayoutConstraint!
     //黑名单
     @IBOutlet weak var blackListBtn: UIButton!
     
@@ -75,6 +76,7 @@ class NVYUserPageHead: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.cBackTopY.constant = UIApplication.shared.statusBarFrame.height;
         userIcon.layer.cornerRadius = userIcon.frame.size.width/2.0
         userIcon.layer.masksToBounds = true
         userIcon.layer.borderWidth = 2.0

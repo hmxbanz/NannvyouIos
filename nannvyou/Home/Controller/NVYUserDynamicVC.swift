@@ -43,6 +43,10 @@ class NVYUserDynamicVC: UITableViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+    }
+    
     private func refresh() {
         self.currentPage = 1
         

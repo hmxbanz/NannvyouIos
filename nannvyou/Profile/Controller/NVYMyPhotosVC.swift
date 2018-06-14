@@ -39,12 +39,14 @@ class NVYMyPhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLay
         setNavRightBtn()
         
         albums = Array()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
         NVYProfileDataTool.getUserAlbum { (Albums) in
             self.albums = Albums
             self.collectionView?.reloadData()
         }
-
     }
     
     func setNavRightBtn() {
@@ -66,46 +68,62 @@ class NVYMyPhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLay
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (self.albums?.count)!
+        var count = self.albums?.count ?? 0;
+        if count == 0 {
+            count = 1;
+        }
+        return count;
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? NVYHomeCell
-        
-        if (albums?.count)! > 0 {
-            
-            let model = albums![indexPath.row]
-            
-            let imgStr = "\(kBaseURL)\(model.PhotoSmall ?? "")"
-            let imgURL = NSURL(string: imgStr)
-            let imgResource = ImageResource(downloadURL: imgURL! as URL, cacheKey: imgStr)
-            cell?.userIcon?.kf.setImage(with: imgResource, placeholder: Image(named: "icon_head"), options: nil, progressBlock: nil, completionHandler: { (Image, NSError, CacheType, URL) in
+        let count = self.albums?.count ?? 0;
+        if count > 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? NVYHomeCell
+            if (albums?.count)! > 0 {
+                let model = albums![indexPath.row]
+                let imgStr = "\(kBaseURL)\(model.PhotoSmall ?? "")"
+                let imgURL = NSURL(string: imgStr)
+                let imgResource = ImageResource(downloadURL: imgURL! as URL, cacheKey: imgStr)
+                cell?.userIcon?.kf.setImage(with: imgResource, placeholder: Image(named: "icon_head"), options: nil, progressBlock: nil, completionHandler: { (Image, NSError, CacheType, URL) in
+                    
+                })
+                cell?.userNameLabe.text = "\(model.AlbumName ?? "")"
                 
-            })
-            
-            cell?.userNameLabe.text = "\(model.AlbumName ?? "")"
-            
-        } 
-        
-        return cell!
+            }
+            return cell!
+        }else{
+            collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "noDataCell");
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noDataCell", for: indexPath);
+            var label = cell.contentView.viewWithTag(111) as! UILabel?;
+            if label == nil {
+                label = UILabel.init(frame: CGRect(x: 0, y: 0, width: screenWidth!, height: 120));
+                label!.tag = 111;
+                label?.textAlignment = .center;
+                cell.contentView.addSubview(label!);
+            }
+            label?.text = "暂无数据";
+            return cell;
+        }
     }
 
     //MARK: - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if (self.albums?.count)! > 2 {
-            let width  = (screenWidth! - 40)/3.0
-            let height = width + 20.0
-            
-            return CGSize(width: width, height: height)
-        } else {
-            let width  = 100.0
-            let height = width + 20.0
-            
-            return CGSize(width: width, height: height)
+        let count = self.albums?.count ?? 0;
+        if count > 0 {
+            if (self.albums?.count)! > 2 {
+                let width  = (screenWidth! - 40)/3.0
+                let height = width + 20.0
+                
+                return CGSize(width: width, height: height)
+            } else {
+                let width  = 100.0
+                let height = width + 20.0
+                
+                return CGSize(width: width, height: height)
+            }
+        }else{
+            return CGSize(width: NVY_SCREEN_WIDTH, height: 45);
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -122,14 +140,16 @@ class NVYMyPhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLay
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = UICollectionViewScrollDirection.vertical;
-        let model = albums![indexPath.row];
-        let vc = NVYMyAlbumDetailVC(collectionViewLayout: layout)
-        vc.albumModel = model;
-        vc.albumType = indexPath.row + 1
-        navigationController?.pushViewController(vc, animated: true)
+        let count = self.albums?.count ?? 0;
+        if count > 0 {
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = UICollectionViewScrollDirection.vertical;
+            let model = albums![indexPath.row];
+            let vc = NVYMyAlbumDetailVC(collectionViewLayout: layout)
+            vc.albumModel = model;
+            vc.albumType = indexPath.row + 1
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     override func didReceiveMemoryWarning() {

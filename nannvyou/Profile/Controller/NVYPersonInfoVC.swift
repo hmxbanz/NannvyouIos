@@ -91,7 +91,7 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     //MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 18
+        return cellTitles.count;
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -183,11 +183,13 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             
             switch indexPath.row {
             case 6:
-                cell?.selectBtn.text = userModel.AreaName ?? "请选择"
+                let tips = userModel.areaDisplayString;
+                cell?.selectBtn.text = tips.count == 0 ? "请选择" : tips;
                 break
                 
             case 7:
-                cell?.selectBtn.text = userModel.NativeAreaName ?? "请选择"
+                let tip = userModel.nativeAreaDisplayString;
+                cell?.selectBtn.text = tip.count == 0 ? "请选择" : tip;
                 break
                 
             case 8:
@@ -195,11 +197,11 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 break
                 
             case 9:
-                cell?.selectBtn.text = String(userModel.BodyHeight);//userInfoModel?.BodyHeight ?? "请选择"
+                cell?.selectBtn.text = String(userModel.BodyHeight) + "CM";//userInfoModel?.BodyHeight ?? "请选择"
                 break
                 
             case 10:
-                cell?.selectBtn.text = String(userModel.BodyWeight);//userInfoModel?.BodyWeight ?? "请选择"
+                cell?.selectBtn.text = String(userModel.BodyWeight) + "KG";//userInfoModel?.BodyWeight ?? "请选择"
                 break
                 
             case 11:
@@ -238,8 +240,8 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.view.endEditing(true);
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        if indexPath.row == 6 || indexPath.row == 7 {
+        let title = cellTitles[indexPath.row];
+        if (title == "地区：" || title == "祖籍：") {
             
             let addressPicker: NVYAddressPicker = Bundle.main.loadNibNamed("NVYAddressPicker", owner: nil, options: nil)?.first as! NVYAddressPicker
             addressPicker.frame = CGRect(x: 0, y: 0, width: self.screenWidth!, height: self.screenHeight! - 49)
@@ -261,8 +263,7 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                     }
                 });
             }
-        } else if (indexPath.row == 8) {//生日
-            
+        } else if (title == "生日：") {//生日
             if userModel.isUserChecked() {
                 self .showEditErrorWith(msg: "生日已审核，不可修改");
                 return;
@@ -286,8 +287,7 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 });
             }
             
-        } else if (indexPath.row == 9) {//身高
-            
+        } else if (title == "身高：") {//身高
             let picker = Bundle.main.loadNibNamed("NVYSingleLinePicker", owner: nil, options: nil)?.first as? NVYSingleLinePicker
             picker?.frame = CGRect(x: 0, y: 0, width: self.screenWidth!, height: self.screenHeight! - 49)
             self.view.addSubview(picker!)
@@ -305,13 +305,13 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 NVYProfileDataTool.uploadSingleUserInfo(info: stringValue!, apiName: "BodyHeight", completion: { (Bool) in
                     if Bool {
                         let cell = tableView.cellForRow(at: indexPath) as! NVYPickerCell
-                        cell.selectBtn.text = stringValue;
+                        cell.selectBtn.text = stringValue! + "CM";
                         self.userModel.BodyHeight = (stringValue as NSString?)?.integerValue ?? 0;
                     }
                 });
             }
             
-        } else if (indexPath.row == 10) {//体重
+        } else if (title == "体重：") {//体重
             
             let picker = Bundle.main.loadNibNamed("NVYSingleLinePicker", owner: nil, options: nil)?.first as? NVYSingleLinePicker
             picker?.frame = CGRect(x: 0, y: 0, width: self.screenWidth!, height: self.screenHeight! - 49)
@@ -330,14 +330,13 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 NVYProfileDataTool.uploadSingleUserInfo(info: stringValue!, apiName: "BodyWeight", completion: { (Bool) in
                     if Bool {
                         let cell = tableView.cellForRow(at: indexPath) as! NVYPickerCell
-                        cell.selectBtn.text = stringValue;
+                        cell.selectBtn.text = stringValue! + "KG";
                         self.userModel.BodyWeight = (stringValue as NSString?)?.integerValue ?? 0;
                     }
                 });
             }
             
-        } else if (indexPath.row == 11) {//职业
-            
+        } else if (title == "职业：") {//职业
             let picker = Bundle.main.loadNibNamed("NVYJobPicker", owner: nil, options: nil)?.first as? NVYJobPicker
             picker?.frame = CGRect(x: 0, y: 0, width: self.screenWidth!, height: self.screenHeight! - 49)
             self.view.addSubview(picker!)
@@ -355,7 +354,7 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                     }
                 });
             };
-        } else if (indexPath.row == 12) {//婚史
+        } else if (title == "婚史：") {//婚史
             
             let picker = Bundle.main.loadNibNamed("NVYSingleLinePicker", owner: nil, options: nil)?.first as? NVYSingleLinePicker
             picker?.frame = CGRect(x: 0, y: 0, width: self.screenWidth!, height: self.screenHeight! - 49)
@@ -383,8 +382,7 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 });
             }
             
-        } else if (indexPath.row == 13) {//学历
-            
+        } else if (title == "学历：") {//学历
             let picker = Bundle.main.loadNibNamed("NVYSingleLinePicker", owner: nil, options: nil)?.first as? NVYSingleLinePicker
             picker?.frame = CGRect(x: 0, y: 0, width: self.screenWidth!, height: self.screenHeight! - 49)
             self.view.addSubview(picker!)
@@ -410,7 +408,7 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 });
             }
             
-        } else if (indexPath.row == 14) {//月入
+        } else if (title == "月入：") {//月入
 
             let picker = Bundle.main.loadNibNamed("NVYSingleLinePicker", owner: nil, options: nil)?.first as? NVYSingleLinePicker
             picker?.frame = CGRect(x: 0, y: 0, width: self.screenWidth!, height: self.screenHeight! - 49)
@@ -438,8 +436,7 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 });
             }
             
-        } else if (indexPath.row == 15) {//购房
-
+        } else if (title == "购房：") {//购房
             let picker = Bundle.main.loadNibNamed("NVYSingleLinePicker", owner: nil, options: nil)?.first as? NVYSingleLinePicker
             picker?.frame = CGRect(x: 0, y: 0, width: self.screenWidth!, height: self.screenHeight! - 49)
             self.view.addSubview(picker!)
@@ -466,7 +463,7 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 });
             }
             
-        } else if (indexPath.row == 16) {//购车
+        } else if (title == "购车：") {//购车
             
             let picker = Bundle.main.loadNibNamed("NVYSingleLinePicker", owner: nil, options: nil)?.first as? NVYSingleLinePicker
             picker?.frame = CGRect(x: 0, y: 0, width: self.screenWidth!, height: self.screenHeight! - 49)
@@ -494,7 +491,7 @@ class NVYPersonInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 });
             }
             
-        } else {//民族
+        } else if (title == "民族："){//民族
             
             let picker = Bundle.main.loadNibNamed("NVYSingleLinePicker", owner: nil, options: nil)?.first as? NVYSingleLinePicker
             picker?.frame = CGRect(x: 0, y: 0, width: self.screenWidth!, height: self.screenHeight! - 49)

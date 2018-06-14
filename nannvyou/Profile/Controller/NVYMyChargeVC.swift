@@ -87,8 +87,11 @@ class NVYMyChargeVC: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return (dataArr?.count)!
+        var count = dataArr?.count ?? 0;
+        if count == 0 {
+            count = 1;
+        }
+        return count;
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -96,16 +99,22 @@ class NVYMyChargeVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NVYMyChargeCell", for: indexPath) as! NVYMyChargeCell
-        
-        let model = dataArr![indexPath.row]
-        
-        cell.titleLabel?.text = model.ProductName
-        cell.remarkLabel.text = model.Remark
-        cell.typeLabel.text = "\(model.Price)"
-        
-        return cell
+        let count = dataArr?.count ?? 0;
+        if count > 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NVYMyChargeCell", for: indexPath) as! NVYMyChargeCell
+            let model = dataArr![indexPath.row]
+            cell.titleLabel?.text = model.ProductName
+            cell.remarkLabel.text = model.Remark
+            cell.typeLabel.text = "\(model.Price)"
+            
+            return cell
+        }else{
+            tableView .register(UITableViewCell.self, forCellReuseIdentifier: "blankCell");
+            let cell = tableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath);
+            cell.textLabel?.text = "暂无记录";
+            cell.textLabel?.textAlignment = .center;
+            return cell;
+        }
     }
     
     override func didReceiveMemoryWarning() {

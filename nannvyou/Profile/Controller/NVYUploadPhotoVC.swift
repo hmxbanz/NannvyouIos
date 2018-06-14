@@ -125,7 +125,7 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 
                 imagePicker.sourceType = .photoLibrary
-                imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: imagePicker.sourceType)!
+//                imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: imagePicker.sourceType)!
             }
         }
         
@@ -178,7 +178,8 @@ class NVYUploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINav
         NVYProfileDataTool.uploadUserPic(albumType: "\(albumType)", photoInfo: introTF.text!, image: (imgButton.imageView?.image)!) { (result) in
             
             if result {
-                HUD.flash(.label("上传成功"), delay: 1.0)
+                HUD.flash(.label("上传成功"), delay: 1.0);
+                self.navigationController?.popViewController(animated: true);
             } else {
                 HUD.flash(.label("上传失败"), delay: 1.0)
             }

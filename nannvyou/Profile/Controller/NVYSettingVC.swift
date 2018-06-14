@@ -43,6 +43,14 @@ class NVYSettingVC: UITableViewController {
         signOutBtn.setTitle("注销登录", for: .normal)
         signOutBtn.addTarget(self, action: #selector(signOutAction), for: .touchUpInside)
         
+        let info = Bundle.main.infoDictionary!;
+        let version = "版本号：\(info["CFBundleShortVersionString"] ?? "")";
+        let versionLabel = UILabel.init(frame: CGRect(x: 0, y: signOutBtn.frame.maxY + 20, width: NVY_SCREEN_WIDTH, height: 21));
+        versionLabel.textColor = UIColor.darkGray;
+        versionLabel.textAlignment = .center;
+        versionLabel.font = UIFont.systemFont(ofSize: 15);
+        versionLabel.text = version;
+        view.addSubview(versionLabel);
     }
     
     func signOutAction() {

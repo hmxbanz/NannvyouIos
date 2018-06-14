@@ -19,6 +19,8 @@ class NVYPublishConditionVC: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var publishButton: UIButton!
     
+    var selectedImg = false;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -88,7 +90,7 @@ class NVYPublishConditionVC: UIViewController, UIImagePickerControllerDelegate, 
             let image = info[UIImagePickerControllerEditedImage] as! UIImage
             
             picBtn.setImage(image, for: .normal)
-            
+            selectedImg = true;
             picker.dismiss(animated: true, completion: nil)
         }
     }
@@ -101,12 +103,14 @@ class NVYPublishConditionVC: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func publishAction(_ sender: UIButton) {
         
-//        if contentTV.text == "" {
-//            HUD.flash(.labeledError(title: "请输入内容", subtitle: ""), delay: 1.0)
-//            return
-//        }
-
-        NVYProfileDataTool.publishPic(content: contentTV.text, image: (picBtn.imageView?.image)!) { (result) in
+        let textEmpty = contentTV.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        if  textEmpty {//contentTV.text == "" {
+            HUD.flash(.labeledError(title: "请输入内容", subtitle: ""), delay: 1.0)
+            return
+        }
+        
+        let image = selectedImg ? (picBtn.imageView?.image)! : nil;//(picBtn.imageView?.image)!
+        NVYProfileDataTool.publishPic(content: contentTV.text, image: image) { (result) in
             
             if result {
                 HUD.flash(.label("上传成功"), delay: 1.0)

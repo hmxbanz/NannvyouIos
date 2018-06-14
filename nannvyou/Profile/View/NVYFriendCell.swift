@@ -15,6 +15,7 @@ class NVYFriendCell: UITableViewCell {
     @IBOutlet weak var userIcon: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var cNameLabelY: NSLayoutConstraint!
     
     @IBOutlet weak var timeLabel: UILabel!
     

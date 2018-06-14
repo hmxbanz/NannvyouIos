@@ -84,8 +84,11 @@ class NVYMyCollectionVC: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return (dataArr?.count)!
+        var count = dataArr?.count ?? 0;
+        if count == 0 {
+            count = 1;
+        }
+        return count;
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -93,36 +96,37 @@ class NVYMyCollectionVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NVYVisitCell") as? NVYVisitCell
-        
-        let model = dataArr![indexPath.row]
-        
-        let imgStr = "\(kBaseURL)\(model.ObjectIcon ?? "")"
-        
-        let imgURL = NSURL(string: imgStr)
-        let imgResource = ImageResource(downloadURL: imgURL! as URL, cacheKey: imgStr)
-        cell?.userIcon?.kf.setImage(with: imgResource, placeholder: Image(named: "icon_head"), options: nil, progressBlock: nil, completionHandler: { (Image, NSError, CacheType, URL) in
-            
-        })
-        
-        cell?.nameLabel.text = model.ObjectNickName
-        
-        cell?.timeLabel.text = model.CreateDate?.lwz_changeTime()
-        
-        return cell!
+        let count = dataArr?.count ?? 0;
+        if count > 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NVYVisitCell") as? NVYVisitCell
+            let model = dataArr![indexPath.row]
+            let imgStr = "\(kBaseURL)\(model.ObjectIcon ?? "")"
+            let imgURL = NSURL(string: imgStr)
+            let imgResource = ImageResource(downloadURL: imgURL! as URL, cacheKey: imgStr)
+            cell?.userIcon?.kf.setImage(with: imgResource, placeholder: Image(named: "icon_head"), options: nil, progressBlock: nil, completionHandler: { (Image, NSError, CacheType, URL) in
+                
+            })
+            cell?.nameLabel.text = model.ObjectNickName
+            cell?.timeLabel.text = model.CreateDate?.lwz_changeTime()
+            return cell!
+        }else{
+            tableView .register(UITableViewCell.self, forCellReuseIdentifier: "blankCell");
+            let cell = tableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath);
+            cell.textLabel?.text = "暂无记录";
+            cell.textLabel?.textAlignment = .center;
+            return cell;
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        let model = dataArr![indexPath.row]
-        
-        let vc = NVYUserPageVC()
-        vc.userInfoID = model.ObjectUserInfoID
-        
-        navigationController?.pushViewController(vc, animated: true)
+        let count = dataArr?.count ?? 0;
+        if count > 0 {
+            tableView.deselectRow(at: indexPath, animated: true)
+            let model = dataArr![indexPath.row]
+            let vc = NVYUserPageVC()
+            vc.userInfoID = model.ObjectUserInfoID
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -69,22 +69,22 @@ class NVYUserPageConditionVC: UITableViewController {
             break
             
         case 1://地区
-            cell?.descLabel.text = "\(infoModel?.ProvinceName ?? "") \(infoModel?.CityName ?? "") \(infoModel?.AreaName ?? "")"
+            cell?.descLabel.text = infoModel?.areaDisplayString;//"\(infoModel?.ProvinceName ?? "") \(infoModel?.CityName ?? "") \(infoModel?.AreaName ?? "")"
             cell?.descLabel.textColor = UIColor.lightGray
             break
             
         case 2://祖籍
-            cell?.descLabel.text = "\(infoModel?.NativeProvinceName ?? "") \(infoModel?.NativeCityName ?? "") \(infoModel?.NativeAreaName ?? "")"
+            cell?.descLabel.text = infoModel?.nativeAreaDisplayString;//"\(infoModel?.NativeProvinceName ?? "") \(infoModel?.NativeCityName ?? "") \(infoModel?.NativeAreaName ?? "")"
             cell?.descLabel.textColor = UIColor.lightGray
             break
             
         case 3://身高
-            cell?.descLabel.text = "\(infoModel?.BodyHeightMin ?? 0)-\(infoModel?.BodyHeightMax ?? 0)"
+            cell?.descLabel.text = "\(infoModel?.BodyHeightMin ?? 0)-\(infoModel?.BodyHeightMax ?? 0)cm"
             cell?.descLabel.textColor = UIColor.lightGray
             break
             
         case 4://体重
-            cell?.descLabel.text = "\(infoModel?.BodyWeightMin ?? 0)-\(infoModel?.BodyWeightMax ?? 0) "
+            cell?.descLabel.text = "\(infoModel?.BodyWeightMin ?? 0)-\(infoModel?.BodyWeightMax ?? 0)kg"
             cell?.descLabel.textColor = UIColor.lightGray
             break
             

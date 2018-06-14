@@ -356,7 +356,30 @@ class NVYProfileDataTool: NSObject {
     static func getUserAlbum(completion: @escaping (_ result: Array<NVYMyAlbumModel>) -> Void) {
         
         let user = NVYUserModel.getUserModel()
-        NVYHTTPTool.postMethod(url: "\(kBaseURL)/User/GetAlbums", params: ["objectUserInfoId" : user.UserInfoID]) { (DataResponse) in
+        self.getUserAlbumByUserID(userInfoID: user.UserInfoID, completion: completion);
+//        NVYHTTPTool.postMethod(url: "\(kBaseURL)/User/GetAlbums", params: ["objectUserInfoId" : user.UserInfoID]) { (DataResponse) in
+//
+//            print("获取用户相册 = \(DataResponse)")
+//
+//            let responseDict = DataResponse.result.value as? NSDictionary
+//
+//            let state = responseDict?["state"] as? Int
+//            if (state == 1) {
+//
+//                let albums = Mapper<NVYMyAlbumModel>().mapArray(JSONObject: responseDict?["Albums"])
+//
+//                HUD.flash(.label(responseDict?["msg"] as? String), delay: 1.0)
+//                completion(albums!)
+//            } else {
+//                HUD.flash(.label(responseDict?["msg"] as? String), delay: 1.0)
+//                completion([])
+//            }
+//        }
+    }
+    
+    static func getUserAlbumByUserID(userInfoID:Int, completion: @escaping (_ result: Array<NVYMyAlbumModel>) -> Void) {
+        
+        NVYHTTPTool.postMethod(url: "\(kBaseURL)/User/GetAlbums", params: ["objectUserInfoId" : userInfoID]) { (DataResponse) in
             
             print("获取用户相册 = \(DataResponse)")
             
@@ -448,7 +471,6 @@ class NVYProfileDataTool: NSObject {
     
     //删除好友
     static func delectFriend(userID: Int, completion: @escaping (_ result: Bool) -> Void) {
-        
         NVYHTTPTool.postMethod(url: "\(kBaseURL)/User/DelFriend", params: ["objectUserInfoId" : userID]) { (DataResponse) in
             
             print("获取删除好友 = \(DataResponse)")
@@ -511,9 +533,9 @@ class NVYProfileDataTool: NSObject {
     }
     
     //发布动态
-    static func publishPic(content: String, image: UIImage, completion: @escaping (_ result: Bool) -> Void) {
-        
-        NVYHTTPTool.uploadPic(url: "\(kBaseURL)/User/AddLifeShare", images: [image], params: ["content" : content, "continueSend" : "false"], completion: { (result) in
+    static func publishPic(content: String, image: UIImage?, completion: @escaping (_ result: Bool) -> Void) {
+        let imgs = (image != nil) ? [image!] : [];
+        NVYHTTPTool.uploadPic(url: "\(kBaseURL)/User/AddLifeShare", images: imgs, params: ["content" : content, "continueSend" : "false"], completion: { (result) in
             
             print("发布动态结果 = %@",result)
 

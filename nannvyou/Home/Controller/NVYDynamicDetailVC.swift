@@ -84,16 +84,17 @@ class NVYDynamicDetailVC: UIViewController {
         
         //image
         let imgDict = detailModel?.LifePhotoes?.firstObject as? NSDictionary
-        let imgStr1 = "\(kBaseURL)\(imgDict?["PhotoSmall"] ?? "")"
+        let imgStr1 = "\(kBaseURL)\(imgDict?["Photo"] ?? "")";//(imgDict?["PhotoSmall"] ?? "")"
         let imgURL1 = NSURL(string: imgStr1)
         let imgResource1 = ImageResource(downloadURL: imgURL1! as URL, cacheKey: imgStr1)
         let imgView = UIImageView(frame: CGRect(x: 0, y: contentLabel.frame.maxY, width: screenWidth!, height: screenHeight!))
         imgView.kf.setImage(with: imgResource1, placeholder: nil, options: nil, progressBlock: nil) { (Image, NSError, CacheType, URL) in
             
             if Image != nil {
-                let imgHeight = self.screenWidth! * (Image?.size.height)! / (Image?.size.width)!
+                let imgWidth = self.screenWidth! - 20;
+                let imgHeight = imgWidth * (Image?.size.height)! / (Image?.size.width)!
                 
-                imgView.frame = CGRect(x: 0, y: contentLabel.frame.maxY, width: self.screenWidth!, height: imgHeight)
+                imgView.frame = CGRect(x: 10, y: contentLabel.frame.maxY, width: imgWidth, height: imgHeight)
                 
                 scrollContainer.addSubview(imgView)
                 

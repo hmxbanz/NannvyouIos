@@ -20,8 +20,8 @@ class NVYUserPageInfoVC: UITableViewController {
     var userModel: NVYUserModel?
     
 
-    private let cellImages = [#imageLiteral(resourceName: "icon_nation"), #imageLiteral(resourceName: "icon_map"), #imageLiteral(resourceName: "icon_area"), #imageLiteral(resourceName: "icon_birthday"), #imageLiteral(resourceName: "icon_bodyheight"), #imageLiteral(resourceName: "icon_body_weight"), #imageLiteral(resourceName: "icon_occupation"), #imageLiteral(resourceName: "icon_marry"), #imageLiteral(resourceName: "icon_education"), #imageLiteral(resourceName: "icon_hourse"), #imageLiteral(resourceName: "icon_car"), ]
-    private let cellTitles = ["民族：", "地区：", "祖籍：", "生日：", "身高：", "体重：", "职业：", "婚史：", "学历：", "购房：", "购车："]
+    private let cellImages = [#imageLiteral(resourceName: "icon_nation"), #imageLiteral(resourceName: "icon_map"), #imageLiteral(resourceName: "icon_area"), /*#imageLiteral(resourceName: "icon_birthday"),*/ #imageLiteral(resourceName: "icon_bodyheight"), #imageLiteral(resourceName: "icon_body_weight"), #imageLiteral(resourceName: "icon_occupation"), #imageLiteral(resourceName: "icon_marry"), #imageLiteral(resourceName: "icon_education"), #imageLiteral(resourceName: "icon_hourse"), #imageLiteral(resourceName: "icon_car"), ]
+    private let cellTitles = ["民族", "地区", "祖籍", /*"生日",*/ "身高", "体重", "职业", "婚史", "学历", "购房", "购车"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,67 +57,45 @@ class NVYUserPageInfoVC: UITableViewController {
         let img = UIImage.wz_changeImageTintColor(tintColor: UIColor.wz_colorWithHexString(hex: "#ff7da8"), image: cellImages[indexPath.row])
         cell?.iconView.image = img
         
-        cell?.titleLabel.text = cellTitles[indexPath.row]
+        let title = cellTitles[indexPath.row];
+        cell?.titleLabel.text = title + "：";//cellTitles[indexPath.row]
         cell?.titleLabel.textColor = UIColor.wz_colorWithHexString(hex: "#ff7da8")
         
-        switch indexPath.row {
-        case 0://民族
+        if (title == "民族") {
             cell?.descLabel.text = userModel?.NationName
             cell?.descLabel.textColor = UIColor.lightGray
-            break
-            
-        case 1://地区
-            cell?.descLabel.text = userModel?.AreaName
+        }else if (title == "地区"){
+            cell?.descLabel.text = userModel?.areaDisplayString; //userModel?.AreaName
             cell?.descLabel.textColor = UIColor.lightGray
-            break
-            
-        case 2://祖籍
-            cell?.descLabel.text = userModel?.NativeAreaName
+        }else if (title == "祖籍"){
+            cell?.descLabel.text = userModel?.nativeAreaDisplayString;//userModel?.NativeAreaName
             cell?.descLabel.textColor = UIColor.lightGray
-            break
-            
-        case 3://生日
+        }else if (title == "生日"){
             cell?.descLabel.text = userModel?.Birthday?.lwz_getShortTime()
             cell?.descLabel.textColor = UIColor.lightGray
-            break
-            
-        case 4://身高
-            cell?.descLabel.text = "\(userModel?.BodyHeight ?? 0)"
+        }else if (title == "身高"){
+            cell?.descLabel.text = "\(userModel?.BodyHeight ?? 0)cm"
             cell?.descLabel.textColor = UIColor.lightGray
-            break
-            
-        case 5://体重
-            cell?.descLabel.text = "\(userModel?.BodyWeight ?? 0)"
+        }else if (title == "体重"){
+            cell?.descLabel.text = "\(userModel?.BodyWeight ?? 0)kg"
             cell?.descLabel.textColor = UIColor.lightGray
-            break
-            
-        case 6://职业
+        }else if (title == "职业"){
             cell?.descLabel.text = userModel?.IndustryName
             cell?.descLabel.textColor = UIColor.lightGray
-            break
-            
-        case 7://婚史
+        }else if (title == "婚史"){
             cell?.descLabel.text = userModel?.MaritalStatusName
             cell?.descLabel.textColor = UIColor.lightGray
-            break
-            
-        case 8://学历
+        }else if (title == "学历"){
             cell?.descLabel.text = userModel?.EducationName
             cell?.descLabel.textColor = UIColor.lightGray
-            break
-            
-        case 9://购房
+        }else if (title == "购房"){
             cell?.descLabel.text = userModel?.HouseName
             cell?.descLabel.textColor = UIColor.lightGray
-            break
-        
-        case 10://购车
+        }else if (title == "购车"){
             cell?.descLabel.text = userModel?.CarName
             cell?.descLabel.textColor = UIColor.lightGray
-            break
-            
-        default:
-            cell?.descLabel.text = "dsfadsfad"
+        }else{
+            cell?.descLabel.text = "";
             cell?.descLabel.textColor = UIColor.lightGray
         }
         

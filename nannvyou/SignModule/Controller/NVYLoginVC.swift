@@ -70,7 +70,7 @@ class NVYLoginVC: UIViewController {
     
     func configNavBackButtonIfNeed() {
         if presentMode {
-            let backIcon = UIImage.init(named: "icon_arrow_left");
+            let backIcon = UIImage.init(named: "arrow_left");
             let customView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 44, height: 44));
             let actionBtn = UIButton.init(type: UIButtonType.custom);
             actionBtn.frame = CGRect.init(x: 0, y: 0, width: 25, height: 25);

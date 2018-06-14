@@ -131,8 +131,12 @@
 		31F447511F2A35B000110989 /* NVYPublishConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F4474F1F2A35B000110989 /* NVYPublishConditionVC.swift */; };
 		31F447521F2A35B000110989 /* NVYPublishConditionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F447501F2A35B000110989 /* NVYPublishConditionVC.xib */; };
 		530A564E1FB010B400D4BD78 /* Date+NVY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530A564D1FB010B400D4BD78 /* Date+NVY.swift */; };
+		530D013B20BAEFD1000EAC5D /* NVYFirendsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530D013A20BAEFD1000EAC5D /* NVYFirendsDetailVC.swift */; };
+		536F195520D159CF0053ECFB /* TGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 536F195320D159CF0053ECFB /* TGWebViewController.m */; };
 		53A0C8541FD4F55700073987 /* NVYJobPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A0C8531FD4F55700073987 /* NVYJobPicker.swift */; };
 		53A0C8561FD4F56900073987 /* NVYJobPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53A0C8551FD4F56900073987 /* NVYJobPicker.xib */; };
+		53A8221720BBD6DA00A0F177 /* NVYAlertActionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8221620BBD6DA00A0F177 /* NVYAlertActionTool.swift */; };
+		53A8221B20BBDC8900A0F177 /* ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A8221A20BBDC8900A0F177 /* ZXPUnicode.m */; };
 		53BE64AA20899AA500E57BB4 /* NVYPhotoPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE64A920899AA500E57BB4 /* NVYPhotoPreviewVC.swift */; };
 		53BE64AC2089B6C500E57BB4 /* NVYConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE64AB2089B6C500E57BB4 /* NVYConst.swift */; };
 		53BE64AF2089B9EF00E57BB4 /* NVYPhotoPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE64AE2089B9EF00E57BB4 /* NVYPhotoPreviewCell.swift */; };
@@ -276,8 +280,14 @@
 		31F4474F1F2A35B000110989 /* NVYPublishConditionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVYPublishConditionVC.swift; sourceTree = "<group>"; };
 		31F447501F2A35B000110989 /* NVYPublishConditionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NVYPublishConditionVC.xib; sourceTree = "<group>"; };
 		530A564D1FB010B400D4BD78 /* Date+NVY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+NVY.swift"; sourceTree = "<group>"; };
+		530D013A20BAEFD1000EAC5D /* NVYFirendsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVYFirendsDetailVC.swift; sourceTree = "<group>"; };
+		536F195320D159CF0053ECFB /* TGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGWebViewController.m; sourceTree = "<group>"; };
+		536F195420D159CF0053ECFB /* TGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGWebViewController.h; sourceTree = "<group>"; };
 		53A0C8531FD4F55700073987 /* NVYJobPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVYJobPicker.swift; sourceTree = "<group>"; };
 		53A0C8551FD4F56900073987 /* NVYJobPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NVYJobPicker.xib; sourceTree = "<group>"; };
+		53A8221620BBD6DA00A0F177 /* NVYAlertActionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVYAlertActionTool.swift; sourceTree = "<group>"; };
+		53A8221920BBDC8900A0F177 /* ZXPUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPUnicode.h; sourceTree = "<group>"; };
+		53A8221A20BBDC8900A0F177 /* ZXPUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPUnicode.m; sourceTree = "<group>"; };
 		53BE64A920899AA500E57BB4 /* NVYPhotoPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVYPhotoPreviewVC.swift; sourceTree = "<group>"; };
 		53BE64AB2089B6C500E57BB4 /* NVYConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVYConst.swift; sourceTree = "<group>"; };
 		53BE64AE2089B9EF00E57BB4 /* NVYPhotoPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVYPhotoPreviewCell.swift; sourceTree = "<group>"; };
@@ -461,6 +471,7 @@
 				312664241F4DD15E0045DB0A /* NVYTimePicker.xib */,
 				312A89AF1F5131B3002A5DA7 /* NVYDoubleLinePicker.swift */,
 				312A89B11F5131BC002A5DA7 /* NVYDoubleLinePicker.xib */,
+				53A8221620BBD6DA00A0F177 /* NVYAlertActionTool.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -468,6 +479,8 @@
 		318627031ED1C76700E5922D /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				536F195620D159DD0053ECFB /* TGWebview */,
+				53A8221820BBDC8900A0F177 /* ZXPUnicode */,
 				3168F43B1F40338B00FA8C12 /* WRCycleScrollView */,
 				31DE5FD11F1E5D16008B8DD1 /* BetterSegmentedControl.swift */,
 			);
@@ -496,6 +509,24 @@
 				318098B7B029BEA5304A604E /* Pods_nannvyou.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		536F195620D159DD0053ECFB /* TGWebview */ = {
+			isa = PBXGroup;
+			children = (
+				536F195420D159CF0053ECFB /* TGWebViewController.h */,
+				536F195320D159CF0053ECFB /* TGWebViewController.m */,
+			);
+			path = TGWebview;
+			sourceTree = "<group>";
+		};
+		53A8221820BBDC8900A0F177 /* ZXPUnicode */ = {
+			isa = PBXGroup;
+			children = (
+				53A8221920BBDC8900A0F177 /* ZXPUnicode.h */,
+				53A8221A20BBDC8900A0F177 /* ZXPUnicode.m */,
+			);
+			path = ZXPUnicode;
 			sourceTree = "<group>";
 		};
 		53BE64AD2089B9DE00E57BB4 /* TableCell */ = {
@@ -616,9 +647,10 @@
 				31AEEAFF1F642A52008964B3 /* NVYMyPhotosVC.swift */,
 				31E269671F66D4710044F9D2 /* NVYMyAlbumDetailVC.swift */,
 				53BE64A920899AA500E57BB4 /* NVYPhotoPreviewVC.swift */,
-				31CB46681F6794E8006C8ACF /* NVYMyNoteVC.swift */,
 				31E263D61F6EA9AB0046D67B /* NVYChatListVC.swift */,
+				31CB46681F6794E8006C8ACF /* NVYMyNoteVC.swift */,
 				3122C3671F753B4E0098546D /* NVYConversationVC.swift */,
+				530D013A20BAEFD1000EAC5D /* NVYFirendsDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -999,9 +1031,11 @@
 				31AA85F51EEAE48900069841 /* NVYUnloadHead.swift in Sources */,
 				31E263D71F6EA9AB0046D67B /* NVYChatListVC.swift in Sources */,
 				3122C3681F753B4E0098546D /* NVYConversationVC.swift in Sources */,
+				53A8221720BBD6DA00A0F177 /* NVYAlertActionTool.swift in Sources */,
 				314FEB361EF1888F00063A20 /* NVYHTTPConfig.swift in Sources */,
 				31AAFB131EF80E7A00AA18B3 /* NVYSignDataTool.swift in Sources */,
 				31ED80371F11C97F00456049 /* NVYPerConditionVC.swift in Sources */,
+				53A8221B20BBDC8900A0F177 /* ZXPUnicode.m in Sources */,
 				31E0AA701F35ECE80024C8A3 /* NVYUserPageModel.swift in Sources */,
 				31D835A91F7748C500AE03C2 /* NVYWellcomeVC.swift in Sources */,
 				31A745BA1F17B52A003F69DC /* NVYUserPageConditionVC.swift in Sources */,
@@ -1047,6 +1081,7 @@
 				31BB8A8B1EE5913B000B1809 /* NVYSearchCell.swift in Sources */,
 				FE08763D1EB36CCE00489DC3 /* AppDelegate.swift in Sources */,
 				3166BFAB1EF415AC0079E099 /* NVYProviceModel.swift in Sources */,
+				536F195520D159CF0053ECFB /* TGWebViewController.m in Sources */,
 				FE005B111EC3436900104898 /* NVYTabBarController.swift in Sources */,
 				31ADCBCF1F337541003564D5 /* NVYHomeDataTool.swift in Sources */,
 				31EB43101EEEE79F00EDB583 /* NVYFindPwdVC.swift in Sources */,
@@ -1096,6 +1131,7 @@
 				31F2BC741F12280F00DE6C63 /* NVYUserPageHead.swift in Sources */,
 				31E16B741F41F10200D7CF70 /* NVYMainHomeHead.swift in Sources */,
 				311897F61F38A61000EEA8C9 /* NVYReportVC.swift in Sources */,
+				530D013B20BAEFD1000EAC5D /* NVYFirendsDetailVC.swift in Sources */,
 				3166BFA91EF415910079E099 /* NVYAddressDataTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

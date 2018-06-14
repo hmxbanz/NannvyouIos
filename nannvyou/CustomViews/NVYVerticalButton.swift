@@ -17,7 +17,7 @@ class NVYVerticalButton: UIButton {
         didSet
         {
             self.badgeNumLabel?.text = (badgeNum <= 0) ? "" : "\(badgeNum)";
-            self.layoutIfNeeded();
+            self.setNeedsLayout();
         }
     }
     
@@ -27,7 +27,7 @@ class NVYVerticalButton: UIButton {
         }
         set {
             _badgeSize = newValue;
-            self.layoutIfNeeded();
+            self.setNeedsLayout();
         }
     }
     

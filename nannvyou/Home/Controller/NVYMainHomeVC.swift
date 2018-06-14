@@ -9,6 +9,7 @@
 import UIKit
 import ObjectMapper
 import Alamofire
+import PKHUD
 
 class NVYMainHomeVC: UIViewController, RCIMReceiveMessageDelegate{
     
@@ -114,8 +115,13 @@ class NVYMainHomeVC: UIViewController, RCIMReceiveMessageDelegate{
     }
     
     func messageAction() {
-        let vc = NVYChatListVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+        let logined = NVYUserModel.isLogined();
+        if logined {
+            let vc = NVYChatListVC();
+            self.navigationController?.pushViewController(vc, animated: true);
+        }else{
+            HUD.flash(.label("请先登录"), delay: 1.0);
+        }
     }
     
     //MARK:RCIMReceiveMessageDelegate 融云相关方法
@@ -142,7 +148,7 @@ class NVYMainHomeVC: UIViewController, RCIMReceiveMessageDelegate{
             scrollContainer?.showsHorizontalScrollIndicator = false
             scrollContainer?.bounces = false
             scrollContainer?.isPagingEnabled = true
-            scrollContainer?.contentSize = CGSize(width: 4.0 * screenWidth!, height: screenHeight! - 200)
+            scrollContainer?.contentSize = CGSize(width: 3.0 * screenWidth!, height: screenHeight! - 200)
         }
         return scrollContainer!
     }

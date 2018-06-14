@@ -289,39 +289,54 @@ extension NVYSearchVC {
     
     ///MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (searchDataArr?.count)!
+        var count = searchDataArr?.count ?? 0;
+        if count == 0 {
+            count = 1;
+        }
+        return count;
+//        return (searchDataArr?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell: NVYSearchCell = tableView.dequeueReusableCell(withIdentifier: "searchCell")! as! NVYSearchCell
-//        var cell = tableView.dequeueReusableCell(withIdentifier: "searchCell")!
-
-//        cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "searchCell")
-        
-        let model = self.searchDataArr![indexPath.row]
-        
-        let imgStr = "\(kBaseURL)\(model.IconSmall ?? "")"
-        let imgURL = NSURL(string: imgStr)
-        let imgResource = ImageResource(downloadURL: imgURL! as URL, cacheKey: imgStr)
-        cell.userIcon?.kf.setImage(with: imgResource, placeholder: Image(named: "icon_head"), options: nil, progressBlock: nil, completionHandler: { (Image, NSError, CacheType, URL) in
+        let count = searchDataArr?.count ?? 0;
+        if count > 0 {
+            let cell: NVYSearchCell = tableView.dequeueReusableCell(withIdentifier: "searchCell")! as! NVYSearchCell
+            //        var cell = tableView.dequeueReusableCell(withIdentifier: "searchCell")!
             
-        })
-        cell.nameLabel?.text = model.NickName
-        cell.addressLabel?.text = model.ProvinceName?.appending(model.CityName!)
-        
-        return cell
+            //        cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "searchCell")
+            
+            let model = self.searchDataArr![indexPath.row]
+            
+            let imgStr = "\(kBaseURL)\(model.IconSmall ?? "")"
+            let imgURL = NSURL(string: imgStr)
+            let imgResource = ImageResource(downloadURL: imgURL! as URL, cacheKey: imgStr)
+            cell.userIcon?.kf.setImage(with: imgResource, placeholder: Image(named: "icon_head"), options: nil, progressBlock: nil, completionHandler: { (Image, NSError, CacheType, URL) in
+                
+            })
+            cell.nameLabel?.text = model.NickName
+            cell.addressLabel?.text = model.ProvinceName?.appending(model.CityName!)
+            
+            return cell
+        }else{
+            tableView .register(UITableViewCell.self, forCellReuseIdentifier: "blankCell");
+            let cell = tableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath);
+            cell.textLabel?.text = "暂无记录";
+            cell.textLabel?.textAlignment = .center;
+            return cell;
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        let model = self.searchDataArr![indexPath.row] 
-        
-        let vc = NVYUserPageVC()
-        vc.userInfoID = model.UserInfoID
-        navigationController?.pushViewController(vc, animated: true)
+        let count = searchDataArr?.count ?? 0;
+        if count > 0 {
+            let model = self.searchDataArr![indexPath.row]
+            
+            let vc = NVYUserPageVC()
+            vc.userInfoID = model.UserInfoID
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }

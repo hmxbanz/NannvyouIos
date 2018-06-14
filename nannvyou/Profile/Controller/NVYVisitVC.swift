@@ -160,7 +160,11 @@ class NVYVisitVC: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataArr?.count)!
+        var count = dataArr?.count ?? 0;
+        if count == 0 {
+            count = 1;
+        }
+        return count;
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -169,45 +173,54 @@ class NVYVisitVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NVYVisitCell") as? NVYVisitCell
-        
-        let model = dataArr![indexPath.row] 
-        
-        var imgStr = "\(kBaseURL)\(model.OwnerIcon ?? "")"
-        if currentType != 0 {
-            imgStr = "\(kBaseURL)\(model.ObjectIcon ?? "")"
-        }
-        
-        let imgURL = NSURL(string: imgStr)
-        let imgResource = ImageResource(downloadURL: imgURL! as URL, cacheKey: imgStr)
-        cell?.userIcon?.kf.setImage(with: imgResource, placeholder: Image(named: "icon_head"), options: nil, progressBlock: nil, completionHandler: { (Image, NSError, CacheType, URL) in
+        let count = dataArr?.count ?? 0;
+        if count > 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NVYVisitCell") as? NVYVisitCell
+            let model = dataArr![indexPath.row]
             
-        })
-        
-        if currentType != 0 {
-            cell?.nameLabel.text = model.ObjectNickName
-        } else {
-            cell?.nameLabel.text = model.OwnerNickName
+            var imgStr = "\(kBaseURL)\(model.OwnerIcon ?? "")"
+            if currentType != 0 {
+                imgStr = "\(kBaseURL)\(model.ObjectIcon ?? "")"
+            }
+            
+            let imgURL = NSURL(string: imgStr)
+            let imgResource = ImageResource(downloadURL: imgURL! as URL, cacheKey: imgStr)
+            cell?.userIcon?.kf.setImage(with: imgResource, placeholder: Image(named: "icon_head"), options: nil, progressBlock: nil, completionHandler: { (Image, NSError, CacheType, URL) in
+                
+            })
+            
+            if currentType != 0 {
+                cell?.nameLabel.text = model.ObjectNickName
+            } else {
+                cell?.nameLabel.text = model.OwnerNickName
+            }
+            
+            cell?.timeLabel.text = model.CreateDate?.lwz_changeTime()
+            
+            return cell!
+        }else{
+            tableView .register(UITableViewCell.self, forCellReuseIdentifier: "blankCell");
+            let cell = tableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath);
+            cell.textLabel?.text = "暂无记录";
+            cell.textLabel?.textAlignment = .center;
+            return cell;
         }
-        
-        cell?.timeLabel.text = model.CreateDate?.lwz_changeTime()
-
-        return cell!
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        let model = dataArr![indexPath.row]
-
-        let vc = NVYUserPageVC()
-        if currentType != 0 {
-            vc.userInfoID = model.ObjectUserInfoID
-        } else {
-            vc.userInfoID = model.OwnerUserInfoID
+        let count = dataArr?.count ?? 0;
+        if count > 0 {
+            let model = dataArr![indexPath.row]
+            let vc = NVYUserPageVC()
+            if currentType != 0 {
+                vc.userInfoID = model.ObjectUserInfoID
+            } else {
+                vc.userInfoID = model.OwnerUserInfoID
+            }
+            navigationController?.pushViewController(vc, animated: true)
         }
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

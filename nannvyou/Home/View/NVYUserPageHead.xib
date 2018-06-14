@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,7 +24,7 @@
                         <constraint firstAttribute="height" constant="30" id="Du8-FN-Y3b"/>
                         <constraint firstAttribute="width" constant="30" id="RCf-Gi-VnW"/>
                     </constraints>
-                    <state key="normal" image="icon_arrow_left"/>
+                    <state key="normal" image="arrow_left"/>
                     <connections>
                         <action selector="backBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="W8z-cB-E6a"/>
                     </connections>
@@ -37,7 +37,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="黑名单">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="0.0" green="0.44870010504201679" blue="0.92591747636554622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="blackListBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Cb3-70-NB9"/>
@@ -51,7 +51,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="举报">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="0.0" green="0.44870010504201679" blue="0.92591747636554622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="reportBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZVc-uh-Rzy"/>
@@ -209,7 +209,6 @@
                 <constraint firstItem="awt-eZ-Slf" firstAttribute="leading" secondItem="XEw-0C-7zS" secondAttribute="trailing" constant="10" id="4CO-nY-vvK"/>
                 <constraint firstItem="5hG-Lj-Lv5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6M2-uF-Pa0"/>
                 <constraint firstItem="up1-L5-MVR" firstAttribute="leading" secondItem="Fbp-Ya-lfy" secondAttribute="trailing" id="9UY-Yl-Xl8"/>
-                <constraint firstItem="awt-eZ-Slf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="CG6-jt-wd6"/>
                 <constraint firstItem="F1K-tf-7w1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CYz-L8-qQP"/>
                 <constraint firstItem="GES-2J-I8x" firstAttribute="top" secondItem="GAd-lX-iO9" secondAttribute="bottom" constant="5" id="DL0-dP-2Wa"/>
                 <constraint firstAttribute="bottom" secondItem="sRr-ZM-cg9" secondAttribute="bottom" id="DlJ-uM-cjN"/>
@@ -227,14 +226,15 @@
                 <constraint firstItem="Fbp-Ya-lfy" firstAttribute="width" secondItem="9KR-wR-JkY" secondAttribute="width" id="XJm-Ua-ovg"/>
                 <constraint firstItem="GES-2J-I8x" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="YwQ-71-gzU"/>
                 <constraint firstItem="vNc-Zg-FwT" firstAttribute="leading" secondItem="IgF-qc-MZ4" secondAttribute="trailing" constant="20" id="ZGM-zo-vaL"/>
+                <constraint firstItem="XEw-0C-7zS" firstAttribute="top" secondItem="jJE-zD-HkU" secondAttribute="top" id="a5K-mA-kaa"/>
                 <constraint firstItem="IgF-qc-MZ4" firstAttribute="width" secondItem="dqZ-hw-UCv" secondAttribute="width" id="brw-G2-uud"/>
                 <constraint firstAttribute="bottom" secondItem="up1-L5-MVR" secondAttribute="bottom" id="bvi-Hq-gBm"/>
                 <constraint firstAttribute="trailing" secondItem="sRr-ZM-cg9" secondAttribute="trailing" id="dGi-kK-1CY"/>
-                <constraint firstItem="XEw-0C-7zS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="e7b-M3-4yp"/>
                 <constraint firstAttribute="bottom" secondItem="F1K-tf-7w1" secondAttribute="bottom" id="fz6-vh-6aw"/>
                 <constraint firstAttribute="trailing" secondItem="GAd-lX-iO9" secondAttribute="trailing" id="hFI-VV-dzy"/>
                 <constraint firstItem="5hG-Lj-Lv5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-50" id="hTc-It-IRT"/>
                 <constraint firstItem="dqZ-hw-UCv" firstAttribute="top" secondItem="GES-2J-I8x" secondAttribute="bottom" constant="10" id="hvv-JO-mtn"/>
+                <constraint firstItem="awt-eZ-Slf" firstAttribute="top" secondItem="XEw-0C-7zS" secondAttribute="top" id="ksC-SP-9xq"/>
                 <constraint firstAttribute="trailing" secondItem="awt-eZ-Slf" secondAttribute="trailing" constant="20" id="npq-Jl-w7P"/>
                 <constraint firstItem="jJE-zD-HkU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="rhH-Gy-3Yd"/>
                 <constraint firstItem="dqZ-hw-UCv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="sdr-hF-1wL"/>
@@ -248,6 +248,7 @@
             <connections>
                 <outlet property="backBtn" destination="jJE-zD-HkU" id="jaw-DA-RN3"/>
                 <outlet property="blackListBtn" destination="awt-eZ-Slf" id="b1h-j4-Nz3"/>
+                <outlet property="cBackTopY" destination="SLt-ny-5kd" id="bJN-yY-ZDP"/>
                 <outlet property="chatBtn" destination="vNc-Zg-FwT" id="Hus-ZP-DG2"/>
                 <outlet property="collectBtn" destination="dcI-T3-YQM" id="mn5-Bc-6GL"/>
                 <outlet property="friendBtn" destination="IgF-qc-MZ4" id="VF8-Ac-nYV"/>
@@ -261,12 +262,12 @@
                 <outlet property="userInfoBtn" destination="9KR-wR-JkY" id="ypA-da-v1W"/>
                 <outlet property="userPhotoBtn" destination="sRr-ZM-cg9" id="1Y9-Pg-F1N"/>
             </connections>
-            <point key="canvasLocation" x="-117" y="-53"/>
+            <point key="canvasLocation" x="-96" y="-45"/>
         </view>
     </objects>
     <resources>
+        <image name="arrow_left" width="24" height="24"/>
         <image name="bg_getuser1" width="570" height="570"/>
         <image name="bg_getuser3" width="600" height="600"/>
-        <image name="icon_arrow_left" width="48" height="48"/>
     </resources>
 </document>

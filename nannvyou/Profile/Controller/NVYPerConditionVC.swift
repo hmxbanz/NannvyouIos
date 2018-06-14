@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NVYPerConditionVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVYTextViewCellDelegate {
+class NVYPerConditionVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NVYTextViewCellDelegate, UITextViewDelegate {
 
     var screenWidth: CGFloat?
     var screenHeight: CGFloat?
@@ -85,17 +85,22 @@ class NVYPerConditionVC: UIViewController, UITableViewDelegate, UITableViewDataS
         return conditionTable!
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews();
-        if conditionTable != nil {
-            conditionTable?.frame = CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: self.view.bounds.height);
-        }
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews();
+//        if conditionTable != nil {
+//            conditionTable?.frame = CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: self.view.bounds.height);
+//        }
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.conditionTable?.scrollToRow(at: IndexPath.init(row: 10, section: 0), at: .bottom, animated: true);
+    }
+    
     
     //MARK: 键盘事件
     func keyboardWillShowNotification(notify:Notification) -> Void {
@@ -164,6 +169,8 @@ extension NVYPerConditionVC {
             textView = cell?.textView
             
             cell?.textView.text = editModel?.Remark
+            
+            cell?.textView.delegate = self;
             
             return cell!
             

@@ -29,8 +29,6 @@ class NVYMyFriendVC: UITableViewController {
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "normalCell")
         tableView.register(UINib.init(nibName: "NVYFriendCell", bundle: Bundle.main), forCellReuseIdentifier: "NVYFriendCell")
         
-        self.refresh()
-        
         var header: ESRefreshProtocol & ESRefreshAnimatorProtocol
         var footer: ESRefreshProtocol & ESRefreshAnimatorProtocol
         
@@ -44,7 +42,11 @@ class NVYMyFriendVC: UITableViewController {
         self.tableView?.es.addInfiniteScrolling(animator: footer) { [unowned self] in
             self.loadMore()
         }
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        self.refresh()
     }
     
     private func refresh() {
@@ -94,7 +96,12 @@ class NVYMyFriendVC: UITableViewController {
         if section == 0 {
             return 1
         }
-        return (listArr?.count)!
+        var count = listArr?.count ?? 0;
+        if count == 0 {
+            count = 1;
+        }
+        return count;
+//        return (listArr?.count)!
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -121,42 +128,53 @@ class NVYMyFriendVC: UITableViewController {
             
             return cell!
         } else {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "NVYFriendCell", for: indexPath) as! NVYFriendCell
-            cell.path = indexPath as NSIndexPath
-            
-            if (listArr?.count)! > 0 {
-                let model = listArr![indexPath.row] 
+            let count = listArr?.count ?? 0;
+            if count > 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "NVYFriendCell", for: indexPath) as! NVYFriendCell
+                cell.path = indexPath as NSIndexPath
                 
-                let imgStr = "\(kBaseURL)\(model.ObjectIcon ?? "")"
-                let imgURL = NSURL(string: imgStr)
-                let imgResource = ImageResource(downloadURL: imgURL! as URL, cacheKey: imgStr)
-                cell.userIcon?.kf.setImage(with: imgResource, placeholder: Image(named: "icon_head"), options: nil, progressBlock: nil, completionHandler: { (Image, NSError, CacheType, URL) in
+                if (listArr?.count)! > 0 {
+                    let model = listArr![indexPath.row]
                     
-                })
-                
-                cell.nameLabel.text = "\(model.ObjectNickName ?? "")"
-                cell.timeLabel.text = "\(model.CreateDate?.lwz_changeTime() ?? "")"
-                
-                cell.cellDeleBlock = { (index) -> Void in
-                    
-                    let alertController = UIAlertController(title: "确认加入黑名单?", message: nil, preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-                    alertController.addAction(UIAlertAction(title: "确定", style: .default, handler: { (UIAlertAction) in
+                    let imgStr = "\(kBaseURL)\(model.ObjectIcon ?? "")"
+                    let imgURL = NSURL(string: imgStr)
+                    let imgResource = ImageResource(downloadURL: imgURL! as URL, cacheKey: imgStr)
+                    cell.userIcon?.kf.setImage(with: imgResource, placeholder: Image(named: "icon_head"), options: nil, progressBlock: nil, completionHandler: { (Image, NSError, CacheType, URL) in
                         
-                        let model = self.listArr![index.row] 
-                        NVYProfileDataTool.delectFriend(userID: model.FriendID, completion: { (result) in
-                            
-                            self.refresh()
-                        })
-                        
-                    }))
+                    })
                     
-                    self.navigationController?.present(alertController, animated: true, completion: nil)
+                    cell.nameLabel.text = "\(model.ObjectNickName ?? "")"
+                    cell.timeLabel.text = "\(model.CreateDate?.lwz_changeTime() ?? "")"
+                    
+                    cell.cellDeleBlock = { (index) -> Void in
+                        let model = self.listArr![index.row];
+                        nvy_showDelFriendAlert(friendID: model.ObjectUserInfoID, fromVC: self, completion: { (result) in
+                            self.refresh();
+                        });
+                        //                    let alertController = UIAlertController(title: "确认加入黑名单?", message: nil, preferredStyle: .alert)
+                        //                    alertController.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+                        //                    alertController.addAction(UIAlertAction(title: "确定", style: .default, handler: { (UIAlertAction) in
+                        //
+                        //                        let model = self.listArr![index.row]
+                        //                        NVYProfileDataTool.delectFriend(userID: model.FriendID, completion: { (result) in
+                        //
+                        //                            self.refresh()
+                        //                        })
+                        //
+                        //                    }))
+                        //
+                        //                    self.navigationController?.present(alertController, animated: true, completion: nil)
+                    }
                 }
+                
+                return cell
+            }else{
+                tableView .register(UITableViewCell.self, forCellReuseIdentifier: "blankCell");
+                let cell = tableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath);
+                cell.textLabel?.text = "暂无记录";
+                cell.textLabel?.textAlignment = .center;
+                return cell;
             }
-            
-            return cell
         }
     }
     
@@ -168,14 +186,20 @@ class NVYMyFriendVC: UITableViewController {
             self.navigationController?.pushViewController(vc, animated: true)
             
         } else {
-            
-            let model = listArr![indexPath.row] 
-            
-            let chatVC = NVYConversationVC(conversationType: RCConversationType.ConversationType_PRIVATE, targetId: "\(model.ObjectUserInfoID)")
-//        chatVC.conversationType = RCConversationType.ConversationType_PRIVATE
-//        chatVC.targetId = "\()"
-            chatVC?.title = model.ObjectNickName
-            self.navigationController?.pushViewController(chatVC!, animated: false)
+            let count = listArr?.count ?? 0;
+            if count > 0 {
+                let model = listArr![indexPath.row]
+                
+                //            let chatVC = NVYConversationVC(conversationType: RCConversationType.ConversationType_PRIVATE, targetId: "\(model.ObjectUserInfoID)")
+                ////        chatVC.conversationType = RCConversationType.ConversationType_PRIVATE
+                ////        chatVC.targetId = "\()"
+                //            chatVC?.title = model.ObjectNickName
+                
+                let nextVC = NVYFirendsDetailVC.init();
+                nextVC.friendModel = model;
+                self.navigationController?.pushViewController(nextVC, animated: true);
+                //            self.navigationController?.pushViewController(chatVC!, animated: false)
+            }
         }
     }
     

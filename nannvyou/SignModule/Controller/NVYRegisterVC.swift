@@ -12,6 +12,7 @@ import PKHUD
 class NVYRegisterVC: UIViewController {
 
     @IBOutlet weak var titleIcon: UIImageView!
+    @IBOutlet weak var cIconTopY: NSLayoutConstraint!
     
     @IBOutlet weak var tfContainer: UIView!
     
@@ -26,6 +27,7 @@ class NVYRegisterVC: UIViewController {
     @IBOutlet weak var registerBtn: UIButton!
     
     @IBOutlet weak var protocolBtn: UIButton!
+    @IBOutlet weak var protocolLabel: UILabel!
     
     let tfHeight = 40.0
     
@@ -39,6 +41,7 @@ class NVYRegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.cIconTopY.constant = UIApplication.shared.statusBarFrame.height;
         navigationItem.title = "注册"
         
         tfContainer.layer.borderColor  = UIColor.wz_colorWithHexString(hex: "#5bc0de").cgColor
@@ -47,8 +50,19 @@ class NVYRegisterVC: UIViewController {
         
         registerBtn.backgroundColor = UIColor.wz_colorWithHexString(hex: "#5bc0de")
 
+        protocolLabel.isUserInteractionEnabled = true;
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(protocolLabelTap(gestuer:)));
+        protocolLabel.addGestureRecognizer(tap);
+        
         initViews()
         
+    }
+    
+    func protocolLabelTap(gestuer: UITapGestureRecognizer) -> Void {
+        let nextVC = TGWebViewController.init();
+        nextVC.customTitle = "用户协议";
+        nextVC.path = kBaseURL + "Home/GetProtocol";
+        self.navigationController?.pushViewController(nextVC, animated: true);
     }
     
     func initViews() {

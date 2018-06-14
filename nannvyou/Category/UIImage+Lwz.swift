@@ -41,4 +41,18 @@ extension UIImage {
         return image!
     }
     
+    class func nvy_RoundImageWithColor(color:UIColor, size:CGSize, radius:CGFloat) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height);
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context?.setFillColor(color.cgColor);
+        let pathRef = CGMutablePath();
+        pathRef.addRoundedRect(in: rect, cornerWidth: radius, cornerHeight: radius);
+        context?.addPath(pathRef);
+        context?.fillPath();
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+    
 }

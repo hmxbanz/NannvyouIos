@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class NVYChatListVC: RCConversationListViewController {
 
@@ -29,12 +30,17 @@ class NVYChatListVC: RCConversationListViewController {
     }
 
     override func onSelectedTableRow(_ conversationModelType: RCConversationModelType, conversationModel model: RCConversationModel!, at indexPath: IndexPath!) {
-        
-        let chatVC = NVYConversationVC()
-        chatVC.conversationType = model.conversationType
-        chatVC.targetId = model.targetId
-        chatVC.title = model.conversationTitle
-        self.navigationController?.pushViewController(chatVC, animated: true)
+        //先判断是否为好友
+        let userID = Int(model.targetId ?? "0")!;
+        NVYHomeDataTool.judgeFriend(userID: userID, completion: { (result) in
+            if result {
+                let chatVC = NVYConversationVC()
+                chatVC.conversationType = model.conversationType
+                chatVC.targetId = model.targetId
+                chatVC.title = model.conversationTitle
+                self.navigationController?.pushViewController(chatVC, animated: true)
+            }
+        })
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

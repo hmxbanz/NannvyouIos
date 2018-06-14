@@ -47,13 +47,19 @@ class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         let screenFrame = UIScreen.main.bounds
         screenWidth = screenFrame.width
         screenHeight = screenFrame.height
-
+        
+        addUserLoginNotification();
+        
         profileTable = initProfileTable()
         view.addSubview(profileTable!)
         if NVYUserModel.isLogined() {
             loadUserInfo();
         }
         
+    }
+    
+    deinit {
+        removeUserLoginNotification();
     }
     
     func loadUserInfo() -> Void {
@@ -169,7 +175,7 @@ class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func initProfileTable() -> UITableView {
         if profileTable == nil {
-            let frame = CGRect(x: 0, y: -20, width: screenWidth!, height: screenHeight! - 29.0)
+            let frame = CGRect(x: 0, y: 0, width: screenWidth!, height: screenHeight! - 0);//CGRect(x: 0, y: -20, width: screenWidth!, height: screenHeight! - 29.0)
             profileTable = UITableView(frame: frame, style: UITableViewStyle.plain)
             profileTable?.rowHeight = 50
             profileTable?.delegate = self
@@ -177,6 +183,12 @@ class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             profileTable?.backgroundColor = UIColor.groupTableViewBackground
             profileTable?.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.001))
             profileTable?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "normalCell")
+            if #available(iOS 11.0, *) {
+                profileTable?.contentInsetAdjustmentBehavior = .never
+            } else {
+                // Fallback on earlier versions
+                self.automaticallyAdjustsScrollViewInsets = false;
+            };
         }
         return profileTable!
     }
@@ -272,6 +284,22 @@ class NVYProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if message.conversationType == .ConversationType_SYSTEM {
             updateSystemMsgUnreadInfo();
         }
+    }
+    
+    
+    func userLoginNotification(notify:Notification) -> Void {
+        //用户登录完成的通知
+        self.signedHead();
+        self.loadUserInfo();
+    }
+    
+    func addUserLoginNotification() -> Void {
+        let notifyName = Notification.Name.init(kNVYUserDidLogin);
+        NotificationCenter.default.addObserver(self, selector: #selector(NVYProfileVC.userLoginNotification), name: notifyName, object: nil);
+    }
+    
+    func removeUserLoginNotification() -> Void {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(kNVYUserDidLogin), object: nil);
     }
 }
 

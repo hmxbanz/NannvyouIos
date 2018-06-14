@@ -8,6 +8,8 @@
 
 import Foundation
 
-public let kBaseURL = "http://m.nannvyou.cn/"
-//public let kBaseURL = "http://test.nannvyou.cn/";
+//public let kBaseURL = "http://m.nannvyou.cn/"
+public let kBaseURL = "http://test.nannvyou.cn/";
+
+public let kNVYUserDidLogin = "NVYUserDidLogin";
 

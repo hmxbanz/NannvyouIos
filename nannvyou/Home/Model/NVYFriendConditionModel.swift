@@ -236,6 +236,23 @@ class NVYFriendConditionModel: NSObject, Mappable {
         self.NativeAreaName = area?.AreaName;
     }
     
+    
+    var areaDisplayString: String {
+        let prov = ProvinceName != nil ? ProvinceName! + "-" : "";
+        let city = CityName != nil ? CityName! + "-" : "";
+        let area = AreaName != nil ? AreaName! + "" : "";
+        let result = prov + city + area;
+        return result;
+    }
+    
+    var nativeAreaDisplayString: String {
+        let prov = NativeProvinceName != nil ? NativeProvinceName! + "-" : "";
+        let city = NativeCityName != nil ? NativeCityName! + "-" : "";
+        let area = NativeAreaName != nil ? NativeAreaName! + "" : "";
+        let result = prov + city + area;
+        return result;
+    }
+    
     //MARK: 年龄范围
     func ageRangeString() -> String {
         let result = "\(AgeMin)-\(AgeMax)岁";

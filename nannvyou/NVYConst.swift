@@ -13,3 +13,8 @@ let NVY_SCREEN_WIDTH = UIScreen.main.bounds.size.width
 
 // 屏幕的高
 let NVY_SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+
+public func NVY_NavigationBarHeight() -> CGFloat {
+    let result = UIApplication.shared.statusBarFrame.height - 44;
+    return result;
+}

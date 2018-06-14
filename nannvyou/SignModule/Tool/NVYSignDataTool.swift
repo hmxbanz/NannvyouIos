@@ -96,6 +96,9 @@ class NVYSignDataTool: NSObject {
                     print("融云登录失败")
                 })
                 
+                let notificationName = Notification.Name(rawValue: kNVYUserDidLogin);
+                NotificationCenter.default.post(name: notificationName, object: nil);
+                
                 print(userModel)
                 print(state!)
                 completion(true)

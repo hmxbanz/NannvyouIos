@@ -143,6 +143,22 @@ class NVYUserModel: NSObject, Mappable {
     var VisitedCount: Int = 0
     
     
+    var areaDisplayString: String {
+        let prov = ProvinceName != nil ? ProvinceName! + "-" : "";
+        let city = CityName != nil ? CityName! + "-" : "";
+        let area = AreaName != nil ? AreaName! + "" : "";
+        let result = prov + city + area;
+        return result;
+    }
+    
+    var nativeAreaDisplayString: String {
+        let prov = NativeProvinceName != nil ? NativeProvinceName! + "-" : "";
+        let city = NativeCityName != nil ? NativeCityName! + "-" : "";
+        let area = NativeAreaName != nil ? NativeAreaName! + "" : "";
+        let result = prov + city + area;
+        return result;
+    }
+    
     required convenience init?(map: Map) {
         self.init()
     }

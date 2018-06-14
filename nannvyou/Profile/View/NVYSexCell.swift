@@ -57,7 +57,9 @@ class NVYSexCell: UITableViewCell {
             if sexBlock != nil {
                 let canChange = sexBlock!(sender.tag);
                 if canChange {
-                    currentBtn.isSelected = false
+                    if currentBtn != nil {
+                        currentBtn.isSelected = false;
+                    }
                     currentBtn = sender
                     currentBtn.isSelected = true
                 }
@@ -73,7 +75,9 @@ class NVYSexCell: UITableViewCell {
             if sexBlock != nil {
                let canChange = sexBlock!(sender.tag);
                 if canChange {
-                    currentBtn.isSelected = false
+                    if currentBtn != nil {
+                        currentBtn.isSelected = false
+                    }
                     currentBtn = sender
                     currentBtn.isSelected = true
                 }

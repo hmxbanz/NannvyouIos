@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NVYFindPwdVC" customModule="nanvyou" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NVYFindPwdVC" customModule="nannvyou" customModuleProvider="target">
             <connections>
                 <outlet property="codeBtn" destination="0fH-Bt-9yw" id="13R-Kk-uok"/>
                 <outlet property="codeTF" destination="cJe-VD-6MB" id="6fN-9p-Dv7"/>
@@ -26,14 +27,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="B0D-QO-agH">
-                    <rect key="frame" x="87.5" y="84" width="200" height="1"/>
+                    <rect key="frame" x="87.5" y="20" width="200" height="1"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="KIE-Bn-5XB"/>
                         <constraint firstAttribute="width" constant="200" id="as9-sv-Eeg"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsJ-2V-CiY">
-                    <rect key="frame" x="20" y="105" width="335" height="120"/>
+                    <rect key="frame" x="20" y="21" width="335" height="120"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="938-X5-f23">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
@@ -124,7 +125,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0C-FQ-mgv">
-                    <rect key="frame" x="20" y="255" width="335" height="40"/>
+                    <rect key="frame" x="20" y="171" width="335" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="dhd-GL-xCg"/>
@@ -141,14 +142,14 @@
             <constraints>
                 <constraint firstItem="i0C-FQ-mgv" firstAttribute="top" secondItem="bsJ-2V-CiY" secondAttribute="bottom" constant="30" id="Bg1-tf-7r7"/>
                 <constraint firstAttribute="trailing" secondItem="bsJ-2V-CiY" secondAttribute="trailing" constant="20" id="KpY-86-Rm2"/>
-                <constraint firstItem="bsJ-2V-CiY" firstAttribute="top" secondItem="B0D-QO-agH" secondAttribute="bottom" constant="20" id="PLU-3t-uL8"/>
-                <constraint firstItem="B0D-QO-agH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="QfP-II-akJ"/>
+                <constraint firstItem="bsJ-2V-CiY" firstAttribute="top" secondItem="B0D-QO-agH" secondAttribute="bottom" id="PLU-3t-uL8"/>
+                <constraint firstItem="B0D-QO-agH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="QfP-II-akJ"/>
                 <constraint firstItem="i0C-FQ-mgv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="dUe-pW-wjy"/>
                 <constraint firstAttribute="centerX" secondItem="B0D-QO-agH" secondAttribute="centerX" id="i8f-Ps-tpH"/>
                 <constraint firstItem="bsJ-2V-CiY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="nXj-tU-PRQ"/>
                 <constraint firstAttribute="trailing" secondItem="i0C-FQ-mgv" secondAttribute="trailing" constant="20" id="yc6-fO-Mrv"/>
             </constraints>
-            <point key="canvasLocation" x="-222.5" y="-30.5"/>
+            <point key="canvasLocation" x="-227" y="-208"/>
         </view>
     </objects>
     <resources>
